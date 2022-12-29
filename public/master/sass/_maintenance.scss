@@ -1,0 +1,17 @@
+body.maintenance {
+	.main-icon {
+		color:$primary;
+		font-size:80px;
+		margin-bottom:15px;
+	}
+	.contain-message {
+		border-radius:6px;
+		background:rgba(0,0,0,.2);
+		margin:35px 0 10px;
+		padding:15px 20px 20px;
+		p {
+			margin-bottom:10px;
+			color:$primary;
+		}
+	}
+}

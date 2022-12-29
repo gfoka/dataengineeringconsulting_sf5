@@ -1,0 +1,132 @@
+/* Short Banner Header */
+#header_subpage1 {
+	background:center top no-repeat;
+	background-size:cover;
+	height:550px;
+	@include bp(xs) {
+		height:340px;
+		min-height:340px;
+		max-height:100%;
+	}
+	width:100%;
+	display:table;
+	position:relative;
+	// Caption
+	.caption {
+		position:absolute;
+		display: table-cell;
+		position: static;
+		vertical-align: middle;
+		text-align:center;
+		z-index:10;
+		margin:0 auto;
+		@include bp(sm) {
+			padding:70px 30px 80px;
+		}
+		img {
+			margin-bottom:20px;
+		}
+	}
+	// Typography
+	h1, h2, h3, h4 {
+		color:white;
+		position:relative;
+	}
+	h3 {
+		opacity:0.8;
+		max-width:750px;
+		margin:auto;
+	}
+	button {
+		margin-top:20px;
+		position:relative;
+	}
+	i.arrow-down {
+		color:white;
+		font-size:30px;
+		position:absolute;
+		text-align:center;
+		bottom:50px;
+		width:20px;
+		left:50%;
+		margin-left:-10px;
+		z-index:11;
+	}
+}
+
+/* Regular Subpage Header */
+#header_subpage2 {
+	
+	.container, .container-fluid {
+		padding-top:80px;
+		padding-bottom:23px;
+		@include bp(sm){
+			padding-left: 40px;
+			padding-right: 40px;
+			width:100%;
+		}
+		@include bp(xs){
+			padding-top:70px;
+		}
+	}
+	width:100%;
+	position:relative;
+	// Caption
+	.caption {
+		text-align:left;
+		position:relative;
+		z-index:2;
+		img {
+			margin-bottom:20px;
+		}
+	}
+	// Typography
+	h1, h2, h3, h4 {
+		color:white;
+	}
+	h3 {
+		opacity:0.8;
+	}
+	button {
+		margin-top:20px;
+	}
+	.breadcrumb {
+		color:white;
+		a {
+			color:white;
+		}
+	}
+}
+
+/* Minimal Top */
+#header_subpage3 {
+	h3 {
+		color:$primary;
+	}
+	.container, .container-fluid {
+		padding-top:120px;
+		padding-bottom:20px;
+		text-align:center;
+		@include bp(sm){
+			padding-left: 40px;
+			padding-right: 40px;
+			width:100%;
+		}
+		@include bp(xs){
+			padding-top:70px;
+		}
+	}
+	width:100%;
+	display:table;
+	position:relative;
+	// Caption
+	.caption {
+		position:absolute;
+		display: inline-block;
+		margin:0 auto;
+		position: static;
+		vertical-align: middle;
+		text-align:center;
+		padding:30px;
+	}
+}

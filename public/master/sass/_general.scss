@@ -1,0 +1,1295 @@
+/* ------ */
+
+
+/* Body & Shaders */
+
+
+/* ------ */
+
+body,
+html {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.boxed {
+    background: url(../img/boxed-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+iframe {
+    width: 100%;
+}
+
+.boxed > .wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background: white;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    background: white;
+    z-index: 2;
+}
+
+.google_maps iframe {
+    margin-top: 10px;
+}
+
+.shader-primary {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: $primary;
+    top: 0;
+    left: 0;
+    opacity: .9;
+}
+
+.shader-light {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: white;
+    top: 0;
+    left: 0;
+    opacity: .9;
+}
+
+.shader-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: -webkit-linear-gradient(-180deg, $gradient-1, $gradient-2);
+    background: linear-gradient(-180deg, $gradient-1, $gradient-2);
+    top: 0;
+    left: 0;
+    opacity: .8;
+}
+
+.shader-dark,
+.shader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: $dark;
+    top: 0;
+    left: 0;
+    opacity: .8;
+}
+
+img.full-width-pic {
+    width: 100%;
+    margin-bottom: 13px;
+    border-radius: 3px;
+}
+
+.icon-alone {
+    text-align: center;
+    i {
+        font-size: 100px;
+    }
+}
+
+
+/* ------ */
+
+
+/* Container Properties */
+
+
+/* ------ */
+
+.container,
+.container-fluid {
+    padding: $section_padding;
+    @include bp(sm) {
+        padding: $ipad_section_padding;
+    }
+    @include bp(xs) {
+        padding: $mobile_section_padding;
+    }
+    &.no-padding {
+        padding: 0;
+        .row {
+            margin: 0;
+        }
+    }
+    &.no-pad-top {
+        padding-top: 0;
+    }
+    &.border-top {
+        border-top: 1px solid $border-color;
+    }
+    .center {
+        text-align: center;
+    }
+    .align-right {
+        text-align: right;
+        @include bp(sm) {
+            text-align: left;
+        }
+    }
+    .align-left {
+        text-align: left;
+    }
+}
+
+.border-bottom {
+    border-bottom: 1px solid $border-color;
+}
+
+.padding-bottom {
+    padding-bottom: $section_padding;
+    @include bp(xs) {
+        padding-bottom: $mobile_section_padding;
+    }
+}
+
+.border-top {
+    border-top: 1px solid $border-color;
+}
+
+
+/* ------ */
+
+
+/* Spacing Controllers Responsive */
+
+
+/* ------ */
+
+.padding-top {
+    padding-top: $section_padding;
+    @include bp(xs) {
+        padding-top: $mobile_section_padding;
+    }
+}
+
+@include bp(mdmin) {
+    .mdmin-spacer {
+        display: block;
+        width: 100%;
+        height: 45px;
+        clear: both;
+    }
+}
+
+@include bp(sm) {
+    .v-spacer {
+        display: block;
+        width: 100%;
+        height: 45px;
+        clear: both;
+    }
+}
+
+@include bp(xs) {
+    .xs-spacer {
+        display: block;
+        width: 100%;
+        height: 45px;
+        clear: both;
+    }
+}
+
+@include bp(xs) {
+    .map_mobile {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+:focus {
+    outline-color: $primary;
+}
+
+
+/* ------ */
+
+
+/* Animation Controllers */
+
+
+/* ------ */
+
+.ani_ {
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    @include bp(xs) {
+        opacity: 1;
+    }
+}
+
+// Delays
+[data-delay='.2'] {
+    animation-delay: .2s;
+}
+
+[data-delay='.4'] {
+    animation-delay: .4s;
+}
+
+[data-delay='.6'] {
+    animation-delay: .6s;
+}
+
+[data-delay='.8'] {
+    animation-delay: .8s;
+}
+
+[data-delay='1'] {
+    animation-delay: 1s;
+}
+
+[data-delay='1.2'] {
+    animation-delay: 1.2s;
+}
+
+[data-delay='1.4'] {
+    animation-delay: 1.4s;
+}
+
+[data-delay='1.6'] {
+    animation-delay: 1.6s;
+}
+
+[data-delay='1.8'] {
+    animation-delay: 1.8s;
+}
+
+[data-delay='2'] {
+    animation-delay: 2s;
+}
+
+
+/* ------ */
+
+
+/* Skill Lines */
+
+
+/* ------ */
+
+.skill {
+    margin-bottom: 25px;
+}
+
+.grey .skill-line {
+    background: white;
+}
+
+.skill-line {
+    width: 100%;
+    background: $light-grey;
+    border-radius: 6px;
+    height: 12px;
+    display: block;
+    .skill-line-inside {
+        height: 12px;
+        width: 0%;
+        background: $primary;
+        display: block;
+        border-radius: 6px;
+        transition: all 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        -webkit-transition: all 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        position: relative;
+        .percentage {
+            position: absolute;
+            right: 0;
+            text-align: right;
+            top: -33px;
+            opacity: 0;
+            color: $primary;
+        }
+        .slowlyappear {
+            opacity: 1;
+            transition: all 3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+            -webkit-transition: all 3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* Service Icon Blocks */
+
+
+/* ------ */
+
+.service-icon-block {
+    .service-block {
+        padding: 23px 5px;
+        text-align: center;
+        border-radius: 6px;
+        &:hover {
+            background: $light-grey;
+        }
+        h4 {
+            margin-top: 15px;
+            color: $primary;
+        }
+        i {
+            font-size: 30px;
+            color: $primary;
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* Sections */
+
+
+/* ------ */
+
+section {
+    background: white;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+section.grey {
+    background: $light-grey;
+}
+
+section.primary {
+    background: $primary;
+}
+
+section.dark {
+    background: $dark;
+    &.primary-gradient {
+        background: -webkit-linear-gradient(-200deg, $primary, $primary-2);
+        background: linear-gradient(-200deg, $primary, $primary-2);
+    }
+}
+
+section.darker {
+    background: $darker;
+}
+
+section.center {
+    text-align: center;
+}
+
+
+/* ------ */
+
+
+/* Phone-1 - Head */
+
+
+/* ------ */
+
+#phone-1 {
+    .half-2 {
+        margin-top: 40px;
+        @include bp(sm) {
+            margin-top: 0;
+        }
+    }
+    .half,
+    .half-2 {
+        @include bp(sm) {
+            width: 50%;
+            float: left;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    i {
+        display: block;
+        @include bp(sm) {
+            margin-top: 0;
+        }
+    }
+    a {
+        @include bp(sm) {
+            margin-bottom: 30px;
+        }
+        display:block;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+
+/* ------ */
+
+
+/* Two Column - Location, Footer */
+
+
+/* ------ */
+
+.triple-con {
+    background: -webkit-linear-gradient(200deg, $primary, $primary-2);
+    background: linear-gradient(200deg, $primary, $primary-2);
+}
+
+.half-con,
+.triple-con {
+    padding: $section_padding;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    overflow: none;
+    img {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: block;
+    }
+    @include bp(xs) {
+        padding: $mobile_section_padding;
+    }
+    h2,
+    h3,
+    h4,
+    p,
+    button,
+    a {
+        opacity: 1;
+        z-index: 2;
+        position: relative;
+    }
+}
+
+.country {
+    background-size: cover;
+    img {
+        width: 50px;
+        margin: 0 auto 13px;
+    }
+}
+
+.triple-con.no-padding {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* ------ */
+
+
+/* Cliens Area */
+
+
+/* ------ */
+
+.clients {
+    .client_pic {
+        padding: 40px 0;
+        text-align: center;
+        background: #fbfcfd;
+        transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        -webkit-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        &:nth-child(even) {
+            background: #f4f7f9;
+        }
+        img {
+            height: 80px;
+            filter: grayscale(100%);
+            -webkit-filter: grayscale(100%);
+            max-height: 70%;
+            max-width: 60%;
+            width: auto;
+        }
+        &:hover {
+            z-index: 2;
+            box-shadow: 0 1px 33px rgba(26, 37, 46, .28), inset 0 1px 0 hsla(0, 0%, 100%, .35);
+            img {}
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* Clients Dark BG */
+
+
+/* ------ */
+
+.clients-darkbg {
+    .client_pic {
+        background: transparent;
+        img {
+            -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+        }
+        &:nth-child(even),
+        &:nth-child(odd) {
+            background: transparent;
+        }
+        &:hover {
+            z-index: 2;
+            box-shadow: none;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            img {
+                -webkit-filter: brightness(0) invert(1);
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* App Intro Area */
+
+
+/* ------ */
+
+.app_intro {
+    .container {
+        @include bp(mdmin) {}
+    }
+    overflow:hidden;
+    h4 {
+        margin-top: 40px;
+        margin-bottom: 15px;
+        i {
+            color: $primary;
+            font-size: 27px;
+            margin-right: 10px;
+            bottom: -4px;
+            position: relative;
+        }
+    }
+    .app_img img {
+        right: 0;
+        top: 0;
+        position: absolute;
+        @include bp(xs) {
+            width: 110%;
+            position: relative;
+            margin-left: -10%;
+        }
+    }
+    .app_img2 img {
+        left: 70px;
+        top: 80px;
+        position: absolute;
+        @include bp(xs) {
+            width: 110%;
+            position: relative;
+            margin-right: -10%;
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* Testimonials Area */
+
+
+/* ------ */
+
+#testimonials {
+    color: white;
+    text-align: center;
+    .title {
+        margin-bottom: 24px;
+    }
+    h2,
+    h3,
+    h4 {
+        color: white;
+        padding: 0 30px;
+        text-align: center;
+    }
+    .cbp-l-testimonials-title-block,
+    .cbp-l-grid-testimonials-body,
+    .cbp-l-grid-testimonials-footer {
+        font-family: $basefont;
+    }
+    .cbp-l-grid-testimonials-footer {
+        margin: 20px 0;
+        color: #fff;
+        font-size: 13px;
+    }
+    .cbp-nav-pagination-item {
+        background: $primary;
+        opacity: .5;
+    }
+    .cbp-nav-pagination-item.cbp-nav-pagination-active {
+        background: #fff;
+        opacity: 1;
+    }
+}
+
+.cbp-l-testimonials-wrap {
+    padding: 75px 0 95px;
+}
+
+
+/* ------ */
+
+
+/* Team Areas */
+
+
+/* ------ */
+
+.cbp-slider-edge .cbp-nav-pagination {
+    bottom: -30px;
+}
+
+.cbp-item h3 {
+    margin: 25px 0 5px;
+    font-weight: 500;
+    color: $dark;
+}
+
+.cbp-item h4 {
+    font-size: 15px;
+    color: $primary;
+}
+
+.cbp-item {
+    text-align: center;
+    a.team_social {
+        font-size: 18px;
+        margin: 0 5px 15px;
+        display: inline-block;
+        width: 43px;
+        height: 43px;
+        color: $dark-grey;
+        background: $light-grey;
+        padding-top: 10px;
+        border-radius: 3px;
+        transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        -webkit-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+        @include bp(sm) {
+            margin: 0 2px 5px;
+            height: 32px;
+            width: 32px;
+            font-size: 15px;
+            padding-top: 5px;
+        }
+        &:hover {
+            transform: scale(1.15);
+            -webkit-transform: scale(1.15);
+            background: $primary;
+            box-shadow: 0 1px 15px rgba(26, 37, 46, .28), inset 0 1px 0 hsla(0, 0%, 100%, .35);
+            color: white;
+        }
+    }
+    p {
+        margin-top: 10px;
+    }
+}
+
+.cbp-caption {
+    img {
+        border-radius: 3px;
+    }
+}
+
+.cbp-slider-edge .cbp-nav-next {
+    right: -67px;
+}
+
+.cbp-slider-edge .cbp-nav-prev {
+    left: -67px;
+}
+
+@include bp(sm) {
+    .cbp-slider-edge .cbp-nav-next,
+    .cbp-slider-edge .cbp-nav-prev {
+        display: none;
+    }
+}
+
+
+/* ------ */
+
+
+/* Social Icons */
+
+
+/* ------ */
+
+.social-icons {
+    text-align: center;
+    display: block;
+    .container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.social-icon {
+    display: inline-table;
+    border-radius: 6px;
+    width: 103px;
+    height: 103px;
+    background: $light-grey;
+    position: relative;
+    text-align: center;
+    margin: 4px;
+    transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -webkit-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    i {
+        font-size: 37px;
+        display: inline-block;
+        display: table-cell;
+        position: static;
+        vertical-align: middle;
+        color: $dark-grey;
+        &:hover {
+            color: white;
+        }
+    }
+    @include bp(md) {
+        width: 80px;
+        height: 80px;
+        i {
+            font-size: 30px;
+        }
+    }
+    @include bp(xs) {
+        width: 40px;
+        height: 40px;
+        i {
+            font-size: 20px;
+        }
+    }
+    &:hover {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        background: $primary;
+        box-shadow: 0 1px 33px rgba(26, 37, 46, .28), inset 0 1px 0 hsla(0, 0%, 100%, .35);
+    }
+}
+
+
+/* ------ */
+
+
+/* Team List on our-team.html */
+
+
+/* ------ */
+
+.team-list h4 {
+    margin-bottom: 15px;
+}
+
+.team-list .cbp-item {
+    margin-bottom: 20px;
+}
+
+.cbp-l-filters-alignLeft {
+    border-bottom: 2px solid $light-grey;
+    .cbp-filter-item {
+        border: 0;
+        font-family: $basefont;
+        font-size: $p-size;
+        @include bp(xs) {
+            width: 100%;
+        }
+        &.cbp-filter-item-active {
+            background: $primary;
+            border: 0;
+            border-radius: 6px;
+        }
+    }
+}
+
+// Filter Value
+.cbp-filter-counter {
+    opacity: 0.6;
+    margin-left: 5px;
+}
+
+
+/* ------ */
+
+
+/* Our Office Slider */
+
+
+/* ------ */
+
+body.our-office {
+    .cbp-nav-pagination {
+        bottom: -30px;
+    }
+    .cbp-nav-controls {
+        top: 49%;
+        width: 100%;
+        left: 0;
+        .cbp-nav-prev {
+            left: 20px;
+            position: absolute;
+        }
+        .cbp-nav-next {
+            right: 20px;
+            position: absolute;
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* Standard List Style */
+
+
+/* ------ */
+
+ul.standard_list {
+    margin-top: 17px;
+    li {
+        line-height: 30px;
+        b {
+            font-weight: 700;
+            margin-right: 5px;
+            color: $dark;
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* Counter Area Styling */
+
+
+/* ------ */
+
+section.counter {
+    text-align: center;
+    i {
+        font-size: 50px;
+        color: white;
+        margin-bottom: 15px;
+        display: block;
+    }
+    &.light {
+        i {
+            color: $primary;
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* Three service picture, used on Agency page */
+
+
+/* ------ */
+
+.service-pic {
+    text-align: center;
+    border-radius: 4px;
+    div.service-container {
+        @include transition-1;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 0;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    div.titles {
+        padding: 20px;
+        background: $dark-grey;
+        margin-top: 0;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        color: white;
+        @include transition-1;
+        h2,
+        h4 {
+            color: white;
+        }
+        h2 {
+            margin-bottom: 8px;
+            font-size: 22px;
+            font-weight: $regular;
+            padding-bottom: 0;
+            margin-top: 0;
+            line-height: 25px;
+        }
+        h4 {
+            margin-bottom: 2px;
+            margin-top: 0;
+        }
+    }
+    &:hover div.service-container {
+        transform: scale(1.07);
+        -webkit-transform: scale(1.07);
+        box-shadow: 0 1px 15px rgba(26, 37, 46, .28), inset 0 1px 0 hsla(0, 0%, 100%, .35);
+        color: white;
+    }
+    &:hover div.titles {
+        background: $dark;
+    }
+}
+
+
+/* ------ */
+
+
+/* Testimonials Area */
+
+
+/* ------ */
+
+.testimonials {
+    #small-testimonial {
+        background: $light-grey;
+        padding-bottom: 55px;
+        border-radius: 4px;
+    }
+    .cbp-slider-edge .cbp-nav-pagination {
+        bottom: 30px;
+    }
+    .cbp-l-grid-slider-testimonials-body {
+        color: $dark-grey;
+        font-weight: 300;
+        padding: 10px 40px 15px;
+    }
+    h4 {
+        color: $dark-grey;
+    }
+}
+
+
+/* ------ */
+
+
+/* Blog Area, used on Agency page */
+
+
+/* ------ */
+
+.blog-button {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#blog-mosaic-1 {
+    .cbp-item {
+        border-radius: 4px;
+    }
+    .cbp-item .over {
+        height: 100%;
+        padding: 0;
+        background-color: rgba(26, 37, 46, 0.8);
+        @include transition-1;
+        text-align: left;
+        bottom: 0;
+        position: absolute;
+        .blogDateTitle {
+            padding-right: 10px;
+        }
+    }
+    .cbp-item:hover {
+        box-shadow: 0 1px 33px rgba(26, 37, 46, .38), inset 0 1px 0 hsla(0, 0%, 100%, .35);
+    }
+    .cbp-item:hover .over {
+        background-color: rgba(26, 37, 46, 0.5);
+        box-shadow: 0 1px 33px rgba(26, 37, 46, .38), inset 0 1px 0 hsla(0, 0%, 100%, .35);
+    }
+    .subject {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 12px;
+        span {
+            padding: 2px 11px;
+            border-radius: 30px;
+            border: 1px solid #adb0b3;
+            color: white;
+            margin-right: 10px;
+            display: inline-block;
+            opacity: 0.7;
+        }
+    }
+    .blogDateTitle {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        p {
+            margin: 0;
+            color: $primary-2;
+        }
+        h3 {
+            margin: 0;
+        }
+        .text {
+            color: $font-color;
+            margin-top: 7px;
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* Contact Area 2 */
+
+
+/* ------ */
+
+body.contact-2 {
+    .caption {
+        padding: 100px 0 20px;
+    }
+}
+
+
+/* ------ */
+
+
+/* Services Area */
+
+
+/* ------ */
+
+body.services {
+    .a-service {
+        margin-bottom: 60px;
+    }
+    .services-pic img {
+        width: 100%;
+    }
+}
+
+
+/* ------ */
+
+
+/* FAQ Area */
+
+
+/* ------ */
+
+.faq-section {
+    .cbp-caption-defaultWrap,
+    .cbp-caption-expand .cbp-caption-defaultWrap {
+        text-align: left;
+        padding: 14px 5px;
+        font-family: $basefont !important;
+    }
+    .cbp-caption-expand .cbp-l-caption-body {
+        font-family: $basefont !important;
+    }
+    .cbp-caption-expand .cbp-l-caption-body {
+        color: $font-color;
+        padding-bottom: 20px;
+        text-align: left;
+        font-size: 14px;
+    }
+}
+
+
+/* ------ */
+
+
+/* Logo Strip Under Banner */
+
+
+/* ------ */
+
+#logo-strip {
+    padding: 33px 0;
+    border-bottom: 1px solid $border-color;
+    text-align: center;
+    overflow: hidden;
+    img,
+    svg {
+        max-height: 32px;
+        width: auto;
+        max-width: 90%;
+        fill: $font-color;
+        opacity: .4;
+        @include transition-1;
+        &:hover {
+            fill: $primary;
+            opacity: 1;
+        }
+    }
+    .container,
+    .container-fluid {
+        padding: 0;
+    }
+    @include bp(sm) {
+        display: none;
+    }
+}
+
+
+/* ------ */
+
+
+/* Grid System Area */
+
+
+/* ------ */
+
+section.grid {
+    .grid_ span {
+        height: 30px;
+        width: 100%;
+        display: block;
+        background: $dark-grey;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* ------ */
+
+
+/* Typography Area */
+
+
+/* ------ */
+
+body.typography {
+    .text-layout {
+        h1 {
+            display: inline-block;
+            font-size: 80px;
+        }
+    }
+    .font-float {
+        display: inline-block;
+        margin-left: 15px;
+        top: -10px;
+        position: relative;
+        .uppercase_bold {
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+        }
+        .lowercase {
+            text-transform: lowercase;
+            font-weight: $regular;
+            margin: 0;
+        }
+    }
+}
+
+
+/* ------ */
+
+
+/* Preload Area */
+
+
+/* ------ */
+
+.loader {
+    background: rgba(255, 255, 255, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    z-index: 9999;
+    div {
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    span {
+        display: inline-block;
+        margin: 0 10px;
+        animation: pulse 0.4s alternate infinite ease-in-out;
+        color: black;
+        font-size: 60px;
+        font-weight: bold;
+        font-family: Consolas, Menlo, Monaco, monospace;
+        color: white;
+        &:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+    }
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}
+
+
+/* ------ */
+
+
+/* Tabs */
+
+
+/* ------ */
+
+.tabs {
+    padding: 20px 40px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid $light-grey;
+}
+
+.tabs .cbp-l-filters-big .cbp-filter-item {
+    font-family: $basefont;
+    margin: 0;
+    border-radius: 4px;
+    background: white;
+    border: none;
+}
+
+.tabs .cbp-l-filters-big .cbp-filter-item.cbp-filter-item-active {
+    color: white;
+    border: none;
+}

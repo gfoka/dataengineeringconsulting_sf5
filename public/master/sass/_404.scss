@@ -1,0 +1,22 @@
+body.page-404 {
+	#header-default {
+		background: -webkit-linear-gradient(200deg, $primary,$primary-2);
+		background: linear-gradient(200deg, $primary,$primary-2);
+	}
+	h1 {
+		font-size:100px;
+		font-weight:$regular;
+		line-height:90px;
+	}
+	h2 {
+		line-height:auto;
+	}
+	.useful-links {
+		a {
+			line-height:52px;
+			color: white;
+			font-size:28px;
+			font-weight:$light;
+		}
+	}
+}

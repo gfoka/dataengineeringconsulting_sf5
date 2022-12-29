@@ -1,0 +1,19 @@
+Symfony: J'aime Symfony
+# Ici c'est la traduction du ménu
+menu.home : Accueil
+menu.qui_sommes_nous : Qui nous sommes
+menu.nos_services : Nos services
+menu.conception_de_site_internet : Conceptions de site Internet
+menu.conception_application_mobile : Conception des Applications Mobile
+menu.infographie : Infographie
+menu.hebergement : Hébergement web
+menu.formation : Formation
+menu.formation.qualifiant : Cursus qualifiant
+menu.formation.certifiant : Cursus certifiant
+menu.nos_produits : Nos Produits
+menu.barro : Barro
+menu.codato : CODATO
+menu.logifirm : LOGIFIRM
+menu.immo : Application de suivi des immobilisation
+menu.blog : Blog
+menu.contact : Nous Ecrire

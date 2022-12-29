@@ -1,0 +1,59 @@
+
+// Font family
+$basefont: "Source Sans Pro", sans-serif;
+
+// Font weights
+$light: 300;  $regular: 400;
+
+// Fonts
+$h1-size: 35px;  $h1-lineheight: 45px; // H1 Font Size & Height
+$h2-size: 32px;  $h2-lineheight: 40px; // H2 Font Size & Height
+$h3-size: 22px;  $h3-lineheight: 30px; // H3 Font Size & Height
+$h4-size: 18px;  $h4-lineheight: 24px; // H4 Font Size & Height
+$p-size: 15px;  $p-lineheight: 23px;  // Paragraph Font Size & Height
+
+// Variables
+$section_padding:80px;
+$ipad_section_padding:50px 45px;
+$mobile_section_padding:50px 35px;
+
+// Mobile Menu
+$mm-fontsize-1: 25px;
+$mm-fontsize-2:20px;
+$mm-fontsize-3:18px;
+
+$mm-lineheight-1: 60px;
+$mm-lineheight-2: 45px;
+$mm-lineheight-3: 35px;
+
+$mm-link-1:#f4f7f9;
+$mm-link-2:#94a5b4;
+$mm-link-3:#017cef;
+
+$mobile-menu:#0e1318;
+
+// Colours
+$dark: #1a252e; // Dark font colour, Dark background colour
+$darker: #0C1216; // Darker background colour for contrast
+
+// Primary Colours
+$primary: #017cef; // Primary font colour, Primary background colour, Buton Colour
+$primary-2: #04b0e3; // Secondary Primary
+
+// Custom Gradient Colours
+$gradient-1: #c755bb;
+$gradient-2: #0082f0;
+
+$font-color: #7f90a0; // Paragraph colour
+$light-grey: #f4f7f9; // Background colour for content split
+$dark-grey: #94a5b4; // Darker grey
+$border-color:#e6eaec; // Border colour on white
+$footer:#1a252e; // Background of Footer
+$footer-border-color:#46525d; // Border colours in the footer
+$dark-logo: #5f6971; // Used for dark logo
+
+// Footer Text Colours
+$footer_1_text: #94a5b4;
+$footer_1_link: #c2cfdb;
+$footer_1_hover: #fff;
+$footer_1_contactlink: $primary;

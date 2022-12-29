@@ -1,0 +1,164 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	Comflare
+Version:	1.0.1
+Last change:	20/08/16 [TF Compatibility]
+By:	Premonday
+Primary use:	Multi-Purpose with Agency & App Features 
+
+[Table of contents]
+
+1. 5 Column Rules (Bootstrap Config)
+2. Typography
+3. Icons
+4. Buttons
+5. Banners & Headers
+6. General + Components
+7. Navigation
+8. Mobile Menu
+9. Forms
+10. Pricing Table
+11. Portfolio
+12. Footers
+13. Feature Pages
+14. Careers Styling
+15. Blog
+16. Dark Sections
+17. Work with us - Modal
+
+[Color Codes]
+
+# Dark Value: #1a252e // Dark font colour, Dark background colour
+# Darker Value: #0C1216 // Darker background colour used for contrast
+
+// Primary Colours
+# Primary Colour: #017cef // Primary font colour, Primary background colour, Buton Colour
+# Secondary Colour: #04b0e3 // Secondary
+
+// Custom Gradient Colours
+# Gradient Colour 1: #c755bb // Starting Colour
+# Gradient Colour 2: #0082f0 // Ending Colour
+
+# Paragraph Colour: #7f90a0 // Paragraph colour
+# Alternate Background: #f4f7f9 // Background colour for content split
+# Dark Grey: #94a5b4 // Darker grey
+# Border Color on White: #e6eaec
+
+# Footer Background: #1a252e
+# Footer Border Color: #46525d
+
+# Mobile Menu Background: #0e1318
+
+[Typography]
+
+Font: Source Sans Pro
+Weights: 300 & 400
+
+h1: 35px Size / 45px Lineheight - 300
+h2: 32px Size / 40px Lineheight - 300
+h3: 22px Size / 30px Lineheight - 300
+h4: 18px Size / 24px Lineheight - 400
+
+p: 15px Size / 23px Lineheight - 400
+-------------------------------------------------------------------*/
+
+@import "compass/css3";
+
+/* ----------------------- */
+/* 1. 5 Column Rules */
+/* ----------------------- */
+@import "_5columnBootstrap";
+@import "_mixins";
+@import "_values";
+
+/* ----------------------- */
+/* 2. Typography */
+/* ----------------------- */
+@import "_typography";
+
+/* ----------------------- */
+/* 3. Icon Rules */
+/* ----------------------- */
+@import "_icons";
+
+/* ----------------------- */
+/* 4. Buttons */
+/* ----------------------- */
+@import "_buttons";
+
+/* ----------------------- */
+/* 5. Banners & Headers */
+/* ----------------------- */
+@import "_headers";
+@import "_page-headers";
+
+/* ----------------------- */
+/* 6. General */
+/* ----------------------- */
+@import "_general";
+
+/* ----------------------- */
+/* 7. Navigation */
+/* ----------------------- */
+@import "_nav";
+
+/* ----------------------- */
+/* 8. Mobile Menu */
+/* ----------------------- */
+@import "_mobile-menu";
+
+/* ----------------------- */
+/* 9. Forms */
+/* ----------------------- */
+@import "_forms";
+
+/* ----------------------- */
+/* 10. Pricing Table */
+/* ----------------------- */
+@import "_pricing-table";
+
+/* ----------------------- */
+/* 11. Portfolio */
+/* ----------------------- */
+@import "_portfolio";
+
+/* ----------------------- */
+/* 12. Footers */
+/* ----------------------- */
+@import "_footers";
+
+/* ----------------------- */
+/* 13. Feature Pages */
+/* ----------------------- */
+/* 404 Page */
+@import "_404";
+
+/* Coming Soon Page */
+@import "_coming-soon";
+
+/* Maintenance */
+@import "_maintenance";
+
+/* Sitemap */
+@import "_sitemap";
+
+/* ----------------------- */
+/* 14. Careers Styling */
+/* ----------------------- */
+@import "_careers";
+
+/* ----------------------- */
+/* 15. Blog */
+/* ----------------------- */
+@import "_blog";
+
+/* ----------------------- */
+/* 16. Dark Sections */
+/* ----------------------- */
+@import "_dark-sections";
+
+/* ----------------------- */
+/* 17. Work with Us - Modal */
+/* ----------------------- */
+@import "_workwithus";

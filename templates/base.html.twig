@@ -1,19 +1,197 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+    <!-- Google font -->
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+   <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cubeportfolio.min.css') }}">
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Ion Icons -->
+    <link href="{{ asset('css/screen.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/print.css') }}" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link href="{{ asset('css/ie.css') }}" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script src="{{ asset('js/modernizr.js') }}"></script>
+    <!-- Modernizr -->
+    <title>{% block title %}{% endblock %}</title>
+    {% block meta %}{% endblock %}
+    <!-- Selected Theme, Currently Selected Default Blue -->
+    <link rel="stylesheet" href="{{ asset('css/themes/1.css') }}">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.10&appId=1726127437678125";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    
+    
+</head>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<body class="main">
+<!-- Nav Icon -->
+<div class="loader">
+    <div>
+        <span>{</span><span>}</span>
+    </div>
+</div>
+<div class="nav-icon hidden-md hidden-lg"><span></span><span></span><span></span></div>
+<!-- Mobile Nav Here -->
+<div class="mobile-nav">
+    <div class="mobile-shader"></div>
+</div>
+<div class="wrapper">
+<!-- Navigation -->
+<div id="nav">
+    <div class="container">
+        <nav>
+            <ul>
+                <li class="parent_1"><a href="{{ path('home') }}">{% trans %}menu.home{% endtrans %}</i></a></li>
+                <li class="parent_1"><a href="{{ path('qui_sommes_nous') }}">{% trans %}menu.qui_sommes_nous{% endtrans %}</i></a></li>
+
+                 <li class="parent_1"><a href="#">{% trans %}menu.nos_services{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
+                     <ul class="animated flipInX">
+                         <li><a href="{{ path('developpement_web') }}">{% trans %}menu.conception_de_site_internet{% endtrans %}</a></li>
+                         <li><a href="{{ path('appli_mobile') }}">{% trans %}menu.conception_application_mobile{% endtrans %}</a></li>
+                         <li><a href="{{ path('infographie') }}">{% trans %}menu.infographie{% endtrans %}</a></li>
+                         <li><a href="{{ path('hosting') }}">{% trans %}menu.hebergement{% endtrans %}</a></li>
+
+                        
+                     </ul>
+                 </li>
+                 
+
+                <li class="parent_1"><a href="#">{% trans %}menu.nos_produits{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
+                    <ul class="animated flipInX">
+                        <li><a href="{{ path('barro') }}">{% trans %}menu.barro{% endtrans %}</a></li>
+                        <li><a href="{{ path('codato') }}">{% trans %}menu.codato{% endtrans %}</a></li>
+                        <li><a href="{{ path('logifirmAction') }}">{% trans %}menu.logifirm{% endtrans %}</a></li>
+                        <li><a href="{{ path('immobilisation') }}">{% trans %}menu.immo{% endtrans %}</a></li>
+                        <!--
+                        <li><a target="_blank" href="http://www.zone237.com">Zone 237</a></li>
+                        <li><a target="_blank" href="http://blackara.com">Blackara</a></li>
+                        <li><a target="_blank" href="http://www.tamtamphotoflyer.com/">Tamtam Photo Flyer</a></li>-->
+                    </ul>
+                </li>
+
+                <li class="parent_1"><a href="#">{% trans %}menu.formation{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
+                    <ul class="animated flipInX">
+                        <li><a href="{{ path('formation', {'typeformation': 1,'categorieformation': 0,'slug': 'toutes-les-formations'   }) }}">{% trans %}menu.formation.qualifiant{% endtrans %}</a></li>
+                        <li><a href="{{ path('formation', {'typeformation': 2,'categorieformation': 0,'slug': 'toutes-les-formations'   }) }}">{% trans %}menu.formation.certifiant{% endtrans %}</a></li>
+                    </ul>
+                </li>
+
+                <li class="parent_1"><a href="#">{% trans %}menu.blog{% endtrans %}</i></a></li>
+                <li class="parent_1"><a href="{{ path('contact') }}">{% trans %}menu.contact{% endtrans %}</i></a></li>
+            {% if app.request.get('_route') is not empty and app.request.get('_route_params') is not null %}
+                {% if app.request.locale == 'fr' %}
+                    <li class="parent_1"><a alt="English" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}"> <img src="{{ asset('img/en.png') }}" alt="English"> </a></li>
+                {% endif %}
+
+                {% if app.request.locale == 'en' %}
+                   <li class="parent_1"> <a alt="Francais" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}"> <img src="{{ asset('img/fr.png') }}" alt="Francais"></a></li>
+                {% endif %}
+            {% endif %}
+           </ul>
+        </nav>
+        <!-- Logo -->
+        <a href="#" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Data Engineering Consulting Sarl"></a>
+    </div>
+</div>
+<!-- / End of Navigation -->
+<!-- Header -->
+{% block headerimage %} {% endblock %}
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49209426-2', 'auto');
+    ga('send', 'pageview');
+</script>
+<br />
+{% block main %} {% endblock %}
+<!-- Footer 1 -->
+<footer id="footer_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-xs-6">
+                <img src="{{ asset('img/footer-icon.png') }}" alt="">
+                <p>Copyright © 2023 Data Engineering Consulting Sarl ™</p>
+            </div>
+            <!--
+            <div class="col-md-2 col-xs-6">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">History</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </div>-->
+            <div class="v-spacer"></div>
+            <div class="col-md-2 col-xs-6">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="#">Qui sommes nous</a></li>
+                    <li><a href="">Nos services</a></li>
+                    <li><a href="">Nos Produits</a></li>
+                    <li><a href="#">Nous Ecrire</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="">Terms</a></li>
+                    <li><a href="">Privacy</a></li>
+                    <li><a href="">Copyright</a></li>
+                    <li><a href="#">disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="v-spacer"></div>
+            <div class="col-md-2 col-xs-6">
+                <h4>Social</h4>
+                <ul>
+                    <li class="social_link"><a target="_blank" href="https://www.facebook.com/dataengineeringconsulting"><i class="ion-social-facebook"></i>Facebook</a></li>
+                    <li class="social_link"><a target="_blank" href="https://play.google.com/store/apps/dev?id=7649583814672183121"><i class="ion-social-twitter"></i>Play Store</a></li>
+                    <li class="social_link"><a href=""><i class="ion-social-linkedin"></i>LinkedIn</a></li>
+                    <li class="social_link"><a href=""><i class="ion-social-googleplus"></i>Google+</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <h4>Contact</h4>
+                <p> Monté Jouvence</p>
+                <a class="contact_link" href="call:699786514">(+237 6 99 78 65 14)</a>
+                <a class="contact_link" href="mailto:infos@dataengineeringconsulting.com">infos@dataengineeringconsulting.com</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<div id="workwithus" class="workwithus"></div>
+<!-- Ceci c'est pour l'outil interactif -->
+<script src="//code.tidio.co/nyg8kzpzkcckkrr7xelge5fipggljvue.js"></script>
+<!-- End of Wrapper -->
+<script src="{{ asset('vendor/jquery-2.2.1.min.js') }}"></script>
+<script src="{{ asset('vendor/jquery.cubeportfolio.min.js') }}"></script>
+<script src="{{ asset('vendor/jquery.inview.min.js') }}"></script>
+<script src="{{ asset('vendor/jquery.matchHeight-min.js') }}"></script>
+<script src="{{ asset('js/inview-control.js') }}"></script>
+<script src="{{ asset('js/sliders.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+<!-- Resource jQuery -->
+</body>
 </html>

@@ -1,0 +1,112 @@
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+    &:hover {
+        color: $primary-2;
+        text-decoration: none;
+    }
+}
+
+body {
+    * {
+        font-family: $basefont !important;
+    }
+    font-family:$basefont;
+    font-size:$p-size;
+    line-height:$p-lineheight;
+    color:$font-color;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: $dark;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: $h1-size;
+    line-height: $h1-lineheight;
+    font-weight: $light;
+    @include bp(xs) {
+        font-size: 27px;
+        line-height: 28px;
+    }
+}
+
+h2 {
+    font-size: $h2-size;
+    line-height: $h2-lineheight;
+    font-weight: $light;
+    margin-top: 3px;
+    @include bp(xs) {
+        font-size: 25px;
+        line-height: 25px;
+    }
+}
+
+h3 {
+    font-size: $h3-size;
+    line-height: $h3-lineheight;
+    font-weight: $light;
+    color: $font-color;
+    @include bp(xs) {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+h4 {
+    font-size: $h4-size;
+    line-height: $h4-lineheight;
+    font-weight: $regular;
+    @include bp(xs) {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+// Output
+.grey {
+    color: $font-color;
+}
+
+h1.primary,
+h2.primary,
+h3.primary,
+h4.primary,
+p.primary {
+    color: $primary;
+}
+
+h3.dark {
+    color: $dark;
+}
+
+// --------
+// Title
+// --------
+.title {
+    text-align: center;
+    position: relative;
+    padding-right: 20px;
+    padding-left: 20px;
+    z-index: 2;
+}
+
+.title-m {
+    text-align: center;
+    padding-bottom: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    @include bp(xs) {
+        padding-bottom: 20px;
+    }
+}

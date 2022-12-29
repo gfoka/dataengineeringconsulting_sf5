@@ -1,0 +1,112 @@
+/* ----------------------- */
+/* Primary Gradients */
+/* ----------------------- */
+body.page-404 #header-default,
+section.dark.primary-gradient,
+.triple-con, .large-cta,
+#header-2 {
+  background: -webkit-linear-gradient(200deg, #e03581, #f378af);
+  background: linear-gradient(200deg, #e03581, #f378af);
+}
+
+.btn.alt,
+#pricing_1 .pricing__item:hover .btn {
+  background: -webkit-linear-gradient(#f378af, #e03581);
+  background: linear-gradient(#f378af, #e03581);
+}
+
+/* ----------------------- */
+/* Custom Gradients */
+/* ----------------------- */
+.shader-gradient, #header-default.flat {
+  background: -webkit-linear-gradient(200deg, #e3c776, #e03581);
+  background: linear-gradient(200deg, #e3c776, #e03581);
+}
+
+/* ----------------------- */
+/* Primary Colour */
+/* ----------------------- */
+.job-list-item:hover,
+#nav a.nav-btn:hover,
+#nav.light a.nav-btn:hover,
+body.careers .job-list-item:hover,
+body.pricing .job-list-item:hover {
+  border-color: #e03581;
+}
+
+footer#footer_light h1,
+footer#footer_light h2,
+footer#footer_light h3,
+footer#footer_light h4,
+footer#footer_light a:hover,
+footer#footer_light .contact_link,
+.skill-line .skill-line-inside .percentage,
+.contact-detail i,
+.service-icon-block h4,
+.service-icon-block i,
+.cbp-item h4,
+section.counter.light i,
+body.maintenance .main-icon,
+body.maintenance .contain-message p,
+#nav ul li ul li a:hover,
+#header_subpage3 h3,
+#pricing_1 .pricing--yama .pricing__price,
+section a, p a, section a:visited, p a:visited, section a:active, p a:active,
+h1.primary, h2.primary, h3.primary, h4.primary, p.primary, .icon,
+.service-icon-block .service-block i,
+.service-icon-block .service-block h4,
+#nav nav ul li ul li a:hover,
+.mobile-nav nav ul li ul li a:hover,
+.mobile-nav nav ul li a:hover,
+.mobile-nav ul > li > ul > li > ul li a,
+.app_intro h4 i,
+.article .article-foot h4,
+.article h2:hover,
+.btn, a.btn:hover {
+  color: #e03581;
+}
+
+.shader-primary,
+section.primary,
+.skill-line .skill-line-inside,
+#testimonials .cbp-nav-pagination-item,
+.cbp-item a.team_social:hover,
+.social-icon:hover,
+.cbp-l-filters-alignLeft .cbp-filter-item.cbp-filter-item-active,
+#nav.stick.stuck.primary,
+#nav a.nav-btn:hover,
+.cbp-l-grid-mosaic-flat .cbp-caption-activeWrap,
+.cbp-caption-overlayBottomReveal .cbp-caption-activeWrap,
+#pricing_1 .pricing--yama .pricing__price::before,
+#agency-portfolio .cbp-caption-overlayBottomReveal .cbp-caption-activeWrap,
+.cbp-item .over,
+.tabs .cbp-l-filters-big .cbp-filter-item.cbp-filter-item-active,
+#nav.light a.nav-btn:hover {
+  background: #e03581;
+}
+
+@media (max-width: 991px) {
+  #nav.mobile-stick {
+    background: #e03581;
+  }
+}
+
+/* ----------------------- */
+/* Secondary Colour */
+/* ----------------------- */
+#blog-mosaic-2 .blogDateTitle p,
+#blog-mosaic-1 .blogDateTitle p,
+footer#footer_1 .contact_link,
+.country a,
+section a:hover, p a:hover, a:hover {
+  color: #f378af;
+}
+
+#logo-strip img:hover,
+#logo-strip svg:hover {
+  fill: #e03581;
+}
+
+:focus {
+  outline-color: #e03581;
+}

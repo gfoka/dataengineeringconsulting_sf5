@@ -1,0 +1,188 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Application de suivi des immobilisations{% endblock %}
+{% block meta %}
+    <meta property="og:locale" content=""/>
+    <meta property="og:type" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:card" content=""/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:description" content=""/>
+{% endblock %}
+
+{% block headerimage %}
+
+    <!-- Header -->
+    <header id="header_2" class="allwhite" style="background-image:url({{ asset('img/header_immobilisation.jpg') }})">
+        <div class="shader-primary"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 v-mid app-header">
+                    <h1>Application de suivi des immobilisations</h1>
+                    <h3>L'application permet de retracer les immobilisations des différents projets d'une organisation de l'acquisition jusqu'à la mise au rebut.</h3>
+                   <!--  <a href="https://play.google.com/store/apps/details?id=splendid.com.splendid" target="_blank" class="btn alt">Télécharger La brochure</a>-->
+                
+                </div>
+                <div class="col-md-6 mobile-image">
+                    <img src="{{ asset('img/application_de_suivi_des_immobilisation.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+{% endblock %}
+
+
+
+
+{% block main %}
+
+    <!-- App Intro -->
+    <section class="app_intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 app_img imageLarge">
+                    <img src="{{ asset('img/application_de_suivi_des_immobilisations_etiqueteuse.jpg') }}" alt="">
+                </div>
+                <div class="col-md-6 v-mid">
+                    <h2>Application de suivi des immobilisations.</h2>
+                    <h4><i class="ion-android-attach"></i> c'est quoi l'applicaiton de suivi des immobilisations</h4>
+                    <p>Adapter au ONG et organisation internationale, l'application permet de faire le suivi des immobilisations des différents bailleurs de fonds. De l'acquisition a la mise au rebus, en passant par les différentes affectations aux différents détenteurs et aux différentes localisations, l'application retrace le cycle de vie des immobilisations. Elle permet également de suivi l'état des immobilisations et de proposer au manager un fichier de proposition
+                    </p>
+                    <h4><i class="ion-android-attach"></i> étiquetage des immobilisations</h4>
+                    <p>L’application permet de générer des codes uniques permettant d'identifier les immobilisations. Le format de ce code unique permet d’identifier l’année d'acquisition, et aussi le bailleur de l'immobilisation. </p>
+                    <!--<a href="" class="btn alt">Télécharger</a>-->
+
+
+                    <h4><i class="ion-android-attach"></i> les rapports</h4>
+                    <p>L’application de suivi des immobilisations permet de générer des rapports en un temps records au format PDF et Excel.</p>
+                    <!--<a href="" class="btn alt">Télécharger</a>-->
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+ 
+       
+   <!-- Testimonials -->
+    <section id="testimonials" class="cbp-l-testimonials-wrap" style="background: url('{{ asset('img/banner1.jpg') }}') no-repeat center top fixed #2d2d2d; background-size: cover;">
+        <div class="title">
+            <h4>Témoignage</h4>
+        </div>
+        <div id="js-grid-testimonials" class="cbp">
+            <div class="cbp-item">
+                <div class="cbp-l-grid-testimonials-body">
+                    À chaque enregistrement d'une acquisition, je peux insérer les pièces jointes telles que la facture ou alors le bon de commande. Ceci me permet de les retrouver à tout moment.
+                </div>
+                <div class="cbp-l-grid-testimonials-footer">
+                    Martial EYENGA
+                </div>
+            </div>
+            <div class="cbp-item">
+                <div class="cbp-l-grid-testimonials-body">
+                    Facile d’utilisation, je n’ai pas eu de mal à prendre en main l'application.
+                </div>
+                <div class="cbp-l-grid-testimonials-footer">
+                    Erica OUEDRAOGO
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Phone Section -->
+    <section id="phone-1" class="grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 align-right v-mid">
+                    <div class="half">
+                        <i class="ion-ios-analytics-outline icon"></i>
+                        <h2>Production des fiches détentrices</h2>
+                        <p>L’application permet de produire les fiches détentrices. Ceci permet de faciliter les inventaires</p>
+                        
+                    </div>
+                    <div class="half-2">
+                        <i class="ion-arrow-return-left icon"></i>
+                        <h2>Déploiement </h2>
+                        <p>L’application peut être déployée sur le réseau local ou alors sur le cloud</p>
+                    </div>
+                </div>
+                <div class="col-md-6 center">
+                    <img src="{{ asset('img/demo_application_immo.png') }}" alt="">
+                </div>
+                <div class="v-spacer"></div>
+                <div class="col-md-3 v-mid">
+                    <div class="half">
+                        <i class="ion-ios-cloud-outline icon"></i>
+                        <h2>responsive</h2>
+                        <p>Cette application web s'adapter a tous les terminaux: Ordinateurs, Téléphones, Tablettes.</p>
+                        
+                    </div>
+                    <div class="half-2">
+                        <i class="ion-more icon"></i>
+                        <h2>Paramétrable</h2>
+                        <p>En fonction du Manuel de procédure de l'organisation, le logiciel peut être reparamétré.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Form 
+    <section id="contact_form_1">
+        <div class="container">
+            <div class="row">
+                <div class="title-m">
+                    <h2>Vous etes interessé ?</h2>
+                    <h3>Remplissez le formulaire ce dessous</h3>
+                </div>
+                <div class="col-md-8 col-md-offset-2 center col-sm-12">
+                    <form method="post">
+                                        <span class="input">
+                                    <label  for="input-10">
+                                        <span ><i class="ion-person"></i> Nom de votre Entreprise</span>
+                                    </label>
+                                        <input type="text" name="entreprise" required id="input-10" placeholder="nom de votre entreprise..." />
+                                        </span>
+
+                                        <span class="input">
+                                    <label  for="input-11">
+                                        <span > <i class="ion-at"></i> Email Email</span>
+                                    </label>
+                                        <input type="text" type="email" name="email" required id="input-11" placeholder="eg. hello@datadataengineeringconsulting.com" />
+                                        </span>
+
+                                        <span class="input">
+                                    <label  for="input-12">
+                                        <span > <i class="ion-android-more-horizontal"></i> Numéro de téléphone</span>
+                                    </label>
+                                        <input type="text" type="number" name="tel" required id="input-12" placeholder="Téléphone ..." />
+                                        </span>
+
+                                        <span class="input">
+                                    <label  for="input-13">
+                                        <span > <i class="ion-chatbubbles"></i> Message</span>
+                                    </label>
+                                        <textarea id="input-13" required name="msg" placeholder="Si vous le désirer laissez-nous un message ..."></textarea>
+                                        </span>
+
+                        <input type="submit" class="btn alt" value="Envoyez">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+
+
+{% endblock %}

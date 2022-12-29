@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formation{% endblock %}
+{% block meta %}{% endblock %}
+
+{% block headerimage %}
+   
+
+
+    <header id="header_subpage2" style="background: url(asset('img/banner-subpage2.jpg'));">
+            <div class="shader-primary" style="opacity:.91;"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="caption ani_ fadeinup">
+                        <div class="breadcrumb">
+                            <a href="index.html">Acceuil</a> <span>/</span> <a href="#">Formation</a>
+                        </div>
+                        <h2>Nos Formations</h2>
+                    </div>
+                </div>
+            </div>
+        </header> 
+{% endblock %}
+
+
+{% block main %}
+
+
+
+    
+    <section>
+            <div class="container">
+
+                <div class="title-m">
+                    <h1>Formation</h1>
+                    <h3>Nous formons les étudiants, employés, entrepreneurs ou tout simplement passionnés 
+                        aux technologies informatiques de pointe, que vous soyez novice ou expert.</h3>
+                </div>
+                
+                <div class="row">
+                    <div  class="cbp-l-filters-alignLeft">
+                        <div  class="{% if typeformationurl == 0 %} cbp-filter-item-active {% endif %} cbp-filter-item">
+                            
+                            <a {% if typeformationurl == 0 %} style="color: #FFFFFF;"{% endif %}  href="{{ path('formation', {'typeformation': typeformationurl,'categorieformation': 0,'slug': 'toutes-les-formations'   }) }}">Toutes les formations</a>
+                             <!-- <div class="cbp-filter-counter">3</div>-->
+                        </div>
+                        {% for categoriesformation in categoriesformations %}
+                            <div data-filter=".identity" class="cbp-filter-item {% if typeformationurl == categoriesformation.id %} cbp-filter-item-active {% endif %}">
+                            <a {% if typeformationurl == categoriesformation.id %}style="color: #FFFFFF;" {% endif %}href="{{ path('formation', {'typeformation': categoriesformation.typeformation.id,'categorieformation': categoriesformation.id,'slug': categoriesformation.slug  }) }}">  {{ categoriesformation.libelle }}</a>
+                              <!--  <div class="cbp-filter-counter">7</div> -->
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
+                    <div id="four-col-grid-gilles">
+
+                     {% for formation in formations %}
+                        <div class="cbp-item graphic">
+                            <a href="{{ path('formationdetail', {'id': formation.id,'slug': formation.slug  }) }}">
+                                <div class="cbp-caption">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="{{ asset('uploads/photo/' ~ formation.photo) }}" alt="{{ formation.description }}" height="150" width="200">
+                                    </div>
+                                </div>
+                                <h3>{{ formation.titre }}</h3>
+                            </a>
+                        </div>
+                     {% endfor %}   
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
+

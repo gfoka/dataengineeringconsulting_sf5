@@ -1,0 +1,212 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Barro{% endblock %}
+{% block meta %}
+    <meta property="og:locale" content=""/>
+    <meta property="og:type" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:card" content=""/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:description" content=""/>
+{% endblock %}
+
+{% block headerimage %}
+
+    <!-- Header -->
+    <header id="header_2" class="allwhite" style="background-image:url({{ asset('img/header_app2.jpg') }})">
+        <div class="shader-primary"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 v-mid app-header">
+                    <h1>Télécharger l'application Barro</h1>
+                    <h3>Disponible uniquement sur Android Play Store.</h3>
+                    <a href="https://play.google.com/store/apps/details?id=splendid.com.splendid" target="_blank" class="btn alt">Télécharger Maintenant</a><!--<a href="" class="btn alt">Find out more</a>-->
+                </div>
+                <div class="col-md-6 mobile-image">
+                    <img src="{{ asset('img/app1-img.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+{% endblock %}
+
+
+
+
+{% block main %}
+
+    <!-- App Intro -->
+    <section class="app_intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 app_img imageLarge">
+                    <img src="{{ asset('img/ios_image.jpg') }}" alt="">
+                </div>
+                <div class="col-md-6 v-mid">
+                    <h2>Barro.</h2>
+                    <h4><i class="ion-android-attach"></i> Le Bar Android</h4>
+                    <p>Gérez votre Entreprise en toute simplicité
+                        et de façon interactive depuis tous vos
+                        supports mobiles et informatiques. </p>
+                    <h4><i class="ion-android-attach"></i> C’est quoi Barro ?</h4>
+                    <p>C’est une application qui vous aide dans la gestion et la comptabilité de manière pratique, aussi bien pour un bar, un snack, un hôtel, motel, etc. …</p>
+                    <!--<a href="" class="btn alt">Télécharger</a>-->
+
+
+                    <h4><i class="ion-android-attach"></i> Que me faut-il pour utiliser barro</h4>
+                    <p>Simplement un téléphone Android muni d’une connexion internet, si vous le désirez
+
+                        une imprimante sms pour l’impression de vos reçus.</p>
+                    <!--<a href="" class="btn alt">Télécharger</a>-->
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="cbp-l-testimonials-wrap" style="background: url('{{ asset('img/banner1.jpg') }}') no-repeat center top fixed #2d2d2d; background-size: cover;">
+        <div class="title">
+            <h4>Témoignage</h4>
+        </div>
+        <div id="js-grid-testimonials" class="cbp">
+            <div class="cbp-item">
+                <div class="cbp-l-grid-testimonials-body">
+                    Avec Barro j’ai une parfaite maitrise de mon stock, dans la mesure où je peux à tout
+
+                    moment avoir accès à l’état de mon stock et surtout être alerté par sms lorsqu’une rupture de
+
+                    stock s’annonce.
+                </div>
+                <div class="cbp-l-grid-testimonials-footer">
+                    Ernest Amougou
+                </div>
+            </div>
+            <div class="cbp-item">
+                <div class="cbp-l-grid-testimonials-body">
+                    Barro me permet de pouvoir évaluer mes serveurses car a tout moment de la journée, j'ai depuis mon mobile leurs performances respective.
+                </div>
+                <div class="cbp-l-grid-testimonials-footer">
+                    Fotso Deffo
+                </div>
+            </div>
+            <div class="cbp-item">
+                <div class="cbp-l-grid-testimonials-body">
+                    Avec Barro j'ai le repport de mes ventes a temps réels.
+                </div>
+                <div class="cbp-l-grid-testimonials-footer">
+                    Hamadou
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Phone Section -->
+    <section id="phone-1" class="grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 align-right v-mid">
+                    <div class="half">
+                        <i class="ion-ios-analytics-outline icon"></i>
+                        <h2>La vente </h2>
+                        <p>Barro vous permet de gérer les ventes, avoir les performances des serveurs(es) en
+
+                            temps réel et aussi d’imprimer les reçus.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                    <div class="half-2">
+                        <i class="ion-arrow-return-left icon"></i>
+                        <h2>La gestion des stocks </h2>
+                        <p>Vous avez une parfaite maitrise de votre stock et vous pouvez anticiper sur les
+
+                            ruptures avec son système de notifications par sms.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </div>
+                <div class="col-md-6 center">
+                    <img src="{{ asset('img/phone1.png') }}" alt="">
+                </div>
+                <div class="v-spacer"></div>
+                <div class="col-md-3 v-mid">
+                    <div class="half">
+                        <i class="ion-ios-cloud-outline icon"></i>
+                        <h2>L’émission de rapports </h2>
+                        <p>Avec Barro, vendez, nous nous occupons des rapports. Car à tous moments de la
+
+                            journée 24h / 24, quel que soit votre position géographique, vous avez vos rapports sur votre
+
+                            mobile et par mail au format pdf.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                    <div class="half-2">
+                        <i class="ion-more icon"></i>
+                        <h2>Sur Android</h2>
+                        <p>Pour utiliser Barro vous n’avez besoin de rien d’autres que votre téléphone mobile
+
+                            Android. Par conséquent vous jouissez d’une grande mobilité et d’économie énergétique.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Form 
+    <section id="contact_form_1">
+        <div class="container">
+            <div class="row">
+                <div class="title-m">
+                    <h2>Vous etes interessé ?</h2>
+                    <h3>Remplissez le formulaire, recevez instantanément par mail les paramètres pour
+
+                        bénéficier de notre application mobile Barro.</h3>
+                </div>
+                <div class="col-md-8 col-md-offset-2 center col-sm-12">
+                    <form method="post">
+                                        <span class="input">
+                                    <label  for="input-10">
+                                        <span ><i class="ion-person"></i> Nom de votre Entreprise</span>
+                                    </label>
+                                        <input type="text" name="entreprise" required id="input-10" placeholder="nom de votre entreprise..." />
+                                        </span>
+
+                                        <span class="input">
+                                    <label  for="input-11">
+                                        <span > <i class="ion-at"></i> Email Email</span>
+                                    </label>
+                                        <input type="text" type="email" name="email" required id="input-11" placeholder="eg. hello@etsdataengineering.com" />
+                                        </span>
+
+                                        <span class="input">
+                                    <label  for="input-12">
+                                        <span > <i class="ion-android-more-horizontal"></i> Numéro de téléphone</span>
+                                    </label>
+                                        <input type="text" type="number" name="tel" required id="input-12" placeholder="Téléphone ..." />
+                                        </span>
+
+                                        <span class="input">
+                                    <label  for="input-13">
+                                        <span > <i class="ion-chatbubbles"></i> Message</span>
+                                    </label>
+                                        <textarea id="input-13" required name="msg" placeholder="Si vous le désirer laissez-nous un message ..."></textarea>
+                                        </span>
+
+                        <input type="submit" class="btn alt" value="Envoyez">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+
+
+{% endblock %}

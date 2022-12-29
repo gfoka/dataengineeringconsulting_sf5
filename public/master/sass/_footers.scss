@@ -1,0 +1,254 @@
+// ---
+// #Footer
+// ---
+footer#footer_1 {
+	background:$footer;
+	h1, h2, h3, h4 {
+		color:white;
+	}
+	p, a {
+		color:$footer_1_text;
+	}
+	a {
+		line-height:27px;
+		display:block;
+	}
+	a:hover {
+		color:$footer_1_hover;
+	}
+	.social_link i {
+		margin-right:7px;
+	}
+	.contact_link {
+		color:$footer_1_contactlink;
+	}
+}
+
+
+
+// ---
+// #Footer 2
+// ---
+footer#footer_2 {
+	background:$footer;
+	@include bp(sm) {
+		.small_margin {
+			text-align:center;
+			margin-top:20px;
+		}
+	}
+	.foot-padding {
+		padding:50px 0;
+	}
+	.foot-social-2 {
+		a {
+			display:inline-block;
+			i {
+				font-size:25px;
+				margin-left:5px;
+			}
+		}
+	}
+	.logo {
+		width:130px;
+		display:inline-block;
+	}
+	.slogan {
+		margin-top:-7px;
+	}
+	h1, h2, h3, h4 {
+		color:white;
+	}
+	p {
+		color:$footer_1_text;
+		margin:0;
+	}
+	a {
+		line-height:27px;
+		display:block;
+		color:$footer_1_link;
+	}
+	a:hover {
+		color:$footer_1_hover;
+	}
+	.social_link i {
+		margin-right:7px;
+	}
+	.contact_link {
+		color:$footer_1_contactlink;
+	}
+	.copyright-section {
+		border-top:1px solid $footer-border-color;
+		padding:15px 0;
+		a {
+			display:inline-block;
+			margin-left:15px;
+			text-decoration:underline;
+		}
+	}
+	form {
+		padding:0;
+		@include bp(xs) {width:100%;}
+		input {
+			background:transparent;
+			border-radius:3px;
+			border:1px solid $footer-border-color;
+			width:200px;
+			padding:6px 13px;
+			font-size:13px;
+			@include bp(xs) {width:100%; margin-top:20px;}
+		}
+		button {
+			background:$dark-grey;
+			margin-left:5px;
+			border-radius:3px;
+			border:1px solid $footer-border-color;
+			padding:6px 20px;
+			text-shadow:none;
+			color:$light-grey;
+			@include bp(xs) {width:100%; margin-left:0;}
+		}
+	}
+}
+
+
+
+
+// ---
+// #Footer 3
+// ---
+footer#footer_3 {
+	background:$footer;
+	.foot-padding {
+		padding:50px 0;
+	}
+	.foot-social-2 {
+		a {
+			display:inline-block;
+			i {
+				font-size:25px;
+				margin-left:5px;
+			}
+		}
+	}
+	.logo {
+		width:130px;
+		display:inline-block;
+	}
+	.slogan {
+		margin-top:-7px;
+	}
+	h1, h2, h3, h4 {
+		color:white;
+	}
+	p {
+		color:$footer_1_text;
+		margin:0;
+	}
+	a {
+		line-height:27px;
+		display:block;
+		color:$footer_1_link;
+	}
+	a:hover {
+		color:$footer_1_hover;
+	}
+	.social_link i {
+		margin-right:7px;
+	}
+	.contact_link {
+		color:$footer_1_contactlink;
+	}
+	.copyright-section {
+		border-top:1px solid $footer-border-color;
+		padding:15px 0 0;
+		margin-top:70px;
+		a {
+			display:inline-block;
+			margin-left:15px;
+			text-decoration:underline;
+		}
+	}
+	form {
+		padding:0;
+		input {
+			background:transparent;
+			border-radius:3px;
+			border:1px solid $footer-border-color;
+			width:200px;
+			padding:6px 13px;
+			font-size:13px;
+		}
+		button {
+			background:$dark-grey;
+			margin-left:5px;
+			border-radius:3px;
+			border:1px solid $footer-border-color;
+			padding:6px 20px;
+			text-shadow:none;
+			color:$light-grey;
+		}
+	}
+}
+
+
+// ---
+// #Footer 3
+// ---
+footer#footer_light {
+	background: white;
+	border-top:1px solid $border-color;
+	.foot-padding {
+		padding:50px 0;
+	}
+	.foot-social-2 {
+		a {
+			display:inline-block;
+			i {
+				font-size:25px;
+				margin-left:5px;
+			}
+		}
+	}
+	.logo {
+		width:130px;
+		display:inline-block;
+		path {
+			fill:$dark-grey;
+		}
+	}
+	.slogan {
+		margin-top:-7px;
+	}
+	h1, h2, h3, h4 {
+		color:$primary;
+	}
+	p {
+		color:$font-color;
+		margin:0;
+	}
+	a {
+		line-height:27px;
+		display:block;
+		color:$dark-grey;
+	}
+	a:hover {
+		color:$primary;
+	}
+	.social_link i {
+		margin-right:7px;
+	}
+	.contact_link {
+		color:$primary;
+	}
+	.copyright-section {
+		border-top:1px solid $border-color;
+		padding:15px 0 0;
+		margin-top:70px;
+		a {
+			display:inline-block;
+			margin-left:15px;
+			text-decoration:underline;
+		}
+	}
+}

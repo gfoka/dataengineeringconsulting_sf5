@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Qui sommes nous{% endblock %}
+
+{% block headerimage %}
+
+    <!-- Header -->
+    <header id="header_subpage1" style="background-image:url({{ asset('img/header_about-me2.jpg') }})">
+        <div class="shader"></div>
+        <div class="caption ani_ fadeinup">
+            <h3>Data Engineering Consulting</h3>
+            <h1>Qui sommes nous</h1>
+        </div>
+        <i class="ion-ios-arrow-down arrow-down"></i>
+    </header>
+
+{% endblock %}
+
+
+{% block main  %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 title-m">
+                    <h2>Qui sommes nous?</h2>
+
+                </div>
+                <div class="col-md-12 ani_ fadeinleft">
+                    <h2>Data Engineering Consulting Sarl</h2>
+                    <p>Data Engineering Consulting SARL est une entreprise créée en 2015. Nous
+
+                        offrons aux entreprises des solutions fiables adaptées à leurs besoins afin
+
+                        d&#39;optimiser leurs processus métier et de maximiser leur rendement. Comme vous
+
+                        pouvez constater plusieurs entreprises nous ont déjà faits confiance. Nous
+
+                        proposons les services ci-après :</p>
+
+
+                    <ul>
+                        <li>Développement d&#39;applications web et mobile</li>
+                        <li>Conception et réalisation de site web</li>
+                        <li>Installation et administration des réseaux informatiques</li>
+                        <li>Maintenance informatique</li>
+                        <li>Sécurité informatique</li>
+                        <li>Formation (bureautique, infographie, web design …)</li>
+                        <li>marketing digital</li>
+                        <li>Audit et conseils</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {% include 'partners.html.twig' %}
+{% endblock %}

@@ -1,0 +1,32 @@
+.sitemap {
+	.parent_1 {
+		font-size:27px;
+		padding:10px 0;
+		a {
+			color:$dark;
+		}
+
+		> ul {
+			padding:20px 5px;
+			> li {
+				font-size:20px;
+				padding:5px 0;
+				a {
+					color:$font-color;
+				}
+				> ul {
+					padding:10px 0px;
+					border-top:1px solid $border-color;
+					> li {
+						font-size:17px;
+						a {
+							color:grey;
+						}
+					}
+				}
+			}
+
+		}
+
+	}
+}

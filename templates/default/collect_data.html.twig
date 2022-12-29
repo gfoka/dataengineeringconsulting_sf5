@@ -1,0 +1,211 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CODATO{% endblock %}
+{% block meta %}
+    <meta property="og:locale" content=""/>
+    <meta property="og:type" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:card" content=""/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:description" content=""/>
+{% endblock %}
+
+{% block headerimage %}
+
+    <!-- Header -->
+    <header id="header_2" class="allwhite" style="background-image:url({{ asset('img/header_collect_data_apps.jpg') }})">
+        <div class="shader-primary"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 v-mid app-header">
+                    <h1>CODATO</h1>
+                    <h3>Application de collecte de données</h3>
+                   <!--  <a href="#" target="_blank" class="btn alt">Télécharger La brochure</a>-->
+                </div>
+                <div class="col-md-6 mobile-image">
+                    <img  src="{{ asset('img/application_de_collecte_de_donnes_android.png') }}" alt="Application de collectede données">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+{% endblock %}
+
+
+
+
+{% block main %}
+
+    <!-- App Intro -->
+    <section class="app_intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 app_img imageLarge">
+                    <img src="{{ asset('img/application_collecte_de_donnees_ok.jpg') }}" alt="">
+                </div>
+                <div class="col-md-6 v-mid">
+                    <h2>CODATO</h2>
+                    <h4><i class="ion-android-attach"></i> C'est quoi CODATO</h4>
+                    <p><strong>CODATO</strong> est une application mobile de <strong>collecte de donn&eacute;es</strong>. Apr&egrave;s param&eacute;trage des formulaires, l&#39;application collecte en toutes simplicit&eacute;s les donn&eacute;es et les sauvegardes sur un serveur central pour analyse.</p>
+                    
+                    
+                    <h4><i class="ion-android-attach"></i> Mode d'emplois</h4>
+                    <p>Apr&egrave;s param&eacute;trage de l&#39;application, Elle peut fonctionner avec ou sans connexion internet (Ceci est important si la zone de collecte n&rsquo;est pas couverte pas le r&eacute;seau internet). Une fois la collecte achev&eacute;e, l&#39;utilisation peut d&eacute;clencher la <strong>synchronisation des donn&eacute;es sur un serveur</strong>. Apr&egrave;s cela, depuis une application web, Il est possible non seulement de parcourir les donn&eacute;es collect&eacute;es, mais aussi de les exporter aux diff&eacute;rents formats (<strong>PDF, EXCEL, CSV,).</strong> Un tableau de bord param&eacute;tr&eacute; suivant les indicateurs de performance de l&rsquo;entreprise, permettra &eacute;galement d&rsquo;appr&eacute;cier de mani&egrave;re qualitative et quantitative la collecte.</p>
+
+                    <!--<a href="" class="btn alt">Télécharger</a>-->
+
+
+                    <h4><i class="ion-android-attach"></i> Formulaires</h4>
+                    <p>Les différents formulaires peuvent être paramétrer en fonction du besoin. En plus d’une large possibilité en type de données a collecté (paramètre GPS, texte, chiffre, booléen, pourcentage, couleur, etc.,), il est également possible de collecter et même de recadrer les images.</p>
+                    <!--<a href="" class="btn alt">Télécharger</a>-->
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+ <!-- App Intro 2 -->
+        <section class="grey app_intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 v-mid">
+                        <h2>Architecture de l'application</h2>
+                        <h3>L&rsquo;application est constituée d&rsquo;un  serveur d&rsquo;application dans laquelle est implémenté la logique métier. Ce  serveur d&rsquo;application interagit avec les applications mobiles et l&rsquo;application  web au travers d&rsquo;un API <strong>RETFUL sécurisée</strong>.  Les données sont persistées sur un serveur de base de données connecté au  serveur d&rsquo;application.</h3>
+                        <h4><i class="ion-android-attach"></i> Déploiement de l'application</h4>
+                        <p>L’application peut être déployée sur le cloud, ou alors sur le serveur de l’entreprise qui sollicite l'application</p>
+                       
+                    </div>
+                    <div class="col-md-6 app_img2 imageLarge">
+                        <img src="{{ asset('img/app-watch.jpg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+   <!-- Testimonials -->
+    <section id="testimonials" class="cbp-l-testimonials-wrap" style="background: url('{{ asset('img/banner1.jpg') }}') no-repeat center top fixed #2d2d2d; background-size: cover;">
+        <div class="title">
+            <h4>Témoignage</h4>
+        </div>
+        <div id="js-grid-testimonials" class="cbp">
+            <div class="cbp-item">
+                <div class="cbp-l-grid-testimonials-body">
+                    La culture du TABAC se fait souvent dans les zones hors réseau.
+                    Avec CODATO, je peux travailler plusieurs jours hors réseau (en mode avion). 
+                    Ceci a pour avantage de garder ma batterie pour longtemps car le travail hors réseau est moins
+                    énergivore
+                </div>
+                <div class="cbp-l-grid-testimonials-footer">
+                    Gauthier Tsasem | Agriculteur
+                </div>
+            </div>
+            <div class="cbp-item">
+                <div class="cbp-l-grid-testimonials-body">
+                    l'application web de CODATO me permet d'avoir les données aux différents formats en un clic.
+                </div>
+                <div class="cbp-l-grid-testimonials-footer">
+                    Gilles FOKA | Informaticien
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Phone Section -->
+    <section id="phone-1" class="grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 align-right v-mid">
+                    <div class="half">
+                        <i class="ion-ios-analytics-outline icon"></i>
+                        <h2>Gestion des utilisateurs</h2>
+                        <p>l'application permet de gérer les utilisateurs suivants les habilitations définir par l'administrateur</p>
+                        
+                    </div>
+                    <div class="half-2">
+                        <i class="ion-arrow-return-left icon"></i>
+                        <h2>Élimination des erreurs</h2>
+                        <p>Pour éviter les erreurs de saisi lors de la collecte des données, des contrôleurs sont paramétrés sur les formulaires pour vérifier la cohérence des données avant enregistrement.</p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 center">
+                    <img src="{{ asset('img/demo_application_de_collecte_de_donnes.png') }}" alt="">
+                </div>
+                <div class="v-spacer"></div>
+                <div class="col-md-3 v-mid">
+                    <div class="half">
+                        <i class="ion-ios-cloud-outline icon"></i>
+                        <h2>Rapports</h2>
+                        <p>les rapports sont générés aux différents formats.</p>
+                        
+                    </div>
+                    <div class="half-2">
+                        <i class="ion-more icon"></i>
+                        <h2>Sur Android</h2>
+                        <p>L'application CODATO est compatible uniquement avec le système android à partir de la version 7.0</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Form 
+    <section id="contact_form_1">
+        <div class="container">
+            <div class="row">
+                <div class="title-m">
+                    <h2>Vous etes interessé ?</h2>
+                    <h3>Remplissez le formulaire, recevez instantanément par mail les paramètres pour
+
+                        bénéficier de notre application mobile Barro.</h3>
+                </div>
+                <div class="col-md-8 col-md-offset-2 center col-sm-12">
+                    <form method="post">
+                                        <span class="input">
+                                    <label  for="input-10">
+                                        <span ><i class="ion-person"></i> Nom de votre Entreprise</span>
+                                    </label>
+                                        <input type="text" name="entreprise" required id="input-10" placeholder="nom de votre entreprise..." />
+                                        </span>
+
+                                        <span class="input">
+                                    <label  for="input-11">
+                                        <span > <i class="ion-at"></i> Email Email</span>
+                                    </label>
+                                        <input type="text" type="email" name="email" required id="input-11" placeholder="eg. hello@dataengineeringconsulting.com" />
+                                        </span>
+
+                                        <span class="input">
+                                    <label  for="input-12">
+                                        <span > <i class="ion-android-more-horizontal"></i> Numéro de téléphone</span>
+                                    </label>
+                                        <input type="text" type="number" name="tel" required id="input-12" placeholder="Téléphone ..." />
+                                        </span>
+
+                                        <span class="input">
+                                    <label  for="input-13">
+                                        <span > <i class="ion-chatbubbles"></i> Message</span>
+                                    </label>
+                                        <textarea id="input-13" required name="msg" placeholder="Si vous le désirer laissez-nous un message ..."></textarea>
+                                        </span>
+
+                        <input type="submit" class="btn alt" value="Envoyez">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+
+
+{% endblock %}

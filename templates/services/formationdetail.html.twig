@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block headerimage %}
+    <header id="header_subpage2" style="background: url(asset('img/banner-subpage2.jpg'));">
+            <div class="shader-primary" style="opacity:.91;"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="caption ani_ fadeinup">
+                        <div class="breadcrumb">
+                            <a href="index.html">Acceuil</a> <span> / </span> <a href="#">Formation</a> / programmation web
+                        </div>
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </header> 
+{% endblock %}
+
+{% block meta %}
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:card" content=""/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:description" content=""/>
+{% endblock %}
+
+
+{% block main %}
+
+
+
+    
+    <section class="info_googlemaps">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h2>Description de la formation</h2>
+                        <p>{{ formation.description }}</p>
+
+                        <div align='center'>
+                                        <img src="{{ asset('uploads/photo/' ~ formation.photo) }}" alt="" height="400" width="500">
+                        </div>
+                        <h2>Programme de la formation</h2>
+                        {{ formation.programmes | raw }}
+                        
+                        <div class="row">
+                            
+                        </div>
+                    </div>
+                    <div class="v-spacer"></div>
+                    <div class="col-md-5 google_maps">
+                        <h2>Détail de la formation</h2>
+                        <ul class="standard_list">
+                            <li><b>prix :</b>{{ formation.prix | number_format }} FCFA</li>
+                            <li><b>Lieu :</b>{{ formation.lieu }} </li>
+                            <li><b>Durée de la formation :</b>{{ formation.duree }} </li>
+                        </ul>
+
+                        <h2>Formateur</h2>
+                        <ul class="standard_list">
+                            <li><h3>{{ formation.formateur.nom ~" "~ formation.formateur.prenom  }}</h3></li>
+                            <li><b>formation  :</b>{{ formation.formateur.formation }} </li>
+                            <li><b>Titre :</b>{{ formation.formateur.titre  }} </li>
+                        </ul>
+
+
+
+
+                        <div class="widget recent-posts">
+                            <h3>articles recents</h3>
+                            {% for article in articles %}
+                                <div class="rp">
+                                    <h4><a href="{{ path('poster_article', {'id': article.id,'slug': article.slug  }) }}">{{ article.titre }} </a></h4>
+                                    <p>{{ article.date|date("m/d/Y") }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
+

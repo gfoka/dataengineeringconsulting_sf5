@@ -1,0 +1,41 @@
+body.careers, body.pricing {
+	.job-list-item {
+		border-radius:4px;
+		border:1px solid $border-color;
+		margin-bottom:9px;
+		text-align:left;
+		padding:17px 0;
+		@include transition-1;
+		@include bp(sm) {
+			border:0;
+			border-bottom:1px solid $border-color;
+			border-radius:0;
+			padding-bottom:25px;
+		}
+		&:hover {
+			border-color:$primary;
+		}
+		button {
+			margin:0;
+			@include bp(sm) {
+				width:100%;
+			}
+		}
+		.job-text {
+			margin-top:5px;
+			@include bp(sm) {
+				padding:10px 0 20px;
+				margin-top:-3px;
+			}
+			h4 {
+				margin-bottom:0;
+			}
+		}
+		.job-title h2 {
+			margin-bottom:0;
+			@include bp (sm) {
+				text-align:center;
+			}
+		}
+	}
+}

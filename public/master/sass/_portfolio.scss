@@ -1,0 +1,153 @@
+#portfolio_1 {
+	&.minimal-portfolio .container-fluid {
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	.container-fluid {
+		max-width:1300px;
+	}
+	.cbp-l-filters-dropdown-floated {
+		margin:10px auto 50px;
+		float:none;
+	}
+}
+
+// --
+// Portfolio Styling
+// --
+#one-col-grid {
+	.cbp-caption {
+		max-height:430px;
+	}
+}
+.cbp-l-grid-agency .cbp-caption:after {
+	border-bottom:0;
+}
+.portfolioNoMargin .row {
+	margin:0;
+}
+.cbp-l-grid-masonry-projects-title {
+	margin-top:0;
+}
+#nomargin-col-grid img, #masonry-nomargin img, #js-grid img {
+	border-radius:0;
+}
+.cbp-l-grid-mosaic-flat .cbp-caption-activeWrap {
+	background: $primary;
+}
+
+
+// --
+// Portfolio Pages
+// --
+.portfolio-item-half, .portfolio-item-full{ 
+	padding:0;
+	margin:0;
+	img{
+		width:100%;
+		margin:0;
+		padding:0;
+		display:block;
+	}
+}
+#project-bar {
+	.container {
+		padding-top:30px;
+		padding-bottom:22px;
+		padding-left:15px;
+		padding-right:15px;
+	}
+	p, i {
+		display:inline-block;
+	}
+	i {
+		margin:0 10px;
+	}
+	.next-project {
+		text-align:right;
+	}
+	.center {
+		font-size:30px;
+		i {
+			margin-top:6px;
+		}
+	}
+	@include bp(xs){
+		.container {
+			padding-top:30px;
+			padding-bottom:30px;
+		}
+		.next-project a, .previous-project a {
+			font-size:30px;
+			margin:0 20px;
+		}
+		.center i {
+			margin-top:0;
+		}
+		.next-project p, .previous-project p {
+			display:none;
+		}
+	}
+}
+
+#agency-portfolio {
+	.cbp-caption img {
+		border-radius:0;
+	}
+	.cbp-item { 
+		p {
+			margin:0;
+			margin-bottom:7px;
+		}
+		h3 {
+			margin-top:3px;
+		}
+		button {
+			margin-top:0;
+		}
+	}
+	.cbp-caption-overlayBottomReveal .cbp-caption:hover .cbp-caption-defaultWrap {
+		top:-140px;
+	}
+	.cbp-caption-overlayBottomReveal .cbp-caption-activeWrap {
+		height:143px;
+		color:white;
+		background:$primary;
+		h3 {
+			color:white;
+		}
+	}
+}
+
+
+
+// --
+// Caption for Text Over Image
+// --
+.cbp-item {
+	overflow:hidden;
+	.over {
+		position:absolute;
+		@include transition-1;
+		z-index:2;
+		text-align:center;
+		width:100%;
+		padding-bottom:8px;
+		background:$primary;
+		height:87px;
+		bottom:-87px;
+		h3 {
+			margin-top:15px;
+			margin-bottom:0;
+			color:white;
+		}
+		h4 {
+			color:white;
+			opacity:.75;
+		}
+	}
+	&:hover .over {
+		bottom:0;
+		opacity:1;
+	}
+}

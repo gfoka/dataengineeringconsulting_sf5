@@ -1,3 +1,96 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+
+home:
+    path: /{_locale}/home
+    controller: App\Controller\DefaultController::home
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+qui_sommes_nous:
+    path: /{_locale}/qui_sommes_nous
+    controller: App\Controller\DefaultController::aboutusAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+barro:
+    path: /{_locale}/barro.html
+    controller: App\Controller\DefaultController::barroAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+codato:
+    path: /{_locale}/codato.html
+    controller: App\Controller\DefaultController::collectdataappsAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+logifirmAction:
+    path: /{_locale}/logifirm.html
+    controller: App\Controller\DefaultController::logifirmAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+immobilisation:
+    path: /{_locale}/immobilisation.html
+    controller: App\Controller\DefaultController::immobilisationAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+# Les services maintenant
+developpement_web:
+    path: /{_locale}/services/developpement_site_internet.html
+    controller: App\Controller\DefaultController::webAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+
+appli_mobile:
+    path: /{_locale}/services/application_mobile_cameroun.html
+    controller: App\Controller\DefaultController::appliAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+infographie:
+    path: /{_locale}/services/infographie.html
+    controller: App\Controller\DefaultController::infographieAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+hosting:
+    path: /{_locale}/services/hosting.html
+    controller: App\Controller\DefaultController::hostingAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+# Les formations de mon site internet
+formation:
+    path: /{_locale}/services/formation/{typeformation}/{categorieformation}/{slug}.html
+    controller: App\Controller\DefaultController::formationAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+# Les services maintenant
+contact:
+    path: /{_locale}/contact
+    controller: App\Controller\DefaultController::contactAction
+    locale:      en
+    requirements:
+      _locale: en|fr

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur 404{% endblock %}
+
+{% block headerimage %}
+<header id="header-default" class="fullheight allwhite">
+    <div class="caption ani_ fadeinup">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2 center">
+                    <h1>404</h1>
+                    <h2>Page not found</h2>
+                    <button onclick="history.go(-1)"><span>Go back</span></button>
+                </div>
+                <div class="v-spacer"></div>
+                <div class="col-md-4 useful-links center">
+                    <ul>
+                        <li><a href="{{ path('homepage') }}">Accueil</a></li>
+                        <li><a href="{{ path('qui_sommes_nous') }}">Qui sommes nous</a></li>
+                        <li><a href="{{ path('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}
+
+{% block main %}
+
+{% endblock %}

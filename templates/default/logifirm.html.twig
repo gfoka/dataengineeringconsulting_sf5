@@ -1,0 +1,214 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Application de suivi des immobilisations{% endblock %}
+{% block meta %}
+    <meta property="og:locale" content=""/>
+    <meta property="og:type" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:card" content=""/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:description" content=""/>
+{% endblock %}
+
+{% block headerimage %}
+
+    <!-- Header -->
+    <header id="header_2" class="allwhite" style="background-image:url({{ asset('img/logifirm/header_logifirm.jpg') }})">
+        <div class="shader-primary"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 v-mid app-header">
+                    <h1>Logiciel de gestion des formations sanitaires</h1>
+                    <h3>LOGIFIRM est un logiciel qui gère l'ensemble des services d'une formation sanitaire.
+                     Il est paramétrable et s'adapte au système d'informations sanitaires de votre hôpital. Audité à plusieurs reprises par le ministère des Finances et de la santé de l'État Camerounais, il a bénéficié de plusieurs bonnes pratiques en matière de gestion.</h3>
+                   <!-- <a href="#" target="_blank" class="btn alt">Tester l'application</a> -->
+                
+                </div>
+                <div class="col-md-6 mobile-image">
+                    <img src="{{ asset('img/logifirm/application_gestion_hospitaliere.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+{% endblock %}
+
+
+
+
+{% block main %}
+
+    <!-- App Intro -->
+    <section class="app_intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 app_img imageLarge">
+                    <img src="{{ asset('img/logifirm/doctors_application_gestion_hospitaliere.jpg') }}" alt="">
+                </div>
+                <div class="col-md-6 v-mid">
+                    <h2>Application de gestion hospitalière</h2>
+                    <h4><i class="ion-android-attach"></i> flexible et paramétrable</h4>
+                    <p>LOGIFIRM a fait ses preuves dans plusieurs hôpitaux privés et publics. il permet une gestion indépendante de chaque service et implique l'ensemble des acteurs de la formation sanitaire.</p>
+
+                    <h4><i class="ion-android-attach"></i> facile d'utilisation</h4>
+                    <p>Dotée d'une interface web responsive et épurée, l'application LOGIFIRM est exploitable sur PC, tablette et téléphone. Très intuitif, le logiciel dispose également d'une documentation assez détaillée.</p>
+
+
+                    <h4><i class="ion-android-attach"></i> les rapports</h4>
+                    <p>Générer les rapports n'a jamais été autant facile. L'application LOGIFIRM génère les rapports sous différents formats(CSV, EXCEL, PDF....)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+       
+   <!-- Testimonials -->
+    <section id="testimonials" class="cbp-l-testimonials-wrap" style="background: url('{{ asset('img/banner1.jpg') }}') no-repeat center top fixed #2d2d2d; background-size: cover;">
+        <div class="title">
+            <h4>Témoignage</h4>
+        </div>
+        <div id="js-grid-testimonials" class="cbp">
+            <div class="cbp-item">
+                <div class="cbp-l-grid-testimonials-body">
+                    Le logiciel LOGIFIRLM me donne une visibilité sur l'ensemble des services de ma formation sanitaire. 
+                </div>
+                <div class="cbp-l-grid-testimonials-footer">
+                    Monsieur LOMBO LOMBO Landry Directeur de l'hôpital de district d'EFOULAN
+                </div>
+            </div>
+            <div class="cbp-item">
+                <div class="cbp-l-grid-testimonials-body">
+                    Le logiciel Logifirm est assez facile d'utilisation et répond à mes besoins.
+                </div>
+                <div class="cbp-l-grid-testimonials-footer">
+                   Madame EFFILA Carine - Régisseur des recettes
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+
+
+<section class="grey">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="title-m">
+                        <h2>Les modules</h2>
+                        <h3> 
+                            
+                         </h3>
+                    </div>
+                    
+                    
+                    <div class="col-md-3 col-sm-6 a-service ani_ fadeindown" data-delay=".2">
+                        <i class="ion-android-notifications icon"></i>
+                        <h4>Gestion des stocks</h4>
+                        <ol>
+                            <li>- Gestion des approvisionnements(numéro de lot et date de péremption) ;</li>
+                            <li>- Gestion des entrepôts ;</li>
+                            <li>- Gestion des transferts des stocks ;</li>
+                            <li>- Intégration des méthodes de valorisation des stocks ;</li>
+                            <li>- Gestions des stocks d'alertes et de sécurité ;</li>
+                             <li>...</li>
+                        </ol>
+                       
+                    </div>
+                    
+                    
+                    <!-- One Service -->
+                    <div class="col-md-3 col-sm-6 a-service ani_ fadeindown" data-delay=".4">
+                        <i class="ion-android-search icon"></i>
+                        <h4>Gestion de la caisse</h4>
+                            <ul>
+                                <li>- Gestion des caissières ;</li>
+                                <li>- Gestion des clôtures de caisses ;</li>
+                                <li>- Acception des moyens de paiement(Orange Money, Mobile money,...) ;</li>
+                                <li>- Gestion de coupons de réduction ;</li>
+                                <li>...</li>
+                            </ul>
+                    </div>
+                    
+                    
+                    
+                    <!-- One Service -->
+                    <div class="col-md-3 col-sm-6 a-service ani_ fadeindown" data-delay=".4">
+                        <i class="ion-document-text icon"></i>
+                        <h4>Gestions des actes médicaux</h4>
+                        <ul>
+                            <li>- Calcul des quotes-parts ;</li>
+                            <li>- Production des rapports par services ;</li>
+                            <li>- Gestions des professionnelles de la santé ;</li>
+                            <li>...</li>
+                        </ul>
+                        
+                    </div>
+
+
+                    <div class="col-md-3 col-sm-6 a-service ani_ fadeindown" data-delay=".4">
+                        <i class="ion-document-text icon"></i>
+                        <h4>Autres modules</h4>
+                        <ul>
+                            <li>- Gestion des hospitalisations ;</li>
+                            <li>- Gestion des ressources humaines ;</li>
+                            <li>- Gestion des patients ;</li>
+                            <li>- Gestion du laboratoire ;</li>
+                            <li>...</li>
+                        </ul>
+                        
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Contact Form -->
+    <section id="contact_form_1" class="dark primary-gradient">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 title-m">
+                        <h2>Entrer en contact</h2>
+                        <h3>Remplissez le formulaire de contact ci-dessous</h3>
+                    </div>
+                
+                
+                
+            </div>
+        </div>
+    </section>
+
+
+    {% for msg in app.session.flashBag.get('info') %}
+
+    <script>
+        swal("Merci !", '{{ msg }}', "success", {
+            button: "Ok",
+        });
+        
+    </script>
+    {% endfor %}
+    
+
+
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{{ article.titre}}{% endblock %}
+
+{% block headerimage %}
+
+    <!-- Header -->
+    <header id="header_subpage1" style="background-image:url({{ asset('uploads/photo/' ~ article.photo.photo4) }})">
+        <div class="shader"></div>
+        <div class="caption ani_ fadeinup">
+            <h3>Ets Data Engineering</h3>
+            <h1>{{ categorie.designation}}</h1>
+        </div>
+        <i class="ion-ios-arrow-down arrow-down"></i>
+    </header>
+
+{% endblock %}
+
+
+{% block main  %}
+<section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="article post ani_ fadeinup">
+                            <div class="article-pic"><img src="{{ asset('uploads/photo/' ~ article.auteur.photo) }}" alt=""></div>
+                            <div class="article-foot">
+                                <h4>Written by <b>{{ article.auteur.prenom~' '~article.auteur.nom}}</b></h4><span>{% if article.date %}{{ article.date|date('Y-m-d') }}{% endif %}</span></div>
+                        </div>
+                        <h2>{{ article.titre}}</h2>
+                        <p>{{ article.intro}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container-fluid no-padding">
+            <div class="row">
+                <div class="col-md-12 portfolio-item-full ani_ fadeinup">
+                    <img src="{{ asset('uploads/photo/' ~ article.photo.photo3) }}" alt="">
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 ani_ fadeinup">
+                        {{ article.contenu | raw }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Social Channels -->
+        <section class="center">
+            <div class="container no-pad-top">
+                <div class="row">
+                    <div class="title-m">
+                        <h2>Share on social media</h2>
+                        <h3>Click a social channel below to share</h3>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="#" class="social-icon"><i class="ion-social-linkedin-outline"></i></a>
+                        <a href="#" class="social-icon"><i class="ion-social-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="ion-social-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="ion-social-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="ion-social-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="ion-social-pinterest-outline"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+    
+                <section id="contact_form_1" class="grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 center col-sm-12">
+                        <div class="fb-comments" data-href="http://etsdataengineering.com{{ path('poster_article', {'id': article.id,'slug': article.slug  }) }}" data-numposts="5"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- Contact Form 
+        <section id="contact_form_1" class="grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 center col-sm-12">
+                        <h2>Leave your comment</h2>
+                        <form class="ani_ fadeinup">
+                            <span class="input">
+                  <label  for="input-10">
+                    <span > <i class="ion-person"></i> Full Name</span>
+                            </label>
+                            <input type="text" id="input-10" placeholder="Insert your name" />
+                            </span>
+                            <span class="input">
+                  <label  for="input-10">
+                    <span > <i class="ion-at"></i> Email Address</span>
+                            </label>
+                            <input type="text" id="input-11" placeholder="eg. hello@comflare.com" />
+                            </span>
+                            <span class="input">
+                  <label for="input-13">
+                    <span><i class="ion-chatbubbles"></i> Message</span>
+                            </label>
+                            <textarea class="textarea" id="input-13" placeholder="Type your message here..."></textarea>
+                            </span>
+                            <input type="submit" class="btn alt" value="Send us your enquiry">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+{% endblock %}

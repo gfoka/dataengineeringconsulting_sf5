@@ -1,0 +1,181 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hébergement web au Cameroun{% endblock %}
+
+{% block meta %}
+    <meta property="og:locale" content="Hébergement de site internet et d'application web Au Cameroun"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Hébergement de site internet et d'application web Au Cameroun"/>
+    <meta property="og:url" content="http://dataengineeringconsulting.com/services/hosting"/>
+    <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
+    <meta property="og:image" content="http://dataengineeringconsulting.com/img/services/metadata/hosting.jpg"/>
+    <meta property="og:description" content="Nous offrons des solutions d’hébergement web et d’application pour des petites, moyennes et grandes entreprises au Cameroun."/>
+    <meta name="twitter:card" content=""/>
+    <meta name="twitter:site" content="Conception de sites internet"/>
+    <meta name="twitter:title" content="Conception de sites internet"/>
+    <meta name="twitter:description" content="Nous offrons des solutions d’hébergement web et d’application pour des petites, moyennes et grandes entreprises au Cameroun."/>
+{% endblock %}
+{% block headerimage %}
+    <!-- Header -->
+    <header id="header_subpage1" style="background-image:url({{ asset('img/services/header_hosting.jpg') }})">
+        <div class="shader-dark" style="opacity:.8;"></div>
+        <div class="caption ani_ fadeinup">
+            <h3>Hébergement</h3>
+            <h1>Nous offrons des solutions d’hébergement web et d’application pour des petites, moyennes et grandes entreprises au Cameroun.</h1>
+        </div>
+        <i class="ion-ios-arrow-down arrow-down"></i>
+    </header>
+{% endblock %}
+
+
+{% block main %}
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="title-m">
+                    <h2>Technologies ...</h2>
+                </div>
+                <div class="col-sm-4 service-pic ani_ fadeindown">
+                    <div class="service-container">
+                        <img src="{{ asset('img/services/hosting/php.jpg') }}" alt="">
+                        <div class="titles">
+                            <h2>PHP</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="xs-spacer"></div>
+                <div class="col-sm-4 service-pic ani_ fadeindown" data-delay=".2">
+                    <div class="service-container">
+                        <img src="{{ asset('img/services/hosting/base_de_donnees.jpg') }}" alt="">
+                        <div class="titles">
+                            <h2>Base de données</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="xs-spacer"></div>
+                <div class="col-sm-4 service-pic ani_ fadeindown" data-delay=".4">
+                    <div class="service-container">
+                        <img src="{{ asset('img/services/hosting/linux.jpg') }}" alt="">
+                        <div class="titles">
+                            <h2>Linux</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+     <section id="pricing_1" class="primary">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="title-m">
+                        <h2>Nos formules d'hébergement au Cameroun</h2>
+                        <h3>choisissez la formule d'hébergement web qui vous convient</h3>
+                    </div>
+                    <div class="pricing pricing--yama">
+                        <div class="pricing__item">
+                            <h2>Hosting starter</h2>
+                            <h3>Formule d'hébergement pour les petits projets</h3>
+                            <div class="pricing__price"><span class="pricing__currency">50 000 FCFA</span><span class="pricing__period">/ Ans</span></div>
+                            <ul class="pricing__feature-list">
+                                <li>Un nom de domaine</li>
+                                <li>10 Adresses e-mail PRO</li>
+                                <li>Une base de données</li>
+                                <li>Espace de stockage 10 GO </li>
+                            </ul>
+                          
+                        </div>
+                        <div class="pricing__item">
+                            <h2>Hosting Strandard</h2>
+                            <h3>Formule idéale pour les sites web a contenu dynamique</h3>
+                            <div class="pricing__price"><span class="pricing__currency">100 000 Fcfa</span><span class="pricing__period">/Ans</span></div>
+                            <ul class="pricing__feature-list">
+                                <li>Un nom de domaine</li>
+                                <li>20 Adresses e-mail PRO</li>
+                                <li>Trois base de données</li>
+                                <li>Espace disque 35 GO </li>
+                            </ul>
+                            
+                        </div>
+                        <div class="pricing__item">
+                            <h2>Hosting performance</h2>
+                            <h3>Formule pour les sites professionnels</h3>
+                            <div class="pricing__price"><span class="pricing__currency">150 000 FCFA</span><span class="pricing__period">/Ans</span></div>
+                            <ul class="pricing__feature-list">
+                                <li>Un nom de domaine</li>
+                                <li>100 Adresses e-mail</li>
+                                <li>Dix Base de données</li>
+                                <li>Espace disque 100 GO </li>
+                            </ul>
+               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- 
+     <section id="pricing_1" class="primary">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="title-m">
+                        <h2>Nous formules de serveur virtuel</h2>
+                        <h3>VPS</h3>
+                    </div>
+                    <div class="pricing pricing--yama">
+                        <div class="pricing__item">
+                            <h2>VPS starter</h2>
+                            <h3>Great for people who like to be their own boss</h3>
+                            <div class="pricing__price"><span class="pricing__currency">$</span>199<span class="pricing__period">/mo</span></div>
+                            <ul class="pricing__feature-list">
+                                <li>Up to 5 employees</li>
+                                <li>Support at $25/hour</li>
+                                <li>Small social media package</li>
+                            </ul>
+                            <a href="" class="btn">Choose plan</a>
+                        </div>
+                        <div class="pricing__item">
+                            <h2>VPS Standard</h2>
+                            <h3>Perfect for start-ups or smaller companies</h3>
+                            <div class="pricing__price"><span class="pricing__currency">$</span>359<span class="pricing__period">/mo</span></div>
+                            <ul class="pricing__feature-list">
+                                <li>Up to 5 employees</li>
+                                <li>Support at $25/hour</li>
+                                <li>Small social media package</li>
+                            </ul>
+                            <a href="" class="btn">Choose plan</a>
+                        </div>
+                        <div class="pricing__item">
+                            <h2>VPS Performance</h2>
+                            <h3>Larger companies would prefer this deal</h3>
+                            <div class="pricing__price"><span class="pricing__currency">$</span>799<span class="pricing__period">/mo</span></div>
+                            <ul class="pricing__feature-list">
+                                <li>Up to 5 employees</li>
+                                <li>Support at $25/hour</li>
+                                <li>Small social media package</li>
+                            </ul>
+                            <a href="" class="btn">Choose plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+          -->               
+
+    <!-- Large CTA -->
+    <section class="large-cta allwhite">
+        <div class="container">
+            <div class="row">
+                <div class="title ani_ fadeinup">
+                    <h2>Pour vos commandes.</h2>
+                    <h3>Appelez-nous au numéro indiquer au pied du page</h3>
+                    <a href="{{ path('contact') }}" class="btn">Pour une facture pro format, écrivez-nous</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

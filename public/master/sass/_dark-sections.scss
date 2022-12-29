@@ -1,0 +1,37 @@
+.dark, .darker {
+	.container.border-top, .container-fluid.border-top {
+		border-top:1px solid $footer-border-color;
+	}
+}
+.primary p {
+	color:white;
+}
+.allwhite, .dark, .darker, .primary {
+	h1, h2, h3, h4 {
+		color:white;
+	}
+	a {
+		color: white;
+	}
+	h3, h4 {
+		opacity:0.8;
+	}
+	.cbp-item h3 {
+		color:white;
+		font-weight:300;
+		opacity:1;
+	}
+	.cbp-slider-edge .cbp-nav-pagination-active {
+		background:white;
+		border:white;
+		&:hover {
+			background:white;
+		}
+	}
+	.cbp-slider-edge .cbp-nav-pagination-item {
+		border:1px solid $dark-grey;
+	}
+	.cbp-slider-edge .cbp-nav-pagination-item:hover {
+		border:2px solid white;
+	}
+}
