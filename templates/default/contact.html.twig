@@ -5,24 +5,25 @@
 
 {% block headerimage %}
 
-<!-- Header -->
+<!-- Header 
 <header id="header_1" style="background-image:url({{ asset('img/header_index2.jpg') }})">
     <div class="shader-gradient"></div>
     <div class="caption ani_ fadeinup">
         <img src="{{ asset('img/logo_2.png') }}" width="61" alt="">
         <h1>Nous Ecrire</h1>
         <h3> </h3>
-        <!--<a href="" class="alt btn">Nos services</a>
-        <a href="" class="btn">Plus d'information</a>-->
+        <a href="#" class="alt btn">Nos services</a>
+        <a href="#" class="btn">Plus d'information</a>
     </div>
     <i class="ion-ios-arrow-down arrow-down"></i>
 </header>
-
+-->
 
 {% endblock %}
 
 
 {% block main %}
+<!--
     <section>
         <div class="container">
             <div class="row">
@@ -51,6 +52,7 @@
             </div>
         </div>
     </section>
+    -->
     <!-- Contact Form -->
     <section id="contact_form_1" class="dark primary-gradient">
         <div class="container">
@@ -62,6 +64,12 @@
                 
                 {{ form_start(form) }}
                 <div class="col-md-8 col-md-offset-2 center col-sm-12">
+
+                            {% if not form.vars.valid %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{ form_errors(form) }}
+                                </div>
+                            {% endif %} 
                        
                             <span class="input">
                                 <label  for="input-10">
@@ -106,7 +114,10 @@
 
                             <span class="input">
                                 {{ form_label(form.captcha) }}
-                                {{ form_errors(form.captcha) }}
+                                 <div class="alert alert-danger">
+                                    {{ form_errors(form.captcha) }}
+                                </div>
+                                
                                 {{ form_widget(form.captcha) }}
                             </span>
 

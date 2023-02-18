@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}{{ formation.titre }}{% endblock %}
 
 {% block headerimage %}
     <header id="header_subpage2" style="background: url(asset('img/banner-subpage2.jpg'));">
@@ -21,15 +21,15 @@
 {% block meta %}
     <meta property="og:locale" content="fr_FR"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content=""/>
-    <meta property="og:url" content=""/>
+    <meta property="og:title" content="{{ formation.titre }}"/>
+    <meta property="og:url" content="{{ path('formationdetail', {'id': formation.id,'slug': formation.slug  }) }}"/>
     <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
-    <meta property="og:image" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="twitter:card" content=""/>
-    <meta name="twitter:site" content=""/>
-    <meta name="twitter:title" content=""/>
-    <meta name="twitter:description" content=""/>
+    <meta property="og:image" content="{{ asset('uploads/photo/' ~ formation.photo) }}"/>
+    <meta property="og:description" content="{{ formation.description }}"/>
+    <meta name="twitter:card" content="{{ formation.titre }}"/>
+    <meta name="twitter:site" content="{{ formation.titre }}"/>
+    <meta name="twitter:title" content="{{ formation.titre }}"/>
+    <meta name="twitter:description" content="{{ formation.description }}"/>
 {% endblock %}
 
 
@@ -42,14 +42,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h2>Description de la formation</h2>
+                        <h1>{{ formation.titre }}</h1>
+                        <hr/><br/>
+                        <h4>Description de la formation</h4>
                         <p>{{ formation.description }}</p>
 
                         <div align='center'>
                                         <img src="{{ asset('uploads/photo/' ~ formation.photo) }}" alt="" height="400" width="500">
                         </div>
                         <h2>Programme de la formation</h2>
-                        {{ formation.programmes | raw }}
+                        {{ formation.programme | raw }}
                         
                         <div class="row">
                             
@@ -74,15 +76,7 @@
 
 
 
-                        <div class="widget recent-posts">
-                            <h3>articles recents</h3>
-                            {% for article in articles %}
-                                <div class="rp">
-                                    <h4><a href="{{ path('poster_article', {'id': article.id,'slug': article.slug  }) }}">{{ article.titre }} </a></h4>
-                                    <p>{{ article.date|date("m/d/Y") }}</p>
-                                </div>
-                            {% endfor %}
-                        </div>
+                        
                     </div>
                 </div>
             </div>

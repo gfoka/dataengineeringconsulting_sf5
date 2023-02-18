@@ -9,12 +9,14 @@ use Symfony\Component\HttpFoundation\Request;
 
 //Les entity
 use App\Entity\Ecrire;
+use App\Entity\Formations;
 
 //formulaire
 use App\Form\EcrireType;
 
 //Repository
 use App\Repository\CategorieFormationRepository;
+use App\Repository\FormationsRepository;
 use App\Repository\FormateurRepository;
 
 
@@ -119,25 +121,37 @@ class DefaultController extends AbstractController
 
     
     //____________________________________Les formations_______________________________________________
-    public function formationAction(Request $request, CategorieFormationRepository $categorieFormationRepository): Response
+    public function formationAction(Request $request, CategorieFormationRepository $categorieFormationRepository, FormationsRepository $formationsRepository): Response
     {
+        
         $typeFormation = $request->attributes->get('typeformation');
         $categorieFormationURL = $request->attributes->get('categorieformation');
 
         //Catégories des formations en fonction du type
-        $categorieFormations  = $categorieFormationRepository->findOneBy(array(
-            //"typeformation"=>"".$typeFormation
-        ));
+        $categorieFormations  = $categorieFormationRepository->findBy(array("typeFormation"=>"".$typeFormation));
+
+        //dump($categorieFormations);
+       // die();
 
         if($categorieFormationURL==0){
-            //$formations  = $categorieFormationRepository->findBy(array( "typeformation"=>"".$typeFormation));
+            $formations  = $formationsRepository->findBy(array("categorieFormation"=>$categorieFormations));
         }else{
-
+            $formations  = $formationsRepository->findBy(array("categorieFormation"=>"".$categorieFormationURL));
         }
+        //die('Les formations de '.$typeFormation.' '.$categorieFormationURL);       
 
+        return $this->render('services/formation.html.twig', [
+            'categoriesformations' => $categorieFormations,
+            'formations' => $formations,
+            'typeformationurl' =>$categorieFormationURL
+        ]);
+    }
 
-
-        die('Les formations de ');       
+    public function formationDetailAction(Request $request, FormationsRepository $formationsRepository, Formations $formations): Response
+    {   
+        return $this->render('services/formationdetail.html.twig', [
+            'formation' => $formations
+        ]);
     }
 
 

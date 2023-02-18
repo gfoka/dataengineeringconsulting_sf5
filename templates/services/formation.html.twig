@@ -47,7 +47,7 @@
                         {% for categoriesformation in categoriesformations %}
                             <div data-filter=".identity" class="cbp-filter-item {% if typeformationurl == categoriesformation.id %} cbp-filter-item-active {% endif %}">
                             <a {% if typeformationurl == categoriesformation.id %}style="color: #FFFFFF;" {% endif %}href="{{ path('formation', {'typeformation': categoriesformation.typeformation.id,'categorieformation': categoriesformation.id,'slug': categoriesformation.slug  }) }}">  {{ categoriesformation.libelle }}</a>
-                              <!--  <div class="cbp-filter-counter">7</div> -->
+                               <!-- <div class="cbp-filter-counter">7</div> -->
                             </div>
                         {% endfor %}
                         
@@ -62,7 +62,7 @@
                                         <img src="{{ asset('uploads/photo/' ~ formation.photo) }}" alt="{{ formation.description }}" height="150" width="200">
                                     </div>
                                 </div>
-                                <h3>{{ formation.titre }}</h3>
+                                <h4>{{ formation.titre }}</h4>
                             </a>
                         </div>
                      {% endfor %}   

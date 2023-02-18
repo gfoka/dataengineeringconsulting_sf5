@@ -47,6 +47,8 @@ class Formations
      */
     private $programme;
 
+    
+
     /**
      * @ORM\Column(type="string", length=255)
      */

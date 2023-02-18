@@ -87,6 +87,13 @@ formation:
     requirements:
       _locale: en|fr
 
+formationdetail:
+    path: /{_locale}/services/formation/{id}-{slug}.html
+    controller: App\Controller\DefaultController::formationDetailAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
 # Les services maintenant
 contact:
     path: /{_locale}/contact

@@ -19,7 +19,7 @@ class EcrireType extends AbstractType
             ->add('message')
             ->add('captcha',ReCaptchaType::class,[
                 //'label' => 'aca.nationalite',
-                'required'=>false
+                'required'=>true
             ])
         ;
     }

@@ -28,6 +28,7 @@
     <!-- Selected Theme, Currently Selected Default Blue -->
     <link rel="stylesheet" href="{{ asset('css/themes/1.css') }}">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -39,6 +40,16 @@
     
     
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VVGXRH9P6Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VVGXRH9P6Z');
+</script>
 
 <body class="main">
 <!-- Nav Icon -->
@@ -107,7 +118,7 @@
            </ul>
         </nav>
         <!-- Logo -->
-        <a href="#" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Data Engineering Consulting Sarl"></a>
+        <a href="{{ path('home') }}" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Data Engineering Consulting Sarl"></a>
     </div>
 </div>
 <!-- / End of Navigation -->
