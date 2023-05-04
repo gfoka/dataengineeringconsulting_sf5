@@ -48,7 +48,7 @@
                         <p>{{ formation.description }}</p>
 
                         <div align='center'>
-                                        <img src="{{ asset('uploads/photo/' ~ formation.photo) }}" alt="" height="400" width="500">
+                                        <img src="{{ asset('uploads/' ~ formation.photo) }}" alt="" height="400" width="500">
                         </div>
                         <h2>Programme de la formation</h2>
                         {{ formation.programme | raw }}

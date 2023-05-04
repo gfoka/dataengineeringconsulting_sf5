@@ -1,0 +1,53 @@
+{# templates/login/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block headerimage %}
+    <header id="header_subpage2" style="background: url(img/banner-subpage2.jpg);">
+            <div class="shader-primary" style="opacity:.91;"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="caption ani_ fadeinup">
+                        <div class="breadcrumb">
+                            <a href="#">Home</a> <span>/</span><a href="#" class="this_page">Login </a>
+                        </div>
+                        <h2>Authentification</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+
+{% block main %}
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ani_ fadeinleft">
+                        <h4>Authentification</h4>
+                        <form action="{{ path('app_login') }}" method="post">
+
+                            <span class="input">
+                                <label for="username">
+                                    <span > <i class="ion-at"></i> Email Address</span>
+                                </label>
+                                <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                            </span>
+
+                            <span class="input">
+                                <label  for="password">
+                                    <span > <i class="ion-ios-locked"></i> Password</span>
+                                </label>
+                            <input type="password" id="password" name="_password" />
+                            </span>
+                            
+                            <br>
+                            <input type="submit" class="btn alt" value="Login">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

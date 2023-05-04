@@ -163,6 +163,7 @@ class DefaultController extends AbstractController
         $form = $this->createForm(EcrireType::class, $ecrire);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            //Je doit soumettre dans le base de données et affichier un pop-up de conformations
            die('Je soumet le formulaire');
         }
         

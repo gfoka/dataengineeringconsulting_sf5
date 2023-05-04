@@ -59,7 +59,7 @@
                             <a href="{{ path('formationdetail', {'id': formation.id,'slug': formation.slug  }) }}">
                                 <div class="cbp-caption">
                                     <div class="cbp-caption-defaultWrap">
-                                        <img src="{{ asset('uploads/photo/' ~ formation.photo) }}" alt="{{ formation.description }}" height="150" width="200">
+                                        <img src="{{ asset('uploads/' ~ formation.photo) }}" alt="{{ formation.description }}" height="150" width="200">
                                     </div>
                                 </div>
                                 <h4>{{ formation.titre }}</h4>

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block headerimage %}
+    <header id="header_subpage2" style="background: url(img/banner-subpage2.jpg);">
+            <div class="shader-primary" style="opacity:.91;"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="caption ani_ fadeinup">
+                        <div class="breadcrumb">
+                            <a href="#">Home</a> <span>/</span><a href="#" class="this_page">Register </a>
+                        </div>
+                        <h2>Register</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+
+{% block main %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    
+
+    
+
+    <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ani_ fadeinleft">
+                        <h4>Register</h4>
+                        {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword, {
+                            label: 'Password'
+                        }) }}
+                        {{ form_row(registrationForm.agreeTerms) }}
+
+                        <button type="submit" class="btn">Register</button>
+                        {{ form_end(registrationForm) }}
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

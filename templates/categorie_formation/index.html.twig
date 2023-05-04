@@ -1,0 +1,46 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}CategorieFormation index{% endblock %}
+
+
+
+
+{% block body %}
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Slug</th>
+                <th>Ordre</th>
+                <th>Active</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie_formation in categorie_formations %}
+            <tr>
+                <td>{{ categorie_formation.id }}</td>
+                <td>{{ categorie_formation.libelle }}</td>
+                <td>{{ categorie_formation.description }}</td>
+                <td>{{ categorie_formation.slug }}</td>
+                <td>{{ categorie_formation.ordre }}</td>
+                <td>{{ categorie_formation.active ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_categorie_formation_show', {'id': categorie_formation.id}) }}">show</a>
+                    <a href="{{ path('app_categorie_formation_edit', {'id': categorie_formation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_categorie_formation_new') }}">Create new</a>
+{% endblock %}

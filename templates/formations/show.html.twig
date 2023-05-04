@@ -1,0 +1,70 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Formations{% endblock %}
+
+{% block body %}
+    <h1>Formations</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Photo</th>
+                <td><img src="{{ asset('uploads/' ~ formation.photo) }}" alt="" height="150" width="200"></td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ formation.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ formation.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ formation.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ formation.prix }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ formation.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ formation.duree }}</td>
+            </tr>
+            
+            
+            <tr>
+                <th>Prerequis</th>
+                <td>{{ formation.prerequis }}</td>
+            </tr>
+            <tr>
+                <th>Cible</th>
+                <td>{{ formation.cible }}</td>
+            </tr>
+            <tr>
+                <th>Langue</th>
+                <td>{{ formation.langue }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ formation.slug }}</td>
+            </tr>
+
+
+            <tr>
+                <th>Programme</th>
+                <td>{{ formation.programme | raw }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_formations_index') }}">back to list</a>
+
+    <a href="{{ path('app_formations_edit', {'id': formation.id}) }}">edit</a>
+
+    {{ include('formations/_delete_form.html.twig') }}
+{% endblock %}
