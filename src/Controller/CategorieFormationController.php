@@ -4,12 +4,14 @@ namespace App\Controller;
 
 use App\Entity\CategorieFormation;
 use App\Form\CategorieFormationType;
+use App\Form\CategorieFormationEditType;
 use App\Repository\CategorieFormationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use App\Service\FileUploader;
 
 /**
  * @Route("/admin/categorie/formation")
@@ -17,10 +19,11 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class CategorieFormationController extends AbstractController
 {
     /**
-     * @Route("/", name="app_categorie_formation_index", methods={"GET"})
+     * @Route("/ghfhf", name="app_categorie_formation_index", methods={"GET"})
      */
     public function index(CategorieFormationRepository $categorieFormationRepository): Response
     {
+        
         return $this->render('categorie_formation/index.html.twig', [
             'categorie_formations' => $categorieFormationRepository->findAll(),
         ]);
@@ -29,14 +32,23 @@ class CategorieFormationController extends AbstractController
     /**
      * @Route("/new", name="app_categorie_formation_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, CategorieFormationRepository $categorieFormationRepository, SluggerInterface $slugger): Response
+    public function new(Request $request, CategorieFormationRepository $categorieFormationRepository, SluggerInterface $slugger, FileUploader $fileUploade): Response
     {
         $categorieFormation = new CategorieFormation();
         $form = $this->createForm(CategorieFormationType::class, $categorieFormation);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
             $categorieFormation->setSlug( $slugger->slug($categorieFormation->getLibelle()));
+
+             //Upload de l'image
+            $ImageFile = $form->get('image')->getData();
+            if ($ImageFile) {
+                $imageFileName = $fileUploade->upload($ImageFile);
+                $categorieFormation->setPhoto($imageFileName);
+            }
+
             $categorieFormationRepository->add($categorieFormation, true);
 
             return $this->redirectToRoute('app_categorie_formation_index', [], Response::HTTP_SEE_OTHER);
@@ -61,13 +73,20 @@ class CategorieFormationController extends AbstractController
     /**
      * @Route("/{id}/edit", name="app_categorie_formation_edit", methods={"GET", "POST"})
      */
-    public function edit(Request $request, CategorieFormation $categorieFormation, CategorieFormationRepository $categorieFormationRepository, SluggerInterface $slugger): Response
+    public function edit(Request $request, CategorieFormation $categorieFormation, CategorieFormationRepository $categorieFormationRepository, SluggerInterface $slugger, FileUploader $fileUploade): Response
     {
-        $form = $this->createForm(CategorieFormationType::class, $categorieFormation);
+        $form = $this->createForm(CategorieFormationEditType::class, $categorieFormation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $categorieFormation->setSlug( $slugger->slug($categorieFormation->getLibelle()));
+
+            //Upload de l'image
+            $ImageFile = $form->get('image')->getData();
+            if ($ImageFile) {
+                $imageFileName = $fileUploade->upload($ImageFile);
+                $categorieFormation->setPhoto($imageFileName);
+            }
             $categorieFormationRepository->add($categorieFormation, true);
 
             return $this->redirectToRoute('app_categorie_formation_index', [], Response::HTTP_SEE_OTHER);

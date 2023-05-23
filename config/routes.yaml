@@ -101,3 +101,18 @@ contact:
     locale:      en
     requirements:
       _locale: en|fr
+
+# Le module Blog
+blogindex:
+    path: /{_locale}/blog.html
+    controller: App\Controller\DefaultController::blogAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+bloglecture:
+    path: /{_locale}/blog/{id}-{slug}.html
+    controller: App\Controller\DefaultController::lectureAction
+    locale:      en
+    requirements:
+      _locale: en|fr

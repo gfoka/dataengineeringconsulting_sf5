@@ -2,25 +2,21 @@
 
 namespace App\Form;
 
-use App\Entity\CategorieFormation;
+use App\Entity\Categorie;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
-class CategorieFormationType extends AbstractType
+class CategorieEditType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('libelle')
+            ->add('lebelle')
+            //->add('slug')
             ->add('description')
-            //->add('slug') 
-            ->add('ordre')
-            ->add('active')
-            ->add('typeFormation')
             ->add('image', FileType::class, [
                 'label' => 'Affiche de la catégorie de la formation',
 
@@ -29,7 +25,7 @@ class CategorieFormationType extends AbstractType
 
                 // make it optional so you don't have to re-upload the PDF file
                 // every time you edit the Product details 
-                'required' => true,
+                'required' => false,
 
                 // unmapped fields can't define their validation using annotations
                 // in the associated entity, so you can use the PHP constraint classes 
@@ -42,10 +38,10 @@ class CategorieFormationType extends AbstractType
                             "image/jpg",
                             "image/gif"
                         ],
-                        'minWidth' => 1200,
-                        'maxWidth' => 1200,
-                        'minHeight' => 800,
-                        'maxHeight' => 800,
+                        'minWidth' => 1600,
+                        'maxWidth' => 1600,
+                        'minHeight' => 511,
+                        'maxHeight' => 511,
                         'mimeTypesMessage' => 'Please upload a valid PDF document',
                     ])
                 ],
@@ -56,7 +52,7 @@ class CategorieFormationType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => CategorieFormation::class,
+            'data_class' => Categorie::class,
         ]);
     }
 }

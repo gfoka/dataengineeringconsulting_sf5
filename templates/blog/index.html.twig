@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block headerimage %}
+        <header id="header_subpage1" style="background-image:url({{ asset('img/header_blog.jpg)') }}">
+            <div class="shader-dark"></div>
+            <div class="caption ani_ fadeinup">
+
+                <h1>Blog</h1>
+       
+
+            </div>
+        </header>
+{% endblock %}
+
+{% block main %}
+        <section class="blog-articles">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+
+                    {% for article in articles %}
+                        <div class="article">
+                            <div class="article-pic"><img src="{{ asset('uploads/' ~ article.auteur.photo) }}" alt=""></div>
+                            <div class="article-foot">
+                                <h4>Written by <b>{{ article.auteur.nom ~" "~article.auteur.prenom  }}</b></h4><span>{{ article.dateCreation |date('d-m-Y') }}</span></div>
+                            <div class="article-main-picture">
+                                <img src="{{ asset('uploads/' ~ article.imagePost) }}" alt="">
+                            </div>
+                            <div class="article-title">
+                                <a href="{{ path('bloglecture', {'id': article.id,'slug': article.slug  }) }}"><h2>{{ article.titre }}</h2></a>
+                                <p>{{ article.chapeau }}</p>
+                                <div class="article-comments">
+                                    <div class="row">
+                                        <div class="col-xs-6"><a href="{{ path('bloglecture', {'id': article.id,'slug': article.slug  }) }}">Read more</a></div>
+                                        <!--<div class="col-xs-6 comments"><i class="ion-chatbubbles"></i> 5 comments</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %} 
+                        
+                        
+                        
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

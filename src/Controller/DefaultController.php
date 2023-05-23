@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 //Les entity
 use App\Entity\Ecrire;
 use App\Entity\Formations;
+use App\Entity\Article;
 
 //formulaire
 use App\Form\EcrireType;
@@ -18,6 +19,9 @@ use App\Form\EcrireType;
 use App\Repository\CategorieFormationRepository;
 use App\Repository\FormationsRepository;
 use App\Repository\FormateurRepository;
+use App\Repository\TypeFormationRepository;
+use App\Repository\ArticleRepository;
+
 
 
 
@@ -121,29 +125,35 @@ class DefaultController extends AbstractController
 
     
     //____________________________________Les formations_______________________________________________
-    public function formationAction(Request $request, CategorieFormationRepository $categorieFormationRepository, FormationsRepository $formationsRepository): Response
+    public function formationAction(Request $request, CategorieFormationRepository $categorieFormationRepository, FormationsRepository $formationsRepository,TypeFormationRepository $typeFormationRepository): Response
     {
         
-        $typeFormation = $request->attributes->get('typeformation');
+        $typeFormationUrl = $request->attributes->get('typeformation');
         $categorieFormationURL = $request->attributes->get('categorieformation');
 
         //Catégories des formations en fonction du type
-        $categorieFormations  = $categorieFormationRepository->findBy(array("typeFormation"=>"".$typeFormation));
+        $categorieFormations  = $categorieFormationRepository->findBy(array("typeFormation"=>"".$typeFormationUrl));
 
-        //dump($categorieFormations);
-       // die();
+        //dump($categorieFormationURL);
+        //die();
 
         if($categorieFormationURL==0){
             $formations  = $formationsRepository->findBy(array("categorieFormation"=>$categorieFormations));
         }else{
             $formations  = $formationsRepository->findBy(array("categorieFormation"=>"".$categorieFormationURL));
         }
+        $typeFormation = $typeFormationRepository->findOneBy(array('id'=>$typeFormationUrl));
+        $categorieformation = $categorieFormationRepository->findOneBy(array('id'=>$categorieFormationURL));
         //die('Les formations de '.$typeFormation.' '.$categorieFormationURL);       
-
+        //dump($typeFormation);
+        //die();
         return $this->render('services/formation.html.twig', [
             'categoriesformations' => $categorieFormations,
+            'categorieformation' => $categorieformation,
             'formations' => $formations,
-            'typeformationurl' =>$categorieFormationURL
+            'typeformationurl' => $typeFormationUrl,
+            'typeFormation' =>$typeFormation,
+            'categorieFormationURL' => $categorieFormationURL
         ]);
     }
 
@@ -170,6 +180,33 @@ class DefaultController extends AbstractController
         return $this->render('default/contact.html.twig', [
             'controller_name' => 'DefaultController',
             'form'=> $form->createView()
+        ]);
+    }
+
+    //____________________________________Les Servvices maintenant_______________________________________________
+    public function blogAction(Request $request,  ArticleRepository $articleRepository): Response
+    {
+
+        //Je dois lister tout les articles
+        $articles  = $articleRepository->findAll();
+        
+        
+        return $this->render('blog/index.html.twig', [
+                "articles"=> $articles 
+        ]);
+    }
+
+
+    public function lectureAction(Request $request,Article $article,ArticleRepository $articleRepository): Response
+    {
+
+        //die();
+        //Je dois lister tout les articles
+        //$articles  = $articleRepository->findAll();
+        
+        
+        return $this->render('blog/lecture.html.twig', [
+                "article"=> $article
         ]);
     }
 

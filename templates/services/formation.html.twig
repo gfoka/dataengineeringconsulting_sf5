@@ -1,12 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Formation{% endblock %}
-{% block meta %}{% endblock %}
+
 
 {% block headerimage %}
-   
-
-
     <header id="header_subpage2" style="background: url(asset('img/banner-subpage2.jpg'));">
             <div class="shader-primary" style="opacity:.91;"></div>
             <div class="container">
@@ -22,6 +19,36 @@
         </header> 
 {% endblock %}
 
+{% block meta %}
+
+    {% if categorieFormationURL == 0 %} 
+            <meta property="og:locale" content="fr_FR"/>
+            <meta property="og:type" content="Formation"/>
+            <meta property="og:title" content="{{ typeFormation.libelle }}"/>
+            <meta property="og:url" content="{{ path('formation', {'typeformation': typeFormation.id,'categorieformation': 0,'slug': typeFormation.slug   }) }}"/>
+            <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
+            <meta property="og:image" content="{{ asset('uploads/photo/' ~ typeFormation.photo) }}"/>
+            <meta property="og:description" content="{{ typeFormation.description }}"/>
+            <meta name="twitter:card" content="{{ typeFormation.libelle }}"/>
+            <meta name="twitter:site" content="{{ typeFormation.libelle }}"/>
+            <meta name="twitter:title" content="{{ typeFormation.libelle }}"/>
+            <meta name="twitter:description" content="{{ typeFormation.description }}"/>
+        {% else %}
+            <meta property="og:locale" content="fr_FR"/>
+            <meta property="og:type" content="Formation"/>
+            <meta property="og:title" content="{{ categorieformation.libelle }}"/>
+            <meta property="og:url" content="{{ path('formation', {'typeformation': categorieformation.typeformation.id,'categorieformation': categorieformation.id,'slug': categorieformation.slug  }) }}"/>
+            <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
+            <meta property="og:image" content="{{ asset('uploads/photo/' ~ categorieformation.photo) }}"/>
+            <meta property="og:description" content="{{ categorieformation.description }}"/>
+            <meta name="twitter:card" content="{{ categorieformation.libelle }}"/>
+            <meta name="twitter:site" content="{{ categorieformation.libelle }}"/>
+            <meta name="twitter:title" content="{{ categorieformation.libelle }}"/>
+            <meta name="twitter:description" content="{{ categorieformation.description }}"/>
+    {% endif %}
+
+{% endblock %}
+
 
 {% block main %}
 
@@ -32,21 +59,28 @@
             <div class="container">
 
                 <div class="title-m">
-                    <h1>Formation</h1>
-                    <h3>Nous formons les étudiants, employés, entrepreneurs ou tout simplement passionnés 
-                        aux technologies informatiques de pointe, que vous soyez novice ou expert.</h3>
+                {% if categorieFormationURL == 0 %} 
+                    <h1>{{ typeFormation.libelle }}</h1>
+                    <h3>{{ typeFormation.description }}</h3>
+
+                {% else %}
+                    <h1>{{ categorieformation.libelle }}</h1>
+                    <h3>{{ categorieformation.description }}</h3>
+
+                {% endif %}
                 </div>
                 
                 <div class="row">
                     <div  class="cbp-l-filters-alignLeft">
-                        <div  class="{% if typeformationurl == 0 %} cbp-filter-item-active {% endif %} cbp-filter-item">
+                        <div  class="{% if categorieFormationURL == 0 %} cbp-filter-item-active {% endif %} cbp-filter-item">
                             
-                            <a {% if typeformationurl == 0 %} style="color: #FFFFFF;"{% endif %}  href="{{ path('formation', {'typeformation': typeformationurl,'categorieformation': 0,'slug': 'toutes-les-formations'   }) }}">Toutes les formations</a>
+                            <a {% if categorieFormationURL == 0 %} style="color: #FFFFFF;"{% endif %}  href="{{ path('formation', {'typeformation': typeformationurl,'categorieformation': 0,'slug': typeFormation.slug   }) }}">Toutes les formations</a>
                              <!-- <div class="cbp-filter-counter">3</div>-->
                         </div>
+
                         {% for categoriesformation in categoriesformations %}
-                            <div data-filter=".identity" class="cbp-filter-item {% if typeformationurl == categoriesformation.id %} cbp-filter-item-active {% endif %}">
-                            <a {% if typeformationurl == categoriesformation.id %}style="color: #FFFFFF;" {% endif %}href="{{ path('formation', {'typeformation': categoriesformation.typeformation.id,'categorieformation': categoriesformation.id,'slug': categoriesformation.slug  }) }}">  {{ categoriesformation.libelle }}</a>
+                            <div data-filter=".identity" class="cbp-filter-item {% if categorieFormationURL == categoriesformation.id %} cbp-filter-item-active {% endif %}">
+                            <a {% if categorieFormationURL == categoriesformation.id %}style="color: #FFFFFF;" {% endif %}href="{{ path('formation', {'typeformation': categoriesformation.typeformation.id,'categorieformation': categoriesformation.id,'slug': categoriesformation.slug  }) }}">  {{ categoriesformation.libelle }}</a>
                                <!-- <div class="cbp-filter-counter">7</div> -->
                             </div>
                         {% endfor %}

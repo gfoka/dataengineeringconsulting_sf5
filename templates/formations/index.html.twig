@@ -23,13 +23,12 @@
                     <tr>
                         <th>Id</th>
                         <th>Titre</th>
+                        <th>Type</th>
+                        <th>Catégorie</th>
                         <th>Prix</th>
                         <th>Lieu</th>
                         <th>Duree</th>
-                        <th>Prerequis</th>
-                        <th>Cible</th>
                         <th>Langue</th>
-                        <th>Slug</th>
                         <th>actions</th>
                     </tr>
                 </thead>
@@ -38,13 +37,12 @@
                     <tr>
                         <td>{{ formation.id }}</td>
                         <td>{{ formation.titre }}</td>
+                        <th>{{ formation.categorieFormation.libelle }}</th>
+                        <th>{{ formation.categorieFormation.typeFormation.libelle }}</th>
                         <td>{{ formation.prix }}</td>
                         <td>{{ formation.lieu }}</td>
                         <td>{{ formation.duree }}</td>
-                        <td>{{ formation.prerequis }}</td>
-                        <td>{{ formation.cible }}</td>
                         <td>{{ formation.langue }}</td>
-                        <td>{{ formation.slug }}</td>
                         <td>
 
                                 <div class="btn-group">

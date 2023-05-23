@@ -1,0 +1,162 @@
+
+{% extends 'base.html.twig' %}
+
+{% block headerimage %}
+<!-- Header -->
+<header id="header_subpage1" style="background-image:url({{ asset('uploads/' ~ article.imageAgencyPost) }})">
+    <div class="shader-dark"></div>
+    <div class="caption ani_ fadeinup">
+        <h4>{{ article.dateCreation |date('d F Y') }}</h4>
+        <h1>{{ article.titre }}</h1>
+        <h3>{{ article.categorie.lebelle }}</h3>
+    </div>
+    <i class="ion-ios-arrow-down arrow-down"></i>
+</header>
+{% endblock %}
+
+
+
+{% block main %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="article post ani_ fadeinup">
+                    <div class="article-pic"><img src="{{ asset('uploads/' ~ article.auteur.photo) }}" alt=""></div>
+                    <div class="article-foot">
+                        <h4>Written by <b>{{ article.auteur.nom ~" "~article.auteur.prenom  }}</b></h4><span>{{ article.dateCreation |date('d-m-Y') }}</span></div>
+                </div>
+                
+                {{ article.contenu | raw }}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Social Channels -->
+<section class="center">
+    <div class="container no-pad-top">
+        <div class="row">
+            <div class="title-m">
+                <h2>Share on social media</h2>
+                <h3>Click a social channel below to share</h3>
+            </div>
+            <div class="col-md-12">
+                <a href="#" class="social-icon"><i class="ion-social-linkedin-outline"></i></a>
+                <a href="#" class="social-icon"><i class="ion-social-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="ion-social-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="ion-social-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="ion-social-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="ion-social-pinterest-outline"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comment Listing 
+<section class="comment-list">
+    <div class="container no-pad-top">
+        <div class="row">
+            <div class="title-m">
+                <h2>5 Comments</h2>
+                <h3>Join the discussion</h3>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="comment">
+                    <img src="img/team/team1.jpg" alt="">
+                    <h4>Person Name</h4>
+                    <h5>24 Sep 2016</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Id tempore nostrum eveniet dolore doloribus temporibus
+                        exercitationem laboriosam excepturi nesciunt, facere
+                        voluptatem illum eos iste totam maxime illo ducimus
+                        neque minus.</p>
+                    <a class="reply" href="#">Reply</a>
+                </div>
+                <ul class="children">
+                    <li>
+                        <div class="comment">
+                            <img src="img/team/team2.jpg" alt="">
+                            <h4>Person Name</h4>
+                            <h5>24 Sep 2016</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                elit. Id tempore nostrum eveniet dolore doloribus
+                                temporibus exercitationem laboriosam excepturi
+                                nesciunt, facere voluptatem illum eos iste
+                                totam maxime illo ducimus neque minus.</p>
+                            <a class="reply" href="#">Reply</a>
+                        </div>
+                        <ul class="children">
+                            <li>
+                                <div class="comment">
+                                    <img src="img/team/team3.jpg" alt="">
+                                    <h4>Person Name</h4>
+                                    <h5>24 Sep 2016</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Id tempore nostrum
+                                        eveniet dolore doloribus.</p>
+                                    <a class="reply" href="#">Reply</a>
+                                </div>
+                                <div class="comment">
+                                    <img src="img/team/team4.jpg" alt="">
+                                    <h4>Person Name</h4>
+                                    <h5>24 Sep 2016</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Id tempore nostrum
+                                        eveniet dolore doloribus.</p>
+                                    <a class="reply" href="#">Reply</a>
+                                </div>
+                                <div class="comment">
+                                    <img src="img/team/team5.jpg" alt="">
+                                    <h4>Person Name</h4>
+                                    <h5>24 Sep 2016</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Id tempore nostrum
+                                        eveniet dolore doloribus.</p>
+                                    <a class="reply" href="#">Reply</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+<!-- Contact Form -->
+<section id="contact_form_1" class="grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 center col-sm-12">
+                <h2>Leave your comment</h2>
+                <form class="ani_ fadeinup">
+                    <span class="input">
+            <label  for="input-10">
+            <span > <i class="ion-person"></i> Full Name</span>
+                    </label>
+                    <input type="text" id="input-10" placeholder="Insert your name" />
+                    </span>
+                    <span class="input">
+            <label  for="input-10">
+            <span > <i class="ion-at"></i> Email Address</span>
+                    </label>
+                    <input type="text" id="input-11" placeholder="eg. hello@comflare.com" />
+                    </span>
+                    <span class="input">
+            <label for="input-13">
+            <span><i class="ion-chatbubbles"></i> Message</span>
+                    </label>
+                    <textarea class="textarea" id="input-13" placeholder="Type your message here..."></textarea>
+                    </span>
+                    <input type="submit" class="btn alt" value="Send us your enquiry">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

@@ -47,7 +47,6 @@ class Formations
      */
     private $programme;
 
-    
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -55,7 +54,7 @@ class Formations
     private $photo;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $prerequis;
 
@@ -83,6 +82,11 @@ class Formations
      * @ORM\ManyToOne(targetEntity=CategorieFormation::class, inversedBy="formations")
      */
     private $categorieFormation;
+
+    /**
+     * @ORM\Column(type="text", nullable=false)
+     */
+    private $objectif;
 
     public function getId(): ?int
     {
@@ -241,6 +245,18 @@ class Formations
     public function setCategorieFormation(?CategorieFormation $categorieFormation): self
     {
         $this->categorieFormation = $categorieFormation;
+
+        return $this;
+    }
+
+    public function getObjectif(): ?string
+    {
+        return $this->objectif;
+    }
+
+    public function setObjectif(?string $objectif): self
+    {
+        $this->objectif = $objectif;
 
         return $this;
     }

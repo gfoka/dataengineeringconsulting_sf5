@@ -1,0 +1,38 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}TypeFormation{% endblock %}
+
+{% block body %}
+    <h1>TypeFormation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ type_formation.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ type_formation.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ type_formation.description }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ type_formation.photo }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ type_formation.slug }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_type_formation_index') }}">back to list</a>
+
+    <a href="{{ path('app_type_formation_edit', {'id': type_formation.id}) }}">edit</a>
+
+    {{ include('type_formation/_delete_form.html.twig') }}
+{% endblock %}

@@ -3,19 +3,16 @@
 {% block title %}{{ formation.titre }}{% endblock %}
 
 {% block headerimage %}
-    <header id="header_subpage2" style="background: url(asset('img/banner-subpage2.jpg'));">
-            <div class="shader-primary" style="opacity:.91;"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="caption ani_ fadeinup">
-                        <div class="breadcrumb">
-                            <a href="index.html">Acceuil</a> <span> / </span> <a href="#">Formation</a> / programmation web
-                        </div>
-                        <h1></h1>
-                    </div>
-                </div>
+    <header id="header_subpage1" style="background-image:url({{ asset('uploads/' ~ formation.photo) }}">
+            <div class="shader-dark"></div>
+            <div class="caption ani_ fadeinup">
+                <h4><a href="{{ path('formation', {'typeformation':  formation.categorieFormation.typeFormation.id ,'categorieformation': formation.categorieFormation.id,'slug': 'toutes-les-formations'   }) }}">{% trans %}menu.formation{% endtrans %}</a>  /  {{ formation.categorieFormation.libelle }} </h4>
+                <h1>{{ formation.titre }}</h1>
+                <h3>{{ formation.categorieFormation.libelle }}</h3>
+                
             </div>
-        </header> 
+            <i class="ion-ios-arrow-down arrow-down"></i>
+        </header>
 {% endblock %}
 
 {% block meta %}
@@ -37,28 +34,56 @@
 
 
 
-    
-    <section class="info_googlemaps">
+
+<section>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7">
-                        <h1>{{ formation.titre }}</h1>
-                        <hr/><br/>
-                        <h4>Description de la formation</h4>
-                        <p>{{ formation.description }}</p>
+                    <div class="title-m">
+                        <h2>{{ formation.titre }}</h2>
+                         <p>{{ formation.description }}</p>
+                    </div>
+					
+                    <div class="col-md-8 ani_ fadeindown" data-delay=".4">
+                        <div class="tabs">
+                            <div id="js-filters-tabs" class="cbp-l-filters-big">
+                                <div data-filter=".first" class="cbp-filter-item-active cbp-filter-item">
+                                    Programme
+                                </div>
+                                <div data-filter=".second" class="cbp-filter-item">
+                                    Public
+                                </div>
+                                <div data-filter=".third" class="cbp-filter-item">
+                                    PRE-REQUIS
+                                </div>
+                                <div data-filter=".four" class="cbp-filter-item">
+                                    OBJECTIF
+                                </div>
+                            </div>
+                            <div id="tabs-services">
+                                <div class="cbp-item first">
+                                    <h2>Programme</h2>
+                                    <div style="text-align: left">
+                                        <p>{{ formation.programme | raw }}</p>
+                                    </div>
+                                </div>
+                                <div class="cbp-item second">
+                                    <h2>Public</h2> {{ formation.cible | raw }}
+                                </div>
+                                <div class="cbp-item third">
+                                    <h2>PRE-REQUIS</h2> {{ formation.prerequis | raw }}
+                                </div>
 
-                        <div align='center'>
-                                        <img src="{{ asset('uploads/' ~ formation.photo) }}" alt="" height="400" width="500">
-                        </div>
-                        <h2>Programme de la formation</h2>
-                        {{ formation.programme | raw }}
-                        
-                        <div class="row">
-                            
+                                <div class="cbp-item four">
+                                    <h2>OBJECTIF</h2> {{ formation.objectif | raw }}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="v-spacer"></div>
-                    <div class="col-md-5 google_maps">
+
+
+
+
+                    <div class="col-md-4 google_maps">
                         <h2>Détail de la formation</h2>
                         <ul class="standard_list">
                             <li><b>prix :</b>{{ formation.prix | number_format }} FCFA</li>
@@ -71,15 +96,21 @@
                             <li><h3>{{ formation.formateur.nom ~" "~ formation.formateur.prenom  }}</h3></li>
                             <li><b>formation  :</b>{{ formation.formateur.formation }} </li>
                             <li><b>Titre :</b>{{ formation.formateur.titre  }} </li>
+                            <li class="social_link"><a target="_blank" href="{{ formation.formateur.linkedin  }}"><i class="ion-social-linkedin"></i> profil LinkedIn de {{ formation.formateur.nom ~" "~ formation.formateur.prenom  }}  </a></li>
                         </ul>
 
 
-
-
-                        
+                        <a href="" class="btn">Souscrire a la formation</a>
                     </div>
+
+
+
+
                 </div>
             </div>
         </section>
+
+
+
 {% endblock %}
 

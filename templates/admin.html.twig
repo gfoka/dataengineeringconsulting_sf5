@@ -152,89 +152,64 @@
 
     
     
-    
-          
-          <li class="nav-item">
+   
+
+
+    {% if is_granted('ROLE_ADMIN') %}
+
+
+<li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
+              <i class="nav-icon fas fa-book"></i>
               <p>
                 Formations
-                <i class="right fas fa-angle-left"></i>
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+              
+              
+
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ path('app_type_formation_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Catégorie formation
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
+                  <p>Gestion des Types de formations</p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="{{ path('app_categorie_formation_new') }}" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Ajouter une Catégorie</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ path('app_categorie_formation_index') }}" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Gérer les catégories</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
 
-
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ path('app_categorie_formation_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Formation
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
+                  <p>Gestion des Catégories de formations</p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="{{ path('app_formations_new') }}" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Ajouter une formation</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ path('app_formations_index') }}" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Gérer des formations</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
 
-
-              <!--
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ path('app_formations_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Level 2</p>
+                  <p>Gestion des formations</p>
                 </a>
-              </li> 
-              -->
+              </li>
 
 
             </ul>
           </li>
-          
-
-          
-
-    {% if is_granted('ROLE_ADMIN') %}
-        
-    {%endif%}
 
 
-    {% if is_granted('ROLE_ADMIN') %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
@@ -244,18 +219,31 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              
+              
+
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ajouter un article</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ path('app_article_index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gestion des articles</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="{{ path('app_categorie_index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gestion des Catégories</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ path('app_auteur_index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gestion des auteurs</p>
+                </a>
+              </li>
+
+
             </ul>
           </li>
     {%endif%}

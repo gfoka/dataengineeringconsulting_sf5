@@ -59,6 +59,12 @@ class Formateur
      */
     private $formations;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $linkedin;
+
+
     public function __construct()
     {
         $this->formations = new ArrayCollection();
@@ -187,4 +193,18 @@ class Formateur
         {
             return $this->prenom." ".$this->nom;
         }
+
+    public function getLinkedin(): ?string
+    {
+        return $this->linkedin;
+    }
+
+    public function setLinkedin(?string $linkedin): self
+    {
+        $this->linkedin = $linkedin;
+
+        return $this;
+    }
+
+
 }

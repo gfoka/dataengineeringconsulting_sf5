@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class FormationsEditType extends AbstractType
 {
@@ -33,7 +34,7 @@ class FormationsEditType extends AbstractType
                 // unmapped fields can't define their validation using annotations
                 // in the associated entity, so you can use the PHP constraint classes
                 'constraints' => [
-                    new File([
+                    new Assert\Image([
                         'maxSize' => '1024k',
                         'mimeTypes' => [
                             "image/png",
@@ -41,12 +42,17 @@ class FormationsEditType extends AbstractType
                             "image/jpg",
                             "image/gif"
                         ],
+                        'minWidth' => 1200,
+                        'maxWidth' => 1200,
+                        'minHeight' => 800,
+                        'maxHeight' => 800,
                         'mimeTypesMessage' => 'Please upload a valid PDF document',
                     ])
                 ],
             ])
             ->add('prerequis')
             ->add('cible')
+            ->add('objectif')
             ->add('langue')
             ->add('formateur')
             ->add('categorieFormation')
