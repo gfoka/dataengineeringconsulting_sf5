@@ -21,7 +21,7 @@
     <meta property="og:title" content="{{ formation.titre }}"/>
     <meta property="og:url" content="{{ path('formationdetail', {'id': formation.id,'slug': formation.slug  }) }}"/>
     <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
-    <meta property="og:image" content="{{ asset('uploads/photo/' ~ formation.photo) }}"/>
+    <meta property="og:image" content="{{ asset('uploads/' ~ formation.photo) }}"/>
     <meta property="og:description" content="{{ formation.description }}"/>
     <meta name="twitter:card" content="{{ formation.titre }}"/>
     <meta name="twitter:site" content="{{ formation.titre }}"/>

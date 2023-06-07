@@ -27,7 +27,7 @@
             <meta property="og:title" content="{{ typeFormation.libelle }}"/>
             <meta property="og:url" content="{{ path('formation', {'typeformation': typeFormation.id,'categorieformation': 0,'slug': typeFormation.slug   }) }}"/>
             <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
-            <meta property="og:image" content="{{ asset('uploads/photo/' ~ typeFormation.photo) }}"/>
+            <meta property="og:image" content="{{ asset('uploads/' ~ typeFormation.photo) }}"/>
             <meta property="og:description" content="{{ typeFormation.description }}"/>
             <meta name="twitter:card" content="{{ typeFormation.libelle }}"/>
             <meta name="twitter:site" content="{{ typeFormation.libelle }}"/>
@@ -39,7 +39,7 @@
             <meta property="og:title" content="{{ categorieformation.libelle }}"/>
             <meta property="og:url" content="{{ path('formation', {'typeformation': categorieformation.typeformation.id,'categorieformation': categorieformation.id,'slug': categorieformation.slug  }) }}"/>
             <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
-            <meta property="og:image" content="{{ asset('uploads/photo/' ~ categorieformation.photo) }}"/>
+            <meta property="og:image" content="{{ asset('uploads/' ~ categorieformation.photo) }}"/>
             <meta property="og:description" content="{{ categorieformation.description }}"/>
             <meta name="twitter:card" content="{{ categorieformation.libelle }}"/>
             <meta name="twitter:site" content="{{ categorieformation.libelle }}"/>
