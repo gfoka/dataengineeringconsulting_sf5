@@ -11,9 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Ecrire;
 use App\Entity\Formations;
 use App\Entity\Article;
+use App\Entity\SessionFormation;
+use App\Entity\Etudiant;
 
 //formulaire
 use App\Form\EcrireType;
+use App\Form\EtudiantType;
 
 //Repository
 use App\Repository\CategorieFormationRepository;
@@ -21,6 +24,8 @@ use App\Repository\FormationsRepository;
 use App\Repository\FormateurRepository;
 use App\Repository\TypeFormationRepository;
 use App\Repository\ArticleRepository;
+use App\Repository\SessionFormationRepository;
+use App\Repository\EtudiantRepository;
 
 
 
@@ -34,11 +39,19 @@ class DefaultController extends AbstractController
     }
 
 
-    public function home(): Response
+    public function home(Request $request, ArticleRepository $articleRepository): Response
     {
-        //die('Hi');
+       
+        $articles = $articleRepository->findBy(array(),
+        array('id' => 'DESC'),
+        5,
+        );
+        //dump($articles);
+        //die();
+        //Je dois selection les cinqs articles les plus recents
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
+            'articles' => $articles
         ]);
     }
 
@@ -163,6 +176,50 @@ class DefaultController extends AbstractController
             'formation' => $formations
         ]);
     }
+
+
+    //Selectionner une Session de formation
+    public function sessionFormationAction(Request $request, FormationsRepository $formationsRepository,SessionFormationRepository $sessionFormationRepository, Formations $formations): Response
+    {   
+        
+        $sessionFormation = $sessionFormationRepository->findBy(["formation"=>$formations->getId()]);
+        return $this->render('services/cessionformation.html.twig', [
+            'formation' => $formations,
+            'sessionformations' => $sessionFormation
+        ]);
+    }
+
+
+    //Selectionner une Session de formation
+    public function inscriptionFormationAction(Request $request, EtudiantRepository $etudiantRepository, SessionFormationRepository $sessionFormationRepository,SessionFormation $sessionFormation): Response
+    {
+        $etudiant = new Etudiant();
+        $form = $this->createForm(EtudiantType::class,$etudiant);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $etudiant->setSessionFormation($sessionFormation);
+            $etudiantRepository->add($etudiant, true);
+            return $this->redirectToRoute('felicitationinscriptionsessionformation', ['id' => $etudiant->getId()]);
+        }
+        return $this->render('services/inscriptionformation.html.twig', [
+            'sessionformation' => $sessionFormation,
+            'form'=> $form->createView()
+        ]);
+    }
+
+
+    //Selectionner une Session de formation
+    public function felicitioninscriptionFormationAction(Request $request, EtudiantRepository $etudiantRepository, SessionFormationRepository $sessionFormationRepository,Etudiant $etudiant): Response
+    {
+        
+        return $this->render('services/felicitationformation.httml.twig', [
+            'etudiant' => $etudiant,
+            //'form'=> $form->createView()
+        ]);
+    }
+
+
+
 
 
     //____________________________________Les Servvices maintenant_______________________________________________

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Félicitation{% endblock %}
+{% block mode %}dark-menu{% endblock %}
+
+{% block headerimage %}
+<header id="header_subpage3">
+            <div class="container center">
+                <div class="row">
+                    <div class="caption ani_ fadeinup">
+                    <h1>Félicitation M. / Mme {{  etudiant.prenom ~" "~ etudiant.nom }}</h1>
+                    <h3>Vous avez bien été inscrit a la formation << {{  etudiant.sessionformation.formation.titre }} >> session de {{ etudiant.sessionformation.date |date('d F Y') }}</h3>
+                    
+               
+               
+                      
+                            <ul>
+                                <li><a href="{{ path('formation', {'typeformation': 1,'categorieformation': 0,'slug': 'Cursus-qualifiant'   }) }}">- {% trans %}menu.formation.qualifiant{% endtrans %}</a></li>
+                                <li><a href="{{ path('formation', {'typeformation': 2,'categorieformation': 0,'slug': 'Cursus-certifiant'   }) }}">- {% trans %}menu.formation.certifiant{% endtrans %}</a></li>
+                            </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+{% endblock %}
+
+{% block main %}
+
+{% endblock %}

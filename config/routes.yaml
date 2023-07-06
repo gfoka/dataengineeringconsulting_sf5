@@ -94,6 +94,27 @@ formationdetail:
     requirements:
       _locale: en|fr
 
+sessionformation:
+    path: /{_locale}/services/formation/sessionformation/{id}-{slug}.html
+    controller: App\Controller\DefaultController::sessionFormationAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+inscriptionsessionformation:
+    path: /{_locale}/services/formation/inscriptionsessionformation/{id}.html
+    controller: App\Controller\DefaultController::inscriptionFormationAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
+felicitationinscriptionsessionformation:
+    path: /{_locale}/services/formation/felicitationinscriptionsessionformation/{id}.html
+    controller: App\Controller\DefaultController::felicitioninscriptionFormationAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
 # Les services maintenant
 contact:
     path: /{_locale}/contact

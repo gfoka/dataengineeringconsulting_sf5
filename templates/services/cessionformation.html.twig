@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ formation.titre }}{% endblock %}
+{% block mode %}dark-menu{% endblock %}
+
+{% block headerimage %}
+
+
+        <header id="header_subpage3">
+            <div class="container center">
+                <div class="row">
+                    <div class="caption ani_ fadeinup">
+                        <h3><a href="{{ path('formationdetail', {'id': formation.id,'slug': formation.slug  }) }}">Formation</a> / {{  formation.titre }}</h3>
+                        <h1>Inscrivez-vous à une session de formation</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+
+{% block meta %}
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ formation.titre }}"/>
+    <meta property="og:url" content="{{ path('formationdetail', {'id': formation.id,'slug': formation.slug  }) }}"/>
+    <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
+    <meta property="og:image" content="{{ asset('uploads/' ~ formation.photo) }}"/>
+    <meta property="og:description" content="{{ formation.description }}"/>
+    <meta name="twitter:card" content="{{ formation.titre }}"/>
+    <meta name="twitter:site" content="{{ formation.titre }}"/>
+    <meta name="twitter:title" content="{{ formation.titre }}"/>
+    <meta name="twitter:description" content="{{ formation.description }}"/>
+{% endblock %}
+
+
+{% block main %}
+<section>
+            <div class="container">
+                <div class="row">
+                    {% for sessionformation in sessionformations %}
+                        <div class="col-md-12 job-list-item">
+                            <div class="col-md-4 job-title">
+                                <h3 class="primary">{{ "Session du  "~sessionformation.date |date('d F Y') }}</h3></div>
+                            <div class="col-md-2 center job-text">
+                                <h4>lieux : <b>{{ sessionformation.lieux }}</b></h4></div>
+                            <div class="col-md-2 center job-text">
+                                <h4>Durée  : <b> {{ sessionformation.duree ~ " jours" }} </b></h4></div>
+                            <div class="col-md-2 center job-text">
+                                <h4><b> {{ sessionformation.prix|number_format(0, '.', ' ') ~ " FCFA" }}</b></h4></div>
+                            <div class="col-md-2 align-right">
+                                <a href="{{ path('inscriptionsessionformation', {'id': sessionformation.id }) }}" class="btn alt">S'inscrire</a>
+                            </div>
+                        </div>
+                    {% endfor %} 
+
+                   
+                  
+                    
+                    
+                </div>
+            </div>
+</section>
+
+
+
+{% endblock %}
+

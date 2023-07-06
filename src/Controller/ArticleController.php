@@ -57,6 +57,13 @@ class ArticleController extends AbstractController
                 $imageFileName = $fileUploade->upload($ImageFile);
                 $article->setImageAgencyPost($imageFileName);
             }
+
+            $ImageFile = $form->get('imagesmalleFile')->getData();
+            if ($ImageFile) {
+                $imageFileName = $fileUploade->upload($ImageFile);
+                $article->setImagesmall($imageFileName);
+            }
+
             $articleRepository->add($article, true);
 
             return $this->redirectToRoute('app_article_index', [], Response::HTTP_SEE_OTHER);
@@ -104,6 +111,13 @@ class ArticleController extends AbstractController
                 $imageFileName = $fileUploade->upload($ImageFile);
                 $article->setImageAgencyPost($imageFileName);
             }
+
+            $ImageFile = $form->get('imagesmalleFile')->getData();
+            if ($ImageFile) {
+                $imageFileName = $fileUploade->upload($ImageFile);
+                $article->setImagesmall($imageFileName);
+            }
+
             $articleRepository->add($article, true);
 
             return $this->redirectToRoute('app_article_index', [], Response::HTTP_SEE_OTHER);

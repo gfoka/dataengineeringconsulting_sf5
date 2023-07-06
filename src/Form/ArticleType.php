@@ -18,7 +18,7 @@ class ArticleType extends AbstractType
         $builder
             ->add('titre')
             ->add('chapeau')
-            ->add('slug')
+            //->add('slug')
             ->add('dateCreation')
             ->add('imagePostFile', FileType::class, [
                 'label' => 'Add imagePost',
@@ -59,7 +59,7 @@ class ArticleType extends AbstractType
                 // every time you edit the Product details
                 'required' => true,
 
-                // unmapped fields can't define their validation using annotations
+                // unmapped fields can't define their validation usi ng annotations
                 // in the associated entity, so you can use the PHP constraint classes 
                 'constraints' => [
                     new Assert\Image([
@@ -75,6 +75,35 @@ class ArticleType extends AbstractType
                         'minHeight' => 702,
                         'maxHeight' => 702,
                         'mimeTypesMessage' => 'Chargé une image de dimansion 870 X 320',
+                    ])
+                ],
+            ])
+            ->add('imagesmalleFile', FileType::class, [
+                'label' => 'Add Image Small',
+
+                // unmapped means that this field is not associated to any entity property
+                'mapped' => false,
+
+                // make it optional so you don't have to re-upload the PDF file
+                // every time you edit the Product details
+                'required' => true,
+
+                // unmapped fields can't define their validation usi ng annotations
+                // in the associated entity, so you can use the PHP constraint classes 
+                'constraints' => [
+                    new Assert\Image([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            "image/png",
+                            "image/jpeg",
+                            "image/jpg",
+                            "image/gif"
+                        ],
+                        'minWidth' => 380,
+                        'maxWidth' => 380,
+                        'minHeight' => 350,
+                        'maxHeight' => 350,
+                        'mimeTypesMessage' => 'Chargé une image de dimansion 380 X 350',
                     ])
                 ],
             ])

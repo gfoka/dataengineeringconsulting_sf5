@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\FormationsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -87,6 +89,16 @@ class Formations
      * @ORM\Column(type="text", nullable=false)
      */
     private $objectif;
+
+    /**
+     * @ORM\OneToMany(targetEntity=SessionFormation::class, mappedBy="formation")
+     */
+    private $sessionFormations;
+
+    public function __construct()
+    {
+        $this->sessionFormations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -257,6 +269,36 @@ class Formations
     public function setObjectif(?string $objectif): self
     {
         $this->objectif = $objectif;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, SessionFormation>
+     */
+    public function getSessionFormations(): Collection
+    {
+        return $this->sessionFormations;
+    }
+
+    public function addSessionFormation(SessionFormation $sessionFormation): self
+    {
+        if (!$this->sessionFormations->contains($sessionFormation)) {
+            $this->sessionFormations[] = $sessionFormation;
+            $sessionFormation->setFormation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSessionFormation(SessionFormation $sessionFormation): self
+    {
+        if ($this->sessionFormations->removeElement($sessionFormation)) {
+            // set the owning side to null (unless already changed)
+            if ($sessionFormation->getFormation() === $this) {
+                $sessionFormation->setFormation(null);
+            }
+        }
 
         return $this;
     }

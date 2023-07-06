@@ -29,33 +29,33 @@
     <link rel="stylesheet" href="{{ asset('css/themes/1.css') }}">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.10&appId=1726127437678125";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.10&appId=1726127437678125";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '209460105167581');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=209460105167581&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '209460105167581');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=209460105167581&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     
     
 </head>
@@ -74,77 +74,80 @@ src="https://www.facebook.com/tr?id=209460105167581&ev=PageView&noscript=1"
 
 
 
-<body class="main">
-<!-- Nav Icon -->
-<div class="loader">
-    <div>
-        <span>{</span><span>}</span>
+<body class="main {% block mode %}{% endblock %}">
+    <!-- Nav Icon -->
+    <div class="loader">
+        <div>
+            <span>{</span><span>}</span>
+        </div>
     </div>
-</div>
-<div class="nav-icon hidden-md hidden-lg"><span></span><span></span><span></span></div>
-<!-- Mobile Nav Here -->
-<div class="mobile-nav">
-    <div class="mobile-shader"></div>
-</div>
+    <div class="nav-icon hidden-md hidden-lg"><span></span><span></span><span></span></div>
+
+    <!-- Mobile Nav Here -->
+    <div class="mobile-nav">
+        <div class="mobile-shader"></div>
+    </div>
+
 <div class="wrapper">
 <!-- Navigation -->
-<div id="nav">
-    <div class="container">
-        <nav>
-            <ul>
-                <li class="parent_1"><a href="{{ path('home') }}">{% trans %}menu.home{% endtrans %}</i></a></li>
-                <li class="parent_1"><a href="{{ path('qui_sommes_nous') }}">{% trans %}menu.qui_sommes_nous{% endtrans %}</i></a></li>
+    <div id="nav" class="border-bottom">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li class="parent_1"><a href="{{ path('home') }}">{% trans %}menu.home{% endtrans %}</i></a></li>
+                    <li class="parent_1"><a href="{{ path('qui_sommes_nous') }}">{% trans %}menu.qui_sommes_nous{% endtrans %}</i></a></li>
 
-                 <li class="parent_1"><a href="#">{% trans %}menu.nos_services{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
-                     <ul class="animated flipInX">
-                         <li><a href="{{ path('developpement_web') }}">{% trans %}menu.conception_de_site_internet{% endtrans %}</a></li>
-                         <li><a href="{{ path('appli_mobile') }}">{% trans %}menu.conception_application_mobile{% endtrans %}</a></li>
-                         <li><a href="{{ path('infographie') }}">{% trans %}menu.infographie{% endtrans %}</a></li>
-                         <li><a href="{{ path('hosting') }}">{% trans %}menu.hebergement{% endtrans %}</a></li>
+                    <li class="parent_1"><a href="#">{% trans %}menu.nos_services{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
+                        <ul class="animated flipInX">
+                            <li><a href="{{ path('developpement_web') }}">{% trans %}menu.conception_de_site_internet{% endtrans %}</a></li>
+                            <li><a href="{{ path('appli_mobile') }}">{% trans %}menu.conception_application_mobile{% endtrans %}</a></li>
+                            <li><a href="{{ path('infographie') }}">{% trans %}menu.infographie{% endtrans %}</a></li>
+                            <li><a href="{{ path('hosting') }}">{% trans %}menu.hebergement{% endtrans %}</a></li>
 
-                        
-                     </ul>
-                 </li>
-                 
+                            
+                        </ul>
+                    </li>
+                    
 
-                <li class="parent_1"><a href="#">{% trans %}menu.nos_produits{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
-                    <ul class="animated flipInX">
-                        <li><a href="{{ path('barro') }}">{% trans %}menu.barro{% endtrans %}</a></li>
-                        <li><a href="{{ path('codato') }}">{% trans %}menu.codato{% endtrans %}</a></li>
-                        <li><a href="{{ path('logifirmAction') }}">{% trans %}menu.logifirm{% endtrans %}</a></li>
-                        <li><a href="{{ path('immobilisation') }}">{% trans %}menu.immo{% endtrans %}</a></li>
-                        <!--
-                            <li><a target="_blank" href="http://www.zone237.com">Zone 237</a></li>
-                            <li><a target="_blank" href="http://blackara.com">Blackara</a></li>
-                            <li><a target="_blank" href="http://www.tamtamphotoflyer.com/">Tamtam Photo Flyer</a></li>
-                        -->
-                    </ul>
-                </li>
+                    <li class="parent_1"><a href="#">{% trans %}menu.nos_produits{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
+                        <ul class="animated flipInX">
+                            <li><a href="{{ path('barro') }}">{% trans %}menu.barro{% endtrans %}</a></li>
+                            <li><a href="{{ path('codato') }}">{% trans %}menu.codato{% endtrans %}</a></li>
+                            <li><a href="{{ path('logifirmAction') }}">{% trans %}menu.logifirm{% endtrans %}</a></li>
+                            <li><a href="{{ path('immobilisation') }}">{% trans %}menu.immo{% endtrans %}</a></li>
+                            <!--
+                                <li><a target="_blank" href="http://www.zone237.com">Zone 237</a></li>
+                                <li><a target="_blank" href="http://blackara.com">Blackara</a></li>
+                                <li><a target="_blank" href="http://www.tamtamphotoflyer.com/">Tamtam Photo Flyer</a></li>
+                            -->
+                        </ul>
+                    </li>
 
-                <li class="parent_1"><a href="#">{% trans %}menu.formation{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
-                    <ul class="animated flipInX">
-                        <li><a href="{{ path('formation', {'typeformation': 1,'categorieformation': 0,'slug': 'Cursus-qualifiant'   }) }}">{% trans %}menu.formation.qualifiant{% endtrans %}</a></li>
-                        <li><a href="{{ path('formation', {'typeformation': 2,'categorieformation': 0,'slug': 'Cursus-certifiant'   }) }}">{% trans %}menu.formation.certifiant{% endtrans %}</a></li>
-                    </ul>
-                </li>
+                    <li class="parent_1"><a href="#">{% trans %}menu.formation{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
+                        <ul class="animated flipInX">
+                            <li><a href="{{ path('formation', {'typeformation': 1,'categorieformation': 0,'slug': 'Cursus-qualifiant'   }) }}">{% trans %}menu.formation.qualifiant{% endtrans %}</a></li>
+                            <li><a href="{{ path('formation', {'typeformation': 2,'categorieformation': 0,'slug': 'Cursus-certifiant'   }) }}">{% trans %}menu.formation.certifiant{% endtrans %}</a></li>
+                        </ul>
+                    </li>
 
-                <li class="parent_1"><a href="{{ path('blogindex') }}">{% trans %}menu.blog{% endtrans %}</i></a></li>
-                <li class="parent_1"><a href="{{ path('contact') }}">{% trans %}menu.contact{% endtrans %}</i></a></li>
-            {% if app.request.get('_route') is not empty and app.request.get('_route_params') is not null %}
-                {% if app.request.locale == 'fr' %}
-                    <li class="parent_1"><a alt="English" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}"> <img src="{{ asset('img/en.png') }}" alt="English"> </a></li>
+                    <li class="parent_1"><a href="{{ path('blogindex') }}">{% trans %}menu.blog{% endtrans %}</i></a></li>
+                    <li class="parent_1"><a href="{{ path('contact') }}">{% trans %}menu.contact{% endtrans %}</i></a></li>
+                {% if app.request.get('_route') is not empty and app.request.get('_route_params') is not null %}
+                    {% if app.request.locale == 'fr' %}
+                        <li class="parent_1"><a alt="English" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}"> <img src="{{ asset('img/en.png') }}" alt="English"> </a></li>
+                    {% endif %}
+
+                    {% if app.request.locale == 'en' %}
+                    <li class="parent_1"> <a alt="Francais" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}"> <img src="{{ asset('img/fr.png') }}" alt="Francais"></a></li>
+                    {% endif %}
                 {% endif %}
-
-                {% if app.request.locale == 'en' %}
-                   <li class="parent_1"> <a alt="Francais" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}"> <img src="{{ asset('img/fr.png') }}" alt="Francais"></a></li>
-                {% endif %}
-            {% endif %}
-           </ul>
-        </nav>
-        <!-- Logo -->
-        <a href="{{ path('home') }}" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Data Engineering Consulting Sarl"></a>
+            </ul>
+            </nav>
+            <!-- Logo -->
+            <a href="{{ path('home') }}" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Data Engineering Consulting Sarl"></a>
+        </div>
     </div>
-</div>
+
 <!-- / End of Navigation -->
 <!-- Header -->
 {% block headerimage %} {% endblock %}

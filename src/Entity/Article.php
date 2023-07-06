@@ -64,6 +64,11 @@ class Article
      */
     private $auteur;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imagesmall;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -180,5 +185,17 @@ class Article
     public function __toString(): string
     {
         return $this->titre;
+    }
+
+    public function getImagesmall(): ?string
+    {
+        return $this->imagesmall;
+    }
+
+    public function setImagesmall(string $imagesmall): self
+    {
+        $this->imagesmall = $imagesmall;
+
+        return $this;
     }
 }
