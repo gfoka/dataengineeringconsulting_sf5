@@ -1,7 +1,7 @@
 {% extends 'admin.html.twig' %}
 
 {% block title %}Liste des formations {% endblock %}
-
+{% block pageactive %}formation{% endblock %}
 {% block stylesheets %}
   <link rel="stylesheet" href="{{ asset('AdminLTE-master/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{ asset('AdminLTE-master/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
@@ -21,7 +21,7 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>#</th>
                         <th>Titre</th>
                         <th>Type</th>
                         <th>Catégorie</th>
@@ -29,6 +29,7 @@
                         <th>Lieu</th>
                         <th>Duree</th>
                         <th>Langue</th>
+                        <th>Nombre de sessions</th>
                         <th>actions</th>
                     </tr>
                 </thead>
@@ -43,6 +44,7 @@
                         <td>{{ formation.lieu }}</td>
                         <td>{{ formation.duree }}</td>
                         <td>{{ formation.langue }}</td>
+                        <td> </td>
                         <td>
 
                                 <div class="btn-group">
@@ -52,8 +54,9 @@
                                     </button>
                                     <div class="dropdown-menu" role="menu">
                                     <a class="dropdown-item" href="{{ path('app_formations_show', {'id': formation.id}) }}">Détail</a>
-                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ path('app_formations_edit', {'id': formation.id}) }}">Editer</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ path('app_session_formation_index', {'id': formation.id}) }}">Session de formation</a>
                                     </div>
                                 </div>
                         </td>

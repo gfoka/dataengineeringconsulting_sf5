@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}SessionFormation{% endblock %}
+
+{% block body %}
+    <h1>SessionFormation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ session_formation.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ session_formation.date ? session_formation.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{{ session_formation.active ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Lieux</th>
+                <td>{{ session_formation.lieux }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ session_formation.duree }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ session_formation.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_session_formation_index') }}">back to list</a>
+
+    <a href="{{ path('app_session_formation_edit', {'id': session_formation.id}) }}">edit</a>
+
+    {{ include('session_formation/_delete_form.html.twig') }}
+{% endblock %}

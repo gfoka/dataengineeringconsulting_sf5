@@ -1,0 +1,55 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}SessionFormation index{% endblock %}
+
+{% block pageactive %} <a href="{{ path('app_formations_index') }}">formations</a> / Session de formation{% endblock %}
+
+{% block body %}
+    <h1>SessionFormation index</h1>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Active</th>
+                <th>Lieux</th>
+                <th>Duree</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for session_formation in session_formations %}
+            <tr>
+                <td>{{ session_formation.id }}</td>
+                <td>{{ session_formation.date ? session_formation.date|date('Y-m-d') : '' }}</td>
+                <td>{{ session_formation.active ? 'Yes' : 'No' }}</td>
+                <td>{{ session_formation.lieux }}</td>
+                <td>{{ session_formation.duree }}</td>
+                <td>{{ session_formation.prix }}</td>
+                <td>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Action</button>
+                        <button type="button" class="btn btn-default dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
+                        <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="{{ path('app_session_formation_show', {'id': session_formation.id}) }}">Détail</a>
+                        <a class="dropdown-item" href="{{ path('app_session_formation_edit', {'id': session_formation.id}) }}">Editer</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ path('app_etudiant_index') }}">Les inscrits</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_session_formation_new', {'id': formation_id}) }}">Create new</a>
+{% endblock %}
