@@ -14,7 +14,21 @@
 </header>
 {% endblock %}
 
+{% block meta %}
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ article.titre }}"/>
+    <meta property="og:url" content="{{ path('bloglecture', {'id': article.id,'slug': article.slug  }) }}"/>
+    <meta property="og:site_name" content="Data Engineering Consulting Sarl"/>
+    <meta property="og:image" content="{{ asset('uploads/' ~ article.imagePost) }}"/>
+    <meta property="og:description" content="{{ article.chapeau }}"/>
+    <meta name="twitter:card" content="{{ article.titre }}"/>
+    <meta name="twitter:site" content="{{ article.titre }}"/>
+    <meta name="twitter:title" content="{{ article.titre }}"/>
+    <meta name="twitter:description" content="{{ article.chapeau }}"/>
+{% endblock %}
 
+ {% block title %}{{ article.titre }}{% endblock %}
 
 {% block main %}
 <section>
@@ -24,6 +38,11 @@
                 <div class="article post ani_ fadeinup">
                     <div class="article-pic"><img src="{{ asset('uploads/' ~ article.auteur.photo) }}" alt=""></div>
                     <div class="article-foot">
+                        {% for message in app.flashes('notice') %}
+                            <h3 class="alert  alert-danger">
+                            <button class="btn alt">{{ message }}</button>
+                            </h3>
+                        {% endfor %}
                         <h4>Written by <b>{{ article.auteur.nom ~" "~article.auteur.prenom  }}</b></h4><span>{{ article.dateCreation |date('d-m-Y') }}</span></div>
                 </div>
                 
@@ -36,7 +55,7 @@
 
 
 
-<!-- Social Channels -->
+<!-- Social Channels 
 <section class="center">
     <div class="container no-pad-top">
         <div class="row">
@@ -55,6 +74,8 @@
         </div>
     </div>
 </section>
+
+-->
 
 <!-- Comment Listing 
 <section class="comment-list">
@@ -126,35 +147,80 @@
         </div>
     </div>
 </section>
+
 -->
 <!-- Contact Form -->
 <section id="contact_form_1" class="grey">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 center col-sm-12">
-                <h2>Leave your comment</h2>
-                <form class="ani_ fadeinup">
-                    <span class="input">
-            <label  for="input-10">
-            <span > <i class="ion-person"></i> Full Name</span>
-                    </label>
-                    <input type="text" id="input-10" placeholder="Insert your name" />
-                    </span>
-                    <span class="input">
-            <label  for="input-10">
-            <span > <i class="ion-at"></i> Email Address</span>
-                    </label>
-                    <input type="text" id="input-11" placeholder="eg. hello@comflare.com" />
-                    </span>
-                    <span class="input">
-            <label for="input-13">
-            <span><i class="ion-chatbubbles"></i> Message</span>
-                    </label>
-                    <textarea class="textarea" id="input-13" placeholder="Type your message here..."></textarea>
-                    </span>
-                    <input type="submit" class="btn alt" value="Send us your enquiry">
-                </form>
-            </div>
+                        {{ form_start(form) }}
+                <div class="col-md-8 col-md-offset-2 center col-sm-12">
+                            <h2>Leave your comment</h2>
+
+                            {% if not form.vars.valid %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{ form_errors(form) }}
+                                </div>
+                            {% endif %} 
+                       
+                            <span class="input">
+                                <label  for="input-10">
+                                    <span > <i class="ion-person"></i> Nom</span>
+                                </label>
+                                
+                                {{ form_widget(form.nom, {required: true, 'id': 'input-10', 'attr': {'placeholder': "Insérez votre nom"} }) }}
+                                
+                            </span>
+                                
+                            <span class="input">
+                                <label  for="input-11">
+                                <span > <i class="ion-person"></i> Prénom</span>
+                                </label>
+                                
+                                {{ form_widget(form.prenom, {required: true, 'id': 'input-11','attr': {'placeholder': "Insérez votre prénom"} }) }}
+                                
+                            </span>
+                    
+                            <span class="input">
+                              <label  for="input-12">
+                              <span > <i class="ion-at"></i> Email</span>
+                              </label>
+                                {{ form_widget(form.email, { required: true, 'id': 'input-12','attr': {'placeholder': "hello@gmail.com"} }) }}
+                              
+                            </span>
+                                
+                            <span class="input">
+                              <label  for="input-13">
+                              <span > <i class="ion-at"></i> Numéro de téléphone</span>
+                              </label>
+                                {{ form_widget(form.telephone, {required: true, 'id': 'input-13','attr': {'placeholder': "Votre numéro de téléphone"} }) }}
+                              
+                            </span>
+                    
+                            <span class="input">
+                                <label for="input-14">
+                                <span><i class="ion-chatbubbles"></i> Message</span>
+                                </label>
+                                {{ form_widget(form.message, { required: true, 'id': 'input-14','attr': {'placeholder': "votre message"} }) }}
+                            </span>
+
+                            <span class="input">
+                                {{ form_label(form.captcha) }}
+                                 <div class="alert alert-danger">
+                                    {{ form_errors(form.captcha) }}
+                                </div>
+                                
+                                {{ form_widget(form.captcha) }}
+                            </span>
+
+
+                            
+                    
+                            <input type="submit" class="btn alt" value="soumettre">
+                        
+                    </div>
+                
+                 {{ form_end(form) }}
         </div>
     </div>
 </section>

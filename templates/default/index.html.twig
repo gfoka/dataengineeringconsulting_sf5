@@ -378,7 +378,7 @@
                     {% set cover = 1 %}
                     {% for article in articles %}
                         <div class="cbp-item">
-                            <a href="">
+                            <a href="{{ path('bloglecture', {'id': article.id,'slug': article.slug  }) }}">
                                 <!-- Blog Content -->
                                 <div class="over">
                                     <span class="subject">

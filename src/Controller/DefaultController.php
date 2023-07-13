@@ -26,6 +26,7 @@ use App\Repository\TypeFormationRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\SessionFormationRepository;
 use App\Repository\EtudiantRepository;
+use App\Repository\EcrireRepository;
 
 
 
@@ -223,15 +224,17 @@ class DefaultController extends AbstractController
 
 
     //____________________________________Les Servvices maintenant_______________________________________________
-    public function contactAction(Request $request): Response
+    public function contactAction(Request $request, EcrireRepository $ecrireRepository): Response
     {
 
         $ecrire = new Ecrire();
         $form = $this->createForm(EcrireType::class, $ecrire);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            //Je doit soumettre dans le base de données et affichier un pop-up de conformations
-           die('Je soumet le formulaire');
+
+            $ecrireRepository->add($ecrire, true);
+            $this->addFlash('notice','Votre message a été enregistrée avec succès !'
+            );
         }
         
         return $this->render('default/contact.html.twig', [
@@ -254,16 +257,23 @@ class DefaultController extends AbstractController
     }
 
 
-    public function lectureAction(Request $request,Article $article,ArticleRepository $articleRepository): Response
+    public function lectureAction(Request $request,Article $article, EcrireRepository $ecrireRepository): Response
     {
 
-        //die();
-        //Je dois lister tout les articles
-        //$articles  = $articleRepository->findAll();
+        $ecrire = new Ecrire();
+        $form = $this->createForm(EcrireType::class, $ecrire);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $ecrireRepository->add($ecrire, true);
+            $this->addFlash('notice','Votre message a été enregistrée avec succès !'
+            );
+        }
         
         
         return $this->render('blog/lecture.html.twig', [
-                "article"=> $article
+                "article"=> $article,
+                'form'=> $form->createView()
         ]);
     }
 
