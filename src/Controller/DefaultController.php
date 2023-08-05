@@ -275,6 +275,15 @@ class DefaultController extends AbstractController
                 "article"=> $article,
                 'form'=> $form->createView()
         ]);
+
+        
+    }
+
+
+    public function verificationAdresse(Request $request): Response
+    {
+        $user = $this->getUser();
+        return $this->render('default/verification_email.html.twig', []);
     }
 
 

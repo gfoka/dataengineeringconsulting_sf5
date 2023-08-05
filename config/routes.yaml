@@ -137,3 +137,9 @@ bloglecture:
     locale:      en
     requirements:
       _locale: en|fr
+
+verification_adresse:
+    path:     /{_locale}/verification_adresse.html
+    controller: App\Controller\DefaultController::verificationAdresse
+    requirements:
+        _locale: en|fr
