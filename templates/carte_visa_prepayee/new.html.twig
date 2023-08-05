@@ -1,0 +1,17 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}New CarteVisaPrepayee{% endblock %}
+
+{% block body %}
+<div class="card">
+    <div class="card-header">
+          <h3 class="card-title">Enregistrer une carte VISA prepayée</h3>
+    </div>
+
+    {{ include('carte_visa_prepayee/_form.html.twig') }}
+
+      <!--
+    <a href="{{ path('app_carte_visa_prepayee_index') }}">back to list</a>
+    -->
+ </div> 
+{% endblock %}

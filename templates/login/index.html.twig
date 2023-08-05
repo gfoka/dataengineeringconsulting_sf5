@@ -18,15 +18,19 @@
 {% endblock %}
 
 {% block main %}
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    
 
     <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 ani_ fadeinleft">
+                    <div class="col-md-8 ani_ fadeinleft">
                         <h4>Authentification</h4>
+
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+
                         <form action="{{ path('app_login') }}" method="post">
 
                             <span class="input">
@@ -35,7 +39,7 @@
                                 </label>
                                 <input type="text" id="username" name="_username" value="{{ last_username }}" />
                             </span>
-
+ 
                             <span class="input">
                                 <label  for="password">
                                     <span > <i class="ion-ios-locked"></i> Password</span>
@@ -47,6 +51,15 @@
                             <input type="submit" class="btn alt" value="Login">
                         </form>
                     </div>
+
+                    <div class="col-md-4 ani_ fadeinleft">
+                        <br/><br/><br/><br/>
+                        <a href="{{ path('app_register') }}" class="btn">S'incrire</a>
+                        <br/><br/> 
+                        <a href="{{ path('app_forgot_password_request') }}" class="btn">Mot de passe oublié</a>
+
+                    </div>
+
                 </div>
             </div>
         </section>

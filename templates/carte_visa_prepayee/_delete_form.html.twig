@@ -1,0 +1,6 @@
+<form method="post" action="{{ path('app_carte_visa_prepayee_delete', {'id': carte_visa_prepayee.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ carte_visa_prepayee.id) }}">
+    {% if is_granted('ROLE_ADMIN') %}
+        <button class="btn btn-danger">Supprimer</button>
+    {%endif%}
+</form>

@@ -1,0 +1,142 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}CarteVisaPrepayee{% endblock %}
+
+{% block body %}
+
+<div class="card">
+
+    <div class="card-header">
+          <h3 class="card-title">detail carte VISA prepayée </h3>
+          {% if carte_visa_prepayee.valide == true %}<span class="badge badge-success"> Carte déjà active </span> {% endif %}
+    </div>
+
+    <table class="table">
+        <tbody>
+             <tr>
+                <th>Id</th>
+                <td>{{ carte_visa_prepayee.id }}</td>
+            </tr>
+
+            <tr>
+                <th>Type de carte</th>
+                <td>{{ carte_visa_prepayee.typeDeCarte.libelle }}</td>
+            </tr>
+           
+            <tr>
+                <th>Nom</th>
+                <td>{{ carte_visa_prepayee.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ carte_visa_prepayee.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{{ carte_visa_prepayee.dateDeNaissance ? carte_visa_prepayee.dateDeNaissance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Ville de naissance</th>
+                <td>{{ carte_visa_prepayee.villeDeNaissance }}</td>
+            </tr>
+            <tr>
+                <th>Profession</th>
+                <td>{{ carte_visa_prepayee.profession }}</td>
+            </tr>
+
+            <tr>
+                <th>Nom du père</th>
+                <td>{{ carte_visa_prepayee.nomDuPere }}</td>
+            </tr>
+
+            <tr>
+                <th>Prénom du père</th>
+                <td>{{ carte_visa_prepayee.prenomDuPere }}</td>
+            </tr>
+
+            <tr>
+                <th>Nom de la mère</th>
+                <td>{{ carte_visa_prepayee.nomDeLaMere }}</td>
+            </tr>
+
+            <tr>
+                <th>Prenom de la mère</th>
+                <td>{{ carte_visa_prepayee.prenomDeLaMere }}</td>
+            </tr>
+
+            <tr>
+                <th>Sexe</th>
+                <td>{{ carte_visa_prepayee.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Ville et quartier de la résidence du client</th>
+                <td>{{ carte_visa_prepayee.ville }}</td>
+            </tr>
+
+            <tr>
+                <th>Type de pièce d'identité du client</th>
+                <td>{{ carte_visa_prepayee.typeDePieceIdentite }}</td>
+            </tr>
+
+            <tr>
+                <th>Numéro de la pièce d'identité (CNI, passport, ...)</th>
+                <td>{{ carte_visa_prepayee.numeroDeCNIOuPassport }}</td>
+            </tr>
+            <tr>
+                <th>Numéro d'identifiant unique</th>
+                <td>{{ carte_visa_prepayee.numeroIdentifiantUnique }}</td>
+            </tr>
+            <tr>
+                <th>Adresse email client</th>
+                <td>{{ carte_visa_prepayee.emailClient }}</td>
+            </tr>
+            <tr>
+                <th>Numéro de télephone du client</th>
+                <td>{{ carte_visa_prepayee.numeroDeTelephone }}</td>
+            </tr>
+            <tr>
+                <th>Numéro de la carte visa prépayée affecter au client</th>
+                <td>{{ carte_visa_prepayee.numeroDeLaCarteVisaPrepayee }}</td>
+            </tr>
+            <tr>
+                <th>Numéro d'identifiant unique</th>
+                <td>{{ carte_visa_prepayee.numeroIdentifiantUnique }}</td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    {% if carte_visa_prepayee.valide == true %}
+                        <span class="badge badge-success"> Carte déjà active </span>
+                    {% else %}
+                        
+                        {% if is_granted('ROLE_VALID_CARTE') %}
+                            <a class="btn btn-primary" href="{{ path('app_carte_visa_prepayee_valider', {'id': carte_visa_prepayee.id}) }}">Validé une carte</a>
+                        {%endif%}
+                    {% endif %}
+                </td>
+                <td></td>
+            </tr>
+             <tr>
+                <td><a class="btn btn-primary" href="{{ path('app_carte_visa_prepayee_index') }}">Liste des cartes VISA prepayée</a></td>
+                <td></td>
+            </tr>
+             <tr>
+                <td><a class="btn btn-info" href="{{ path('app_carte_visa_prepayee_edit', {'id': carte_visa_prepayee.id}) }}">Editer</a></td>
+                <td></td>
+            </tr>
+             <tr>
+                <td>{{ include('carte_visa_prepayee/_delete_form.html.twig') }}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+
+    
+
+    
+
+ </div> 
+{% endblock %}

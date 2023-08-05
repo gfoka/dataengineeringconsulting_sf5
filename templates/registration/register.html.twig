@@ -25,21 +25,61 @@
 
     
 
-    
+     
 
     <section>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 ani_ fadeinleft">
-                        <h4>Register</h4>
-                        {{ form_start(registrationForm) }}
-                        {{ form_row(registrationForm.email) }}
-                        {{ form_row(registrationForm.plainPassword, {
-                            label: 'Password'
-                        }) }}
+                     {{ form_start(registrationForm) }}
+                        <h2>S'inscrire</h2>
+
+                        {% if not registrationForm.vars.valid %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{ form_errors(registrationForm.nom) }}
+                                    {{ form_errors(registrationForm.prenom) }}
+                                    {{ form_errors(registrationForm.email) }}
+                                    {{ form_errors(registrationForm.plainPassword) }}
+                                </div>
+                            {% endif %} 
+
+                        
+                       
+                        <span class="input">
+                                <label for="nom">
+                                    <span > <i class="ion-at"></i> Nom</span>
+                                </label>
+                                {{ form_widget(registrationForm.nom, {required: true, 'id': 'input-10', 'attr': {'placeholder': "Insérez votre nom"} }) }}
+                        </span>
+
+                        <span class="input">
+                                <label for="prenom">
+                                    <span > <i class="ion-at"></i> Prénom</span>
+                                </label>
+                                {{ form_widget(registrationForm.prenom, {required: true, 'id': 'input-10', 'attr': {'placeholder': "Insérez votre prénom"} }) }}
+                        </span>
+                        
+                        
+                        <span class="input">
+                                <label for="username">
+                                    <span > <i class="ion-at"></i> Email Address</span>
+                                </label>
+                                {{ form_widget(registrationForm.email, {required: true, 'id': 'input-10', 'attr': {'placeholder': "Insérez votre adresse email"} }) }}
+                        </span>
+
+
+                        <span class="input">
+                                <label  for="password">
+                                    <span > <i class="ion-ios-locked"></i> Password</span>
+                                </label>
+                            {{ form_widget(registrationForm.plainPassword, {required: true, 'id': 'input-10', 'attr': {'placeholder': "Insérez votre mot de passe"} }) }}
+                        </span>
+
+                        <br/><br/><br/>
                         {{ form_row(registrationForm.agreeTerms) }}
 
-                        <button type="submit" class="btn">Register</button>
+                        <button type="submit" class="btn">S'inscrire</button>
+
                         {{ form_end(registrationForm) }}
                     </div>
                 </div>
