@@ -75,13 +75,47 @@
 
             <tr>
                 <th>Type de pièce d'identité du client</th>
-                <td>{{ carte_visa_prepayee.typeDePieceIdentite }}</td>
+                <td>{{ carte_visa_prepayee.typepieceidentite.libelle }}</td>
             </tr>
 
             <tr>
-                <th>Numéro de la pièce d'identité (CNI, passport, ...)</th>
+                <th>Numéro de la pièce d'identité (CNI, passport, ...)
+                {% if carte_visa_prepayee.pieceIdentiterecto is defined and carte_visa_prepayee.pieceIdentiterecto is not null %}
+                        <a target="blank" href="/uploads/{{ carte_visa_prepayee.pieceIdentiterecto }}"  style="margin-right: 5px;">
+                        <i class="fas fa-download">Recto</i> </a>
+                {% endif %}
+
+                {% if carte_visa_prepayee.pieceIdentiteverso is defined and carte_visa_prepayee.pieceIdentiteverso is not null %}
+                        <a target="blank" href="/uploads/{{ carte_visa_prepayee.pieceIdentiteverso }}"  style="margin-right: 5px;">
+                        <i class="fas fa-download">Verso</i> </a>
+                {% endif %}
+
+                </th>
                 <td>{{ carte_visa_prepayee.numeroDeCNIOuPassport }}</td>
             </tr>
+
+
+
+
+
+            {% if carte_visa_prepayee.PlanDeLocalisation is defined and carte_visa_prepayee.PlanDeLocalisation is not null %}
+            <tr>
+                <th>Plan de localisation
+                    <a target="blank" href="/uploads/{{ carte_visa_prepayee.PlanDeLocalisation }}"  style="margin-right: 5px;">
+                    <i class="fas fa-download"></i> </a>
+                </th>
+                <td>
+                    
+                </td>
+            </tr>
+            {% endif %}
+
+
+
+
+
+
+
             <tr>
                 <th>Numéro d'identifiant unique</th>
                 <td>{{ carte_visa_prepayee.numeroIdentifiantUnique }}</td>

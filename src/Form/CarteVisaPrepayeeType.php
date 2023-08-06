@@ -20,6 +20,7 @@ use Doctrine\ORM\EntityRepository;
 use App\Entity\TypeDePieceIdentite;
 use App\Entity\TypeDeCarte;
 
+
 class CarteVisaPrepayeeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -37,6 +38,9 @@ class CarteVisaPrepayeeType extends AbstractType
                 'choice_label' => 'libelle',
                 'required' =>true,
             ))
+            ->add('montant',IntegerType::class,[
+                'label' => 'Montant d\'achat de la carte VISA prepayée (C\'est le montant qui sera imprimer sur la facture)',
+            ])
             ->add('nom',TextType::class,[
                 'label' => 'Nom',
             ])
@@ -96,10 +100,10 @@ class CarteVisaPrepayeeType extends AbstractType
             ->add('emailClient',EmailType::class,[
                 'label' => 'Adresse email du client',
             ])
-            ->add('numeroDeTelephone',TextType::class,[
+            ->add('numeroDeTelephone',IntegerType::class,[
                 'label' => 'Numéro de téléphone du client',
             ])
-            ->add('numeroDeLaCarteVisaPrepayee',TextType::class,[
+            ->add('numeroDeLaCarteVisaPrepayee',IntegerType::class,[
                 'label' => 'Numéro de la carte VISA prepayée',
             ])
             ->add('precto', FileType::class, [

@@ -178,6 +178,7 @@ class CarteVisaPrepayeeController extends AbstractController
             'nom'         => $carteVisaPrepayee->getNom(),
             'prenom'         => $carteVisaPrepayee->getPrenom(),
             'tel' => $carteVisaPrepayee->getNumeroDeTelephone(),
+            'montant' => $carteVisaPrepayee->getMontant(),
             'email'        => $carteVisaPrepayee->getEmailClient()
         ];
         $html =  $this->renderView('emails/index.html.twig', $data);

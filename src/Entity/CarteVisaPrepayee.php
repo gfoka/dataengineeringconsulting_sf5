@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CarteVisaPrepayeeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CarteVisaPrepayeeRepository::class)
@@ -89,6 +90,12 @@ class CarteVisaPrepayee
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @[Assert\Length(
+     * min: 2,
+     * max: 50,
+     * minMessage: 'Your first name must be at least {{ limit }} characters long',
+     * maxMessage: 'Your first name cannot be longer than {{ limit }} characters',
+     * )]
      */
     private $numeroDeLaCarteVisaPrepayee;
 
