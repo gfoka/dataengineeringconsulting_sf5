@@ -27,6 +27,12 @@ use App\Repository\ArticleRepository;
 use App\Repository\SessionFormationRepository;
 use App\Repository\EtudiantRepository;
 use App\Repository\EcrireRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
+use Symfony\Component\Mime\Email;
 
 
 
@@ -224,7 +230,7 @@ class DefaultController extends AbstractController
 
 
     //____________________________________Les Servvices maintenant_______________________________________________
-    public function contactAction(Request $request, EcrireRepository $ecrireRepository): Response
+    public function contactAction(Request $request, EcrireRepository $ecrireRepository,MailerInterface $mailer): Response
     {
 
         $ecrire = new Ecrire();
@@ -233,8 +239,22 @@ class DefaultController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $ecrireRepository->add($ecrire, true);
-            $this->addFlash('notice','Votre message a été enregistrée avec succès !'
-            );
+            $this->addFlash('notice','Votre message a été enregistrée avec succès !');
+
+
+            //Ici j'envoie le Mail de contact
+            $email = (new Email())
+            ->from('infos@dataengineeringconsulting.com')
+            ->to('infos@dataengineeringconsulting.com')
+            ->cc(''.$ecrire->getEmail())
+            //->bcc('bcc@example.com')
+            //->replyTo('fabien@example.com')
+            ->priority(Email::PRIORITY_HIGH)
+            ->subject(''.$ecrire->getNom().''.$ecrire->getPrenom().''.$ecrire->getTelephone(),)
+            //->text('Sending emails is fun again!')
+            ->html("<p>".$ecrire->getMessage()."</p>");
+
+        $mailer->send($email);
         }
         
         return $this->render('default/contact.html.twig', [
@@ -244,15 +264,18 @@ class DefaultController extends AbstractController
     }
 
     //____________________________________Les Servvices maintenant_______________________________________________
-    public function blogAction(Request $request,  ArticleRepository $articleRepository): Response
-    {
-
-        //Je dois lister tout les articles
-        $articles  = $articleRepository->findAll();
-        
+    public function blogAction(Request $request,  ArticleRepository $articleRepository,EntityManagerInterface $em, PaginatorInterface $paginator): Response
+    {   
+        $dql   = "SELECT a FROM App:Article a";
+        $query = $em->createQuery($dql);
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            4 /*limit per page*/
+        );
         
         return $this->render('blog/index.html.twig', [
-                "articles"=> $articles 
+                "pagination"=> $pagination
         ]);
     }
 

@@ -39,7 +39,7 @@
 
                             {% if not form.vars.valid %}
                                 <div class="alert alert-danger" role="alert">
-                                    {{ form_errors(form) }}
+                                    {{ form_errors(form.captcha) }}
                                 </div>
                             {% endif %} 
                        
@@ -85,11 +85,14 @@
                             </span>
 
                             <span class="input">
-                                {{ form_label(form.captcha) }}
-                                 <div class="alert alert-danger">
-                                    {{ form_errors(form.captcha) }}
-                                </div>
-                                
+                                {% if not form.vars.valid %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ form_errors(form.captcha) }}
+                                    </div>
+                                {% endif %} 
+                            </span>
+
+                            <span class="input">
                                 {{ form_widget(form.captcha) }}
                             </span>
 

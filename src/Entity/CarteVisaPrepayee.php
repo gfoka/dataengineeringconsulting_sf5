@@ -146,6 +146,11 @@ class CarteVisaPrepayee
      */
     private $typepieceidentite;
 
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $date;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -439,6 +444,18 @@ class CarteVisaPrepayee
     public function setTypepieceidentite(?TypeDePieceIdentite $typepieceidentite): self
     {
         $this->typepieceidentite = $typepieceidentite;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(?\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

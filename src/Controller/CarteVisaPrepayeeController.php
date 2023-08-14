@@ -76,6 +76,11 @@ class CarteVisaPrepayeeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+
+
+            $date = new \DateTime();
+            $carteVisaPrepayee->setValide(false);
+            $carteVisaPrepayee->setDate($date);
             $prectoFile = $form->get('precto')->getData();
             if ($prectoFile) {
                 $prectoFileName = $fileUploade->upload($prectoFile);
@@ -114,7 +119,7 @@ class CarteVisaPrepayeeController extends AbstractController
     {
         return $this->render('carte_visa_prepayee/show.html.twig', [
             'carte_visa_prepayee' => $carteVisaPrepayee,
-        ]);
+        ]); 
     }
 
 
@@ -170,7 +175,7 @@ class CarteVisaPrepayeeController extends AbstractController
 
         $carteVisaPrepayee->setValide(true);
         $carteVisaPrepayeeRepository->add($carteVisaPrepayee, true);
-
+        $date = $carteVisaPrepayee->getDate();
         //Je dois générer la facture au format PDF
         $data = [
             'imageSrc'  => $this->imageToBase64($this->getParameter('kernel.project_dir') . '/public/img/logo_2.png'),
@@ -179,7 +184,10 @@ class CarteVisaPrepayeeController extends AbstractController
             'prenom'         => $carteVisaPrepayee->getPrenom(),
             'tel' => $carteVisaPrepayee->getNumeroDeTelephone(),
             'montant' => $carteVisaPrepayee->getMontant(),
-            'email'        => $carteVisaPrepayee->getEmailClient()
+            'email'        => $carteVisaPrepayee->getEmailClient(),
+            'date'  =>   $date->format('d M Y'),
+            'annee'  =>   $date->format('Y'),
+            'typedecarte' => $carteVisaPrepayee->getTypeDeCarte()->getLibelle(),
         ];
         $html =  $this->renderView('emails/index.html.twig', $data);
         $dompdf = new Dompdf();

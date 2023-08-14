@@ -22,13 +22,8 @@
                 <th>#</th>
                 <th>Nom</th>
                 <th>Prenom</th>
-                <th>Sexe</th>
-                <th>Ville</th>
-                <th>numéro de la pièce d'identité</th>
-                <th>Email</th>
-                <th>Numéro de téléphone</th>
-                <th>numéro de la pièce d'identité validé</th>
-                <th>NUI</th>
+                <th>soumis par</th>
+
                 <th></th>
             </tr>
         </thead>
@@ -45,13 +40,7 @@
                 </td>
                 <td>{{ carte_visa_prepayee.nom }}</td>
                 <td>{{ carte_visa_prepayee.prenom }}</td>
-                <td>{{ carte_visa_prepayee.sexe }}</td>
-                <td>{{ carte_visa_prepayee.ville }}</td>
-                <td>{{ carte_visa_prepayee.numeroDeCNIOuPassport }}</td>
-                <td>{{ carte_visa_prepayee.emailClient }}</td>
-                <td>{{ carte_visa_prepayee.numeroDeTelephone }}</td>
-                <td>{{ carte_visa_prepayee.numeroDeLaCarteVisaPrepayee }}</td>
-                <td>{{ carte_visa_prepayee.numeroIdentifiantUnique }}</td>
+                <td>{{ carte_visa_prepayee.agent.nom }}</td>
                 <td>
                     <div class="btn-group">
                         <button type="button" class="btn btn-default">Action</button>

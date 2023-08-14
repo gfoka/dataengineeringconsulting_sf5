@@ -1892,7 +1892,8 @@ body.typography .font-float .lowercase {
 #nav.stick {
   position: fixed;
 }
-#nav.stick.stuck .container, #nav.stick.stuck .container-fluid {
+#nav.stick.stuck .container,
+#nav.stick.stuck .container-fluid {
   padding-top: 10px;
   padding-bottom: 9px;
 }
@@ -1911,7 +1912,8 @@ body.typography .font-float .lowercase {
     position: fixed;
   }
 }
-#nav .container, #nav .container-fluid {
+#nav .container,
+#nav .container-fluid {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: auto;
@@ -1923,16 +1925,19 @@ body.typography .font-float .lowercase {
   transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
 }
 @media (max-width: 991px) {
-  #nav .container, #nav .container-fluid {
+  #nav .container,
+  #nav .container-fluid {
     height: 79px;
   }
 }
 @media (max-width: 767px) {
-  #nav .container, #nav .container-fluid {
+  #nav .container,
+  #nav .container-fluid {
     height: 59px;
   }
 }
-#nav a.logo svg, #nav a.logo img {
+#nav a.logo svg,
+#nav a.logo img {
   display: block;
   margin-left: -15px;
   fill: white;
@@ -1940,14 +1945,16 @@ body.typography .font-float .lowercase {
   margin-top: 2px;
 }
 @media (max-width: 991px) {
-  #nav a.logo svg, #nav a.logo img {
+  #nav a.logo svg,
+  #nav a.logo img {
     left: 35px;
     top: 19px;
     position: absolute;
   }
 }
 @media (max-width: 767px) {
-  #nav a.logo svg, #nav a.logo img {
+  #nav a.logo svg,
+  #nav a.logo img {
     top: 13px;
     width: 120px;
   }
@@ -1964,6 +1971,9 @@ body.typography .font-float .lowercase {
 #nav nav ul li {
   float: left;
   position: relative;
+}
+#nav nav ul li.hasChildren i {
+  display: inline-block;
 }
 #nav nav ul li:hover {
   color: white;
@@ -1985,6 +1995,7 @@ body.typography .font-float .lowercase {
   margin-left: 7px;
   bottom: -1px;
   position: relative;
+  display: none;
 }
 #nav nav ul li ul {
   background: #fff;
@@ -2099,7 +2110,8 @@ body.dark-menu #nav.stuck nav > ul > li > a {
 body.dark-menu #nav.light nav > ul > li > a {
   color: #7f90a0;
 }
-body.dark-menu #nav.light a.logo path, body.dark-menu #nav.light a.logo svg {
+body.dark-menu #nav.light a.logo path,
+body.dark-menu #nav.light a.logo svg {
   fill: #5f6971;
 }
 body.dark-menu #nav.light.stuck a.nav-btn {
@@ -2304,13 +2316,20 @@ body.open .nav-icon span:nth-child(3) {
   overflow: scroll;
   padding: 60px 40px 40px;
 }
-.mobile-nav a, .mobile-nav a:hover, .mobile-nav a:visited, .mobile-nav a:active {
+.mobile-nav a,
+.mobile-nav a:hover,
+.mobile-nav a:visited,
+.mobile-nav a:active {
   text-decoration: none;
   text-color: inherit;
   display: block;
 }
 .mobile-nav i {
   float: right;
+  display: none;
+}
+.mobile-nav li.hasChildren i {
+  display: inline-block;
 }
 .mobile-nav nav {
   height: 100%;
@@ -3191,56 +3210,61 @@ body.maintenance .contain-message p {
 /* ----------------------- */
 /* 14. Careers Styling */
 /* ----------------------- */
-body.careers .job-list-item, body.pricing .job-list-item {
+body.careers .job-list-item,
+body.pricing .job-list-item {
   border-radius: 4px;
   border: 1px solid #e6eaec;
   margin-bottom: 9px;
   text-align: left;
-  padding: 17px 0;
+  padding: 17px 0 22px;
   -webkit-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
   -moz-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
   -ms-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
   -o-transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
   transition: all 300ms cubic-bezier(0.694, 0.0482, 0.335, 1);
 }
-@media (max-width: 991px) {
-  body.careers .job-list-item, body.pricing .job-list-item {
-    border: 0;
-    border-bottom: 1px solid #e6eaec;
-    border-radius: 0;
-    padding-bottom: 25px;
-  }
+body.careers .job-list-item h3,
+body.pricing .job-list-item h3 {
+  margin: 7px 0 0 0;
 }
-body.careers .job-list-item:hover, body.pricing .job-list-item:hover {
-  border-color: #017cef;
-}
-body.careers .job-list-item button, body.pricing .job-list-item button {
-  margin: 0;
+body.careers .job-list-item .btn,
+body.pricing .job-list-item .btn {
+  margin-top: 3px;
 }
 @media (max-width: 991px) {
-  body.careers .job-list-item button, body.pricing .job-list-item button {
-    width: 100%;
-  }
-}
-body.careers .job-list-item .job-text, body.pricing .job-list-item .job-text {
-  margin-top: 5px;
-}
-@media (max-width: 991px) {
-  body.careers .job-list-item .job-text, body.pricing .job-list-item .job-text {
-    padding: 10px 0 20px;
-    margin-top: -3px;
-  }
-}
-body.careers .job-list-item .job-text h4, body.pricing .job-list-item .job-text h4 {
-  margin-bottom: 0;
-}
-body.careers .job-list-item .job-title h2, body.pricing .job-list-item .job-title h2 {
-  margin-bottom: 0;
-}
-@media (max-width: 991px) {
-  body.careers .job-list-item .job-title h2, body.pricing .job-list-item .job-title h2 {
+  body.careers .job-list-item,
+  body.pricing .job-list-item {
     text-align: center;
   }
+  body.careers .job-list-item .align-right,
+  body.pricing .job-list-item .align-right {
+    margin: 10px auto;
+    text-align: center;
+  }
+  body.careers .job-list-item .align-right .btn,
+  body.pricing .job-list-item .align-right .btn {
+    margin-top: 20px;
+  }
+}
+body.careers .job-list-item:hover,
+body.pricing .job-list-item:hover {
+  border-color: #017cef;
+}
+body.careers .job-list-item button,
+body.pricing .job-list-item button {
+  margin: 0;
+}
+body.careers .job-list-item .job-text,
+body.pricing .job-list-item .job-text {
+  margin-top: 0px;
+}
+body.careers .job-list-item .job-text h4,
+body.pricing .job-list-item .job-text h4 {
+  margin-bottom: 0;
+}
+body.careers .job-list-item .job-title h2,
+body.pricing .job-list-item .job-title h2 {
+  margin-bottom: 0;
 }
 
 /* ----------------------- */
@@ -3251,6 +3275,14 @@ body.careers .job-list-item .job-title h2, body.pricing .job-list-item .job-titl
   padding-bottom: 50px;
   margin-bottom: 30px;
   border-bottom: 1px solid #e6eaec;
+}
+.article.category {
+  border-bottom: 0;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+}
+.article.category h2 {
+  font-size: 25px;
 }
 .article.post {
   padding-bottom: 20px;
@@ -3324,6 +3356,13 @@ body.careers .job-list-item .job-title h2, body.pricing .job-list-item .job-titl
 .widget ul li {
   padding: 3px 5px;
 }
+.widget.tags ul li {
+  display: inline-block;
+  background: #f4f7f9;
+  border-radius: 6px;
+  padding: 5px 13px;
+  margin: 5px 10px 5px 0;
+}
 
 .recent-posts .rp {
   padding: 14px;
@@ -3336,6 +3375,44 @@ body.careers .job-list-item .job-title h2, body.pricing .job-list-item .job-titl
 .recent-posts .rp p {
   margin-bottom: 0;
   margin-top: 5px;
+}
+
+.comment {
+  padding-left: 75px;
+  position: relative;
+  margin-top: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #f4f7f9;
+}
+.comment img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 100px;
+  left: 0;
+  top: 0;
+}
+.comment .reply {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+ul.children {
+  margin-left: 50px;
+}
+@media (max-width: 991px) {
+  ul.children {
+    margin-left: 30px;
+  }
+}
+@media (max-width: 767px) {
+  ul.children {
+    margin-left: 15px;
+  }
+}
+ul.children li {
+  list-style: none;
 }
 
 /* ----------------------- */

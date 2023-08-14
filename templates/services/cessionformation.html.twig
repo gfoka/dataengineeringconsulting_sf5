@@ -35,30 +35,25 @@
 
 {% block main %}
 <section>
-            <div class="container">
-                <div class="row">
-                    {% for sessionformation in sessionformations %}
-                        <div class="col-md-12 job-list-item">
-                            <div class="col-md-4 job-title">
-                                <h3 class="primary">{{ "Session du  "~sessionformation.date |date('d F Y') }}</h3></div>
-                            <div class="col-md-2 center job-text">
-                                <h4>lieux : <b>{{ sessionformation.lieux }}</b></h4></div>
-                            <div class="col-md-2 center job-text">
-                                <h4>Durée  : <b> {{ sessionformation.duree ~ " jours" }} </b></h4></div>
-                            <div class="col-md-2 center job-text">
-                                <h4><b> {{ sessionformation.prix|number_format(0, '.', ' ') ~ " FCFA" }}</b></h4></div>
-                            <div class="col-md-2 align-right">
-                                <a href="{{ path('inscriptionsessionformation', {'id': sessionformation.id }) }}" class="btn alt">S'inscrire</a>
-                            </div>
-                        </div>
-                    {% endfor %} 
-
-                   
-                  
-                    
-                    
+    <div class="container">
+        <div class="row">
+            {% for sessionformation in sessionformations %}
+                <div class="col-md-12 job-list-item">
+                    <div class="col-md-4 job-title">
+                        <h3 class="primary">{{ "Session du  "~sessionformation.date |date('d F Y') }}</h3></div>
+                    <div class="col-md-2 center job-text">
+                        <h4>lieux : <b>{{ sessionformation.lieux }}</b></h4></div>
+                    <div class="col-md-2 center job-text">
+                        <h4>Durée  : <b> {{ sessionformation.duree ~ " jours" }} </b></h4></div>
+                    <div class="col-md-2 center job-text">
+                        <h4><b> {{ sessionformation.prix|number_format(0, '.', ' ') ~ " FCFA" }}</b></h4></div>
+                    <div class="col-md-2 align-right">
+                        <a href="{{ path('inscriptionsessionformation', {'id': sessionformation.id }) }}" class="btn alt">S'inscrire</a>
+                    </div>
                 </div>
-            </div>
+            {% endfor %} 
+        </div>
+    </div>
 </section>
 
 

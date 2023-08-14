@@ -122,7 +122,16 @@
             </tr>
             <tr>
                 <th>Adresse email client</th>
-                <td>{{ carte_visa_prepayee.emailClient }}</td>
+                <td>
+                <span id="emailc">{{ carte_visa_prepayee.emailClient }}</span>
+                    
+                    <button type="button" class="btn btn-secondary" id="emailb">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                        </svg>
+                    </button>
+                </td>
             </tr>
             <tr>
                 <th>Numéro de télephone du client</th>
@@ -173,4 +182,48 @@
     
 
  </div> 
+{% endblock %}
+
+
+
+{% block javascripts %}
+
+    <!-- DataTables  & Plugins -->
+    <script src="{{ asset('AdminLTE-master/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/jszip/jszip.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/pdfmake/pdfmake.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/pdfmake/vfs_fonts.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="{{ asset('AdminLTE-master/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+
+<!-- Démo
+    <script src="{{ asset('AdminLTE-master/dist/js/demo.js')}}"></script>
+ -->
+<script>
+
+    // get the text from the DOM Element: 
+    const textToCopy = document.querySelector('#emailc').innerText
+
+    // when someone clicks on the <a class="copy-text"> element 
+    // (which should be a <button>), execute the copy command:
+    document.querySelector('#emailb').addEventListener('click' , ()=> {
+    navigator.clipboard.writeText(textToCopy).then(
+        function() {
+        /* clipboard successfully set */
+        window.alert('Success! The text was copied to your clipboard') 
+        }, 
+        function() {
+        /* clipboard write failed */
+        window.alert('Opps! Your browser does not support the Clipboard API')
+        }
+    )
+    })
+
+</script>
 {% endblock %}
