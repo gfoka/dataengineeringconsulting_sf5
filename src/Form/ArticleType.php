@@ -10,6 +10,7 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ArticleType extends AbstractType
 {
@@ -109,9 +110,12 @@ class ArticleType extends AbstractType
             ])
             ->add('categorie')
             ->add('auteur')
-            ->add('contenu',CKEditorType::class)
+            ->add('contenu',TextareaType::class, [
+                'attr' => ['class' => 'tinymce'],
+            ])
         ;
     }
+
     
 
     public function configureOptions(OptionsResolver $resolver): void

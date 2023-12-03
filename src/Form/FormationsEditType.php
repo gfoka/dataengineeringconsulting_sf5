@@ -10,6 +10,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class FormationsEditType extends AbstractType
 {
@@ -56,7 +57,9 @@ class FormationsEditType extends AbstractType
             ->add('langue')
             ->add('formateur')
             ->add('categorieFormation')
-            ->add('programme',CKEditorType::class)
+            ->add('programme',TextareaType::class, [
+                'attr' => ['class' => 'tinymce'],
+            ])
         ;
     }
 

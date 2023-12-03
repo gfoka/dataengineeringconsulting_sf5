@@ -208,7 +208,7 @@ class CarteVisaPrepayeeController extends AbstractController
 
         //Je doit envoyer un mail pour briffer le client sur l'utilisation de la carte
         $email = (new TemplatedEmail())
-            ->from('infos@dataengineeringconsulting.com')
+            ->from('contact@dataengineeringconsulting.com')
             ->to(new Address(''.$carteVisaPrepayee->getEmailClient()))
             ->subject('Facture carte VISA prepayée')
             // path of the Twig template to render

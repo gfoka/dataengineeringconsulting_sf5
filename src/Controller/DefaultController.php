@@ -244,8 +244,8 @@ class DefaultController extends AbstractController
 
             //Ici j'envoie le Mail de contact
             $email = (new Email())
-            ->from('infos@dataengineeringconsulting.com')
-            ->to('infos@dataengineeringconsulting.com')
+            ->from('contact@dataengineeringconsulting.com')
+            ->to('gfoka@dataengineeringconsulting.com')
             ->cc(''.$ecrire->getEmail())
             //->bcc('bcc@example.com')
             //->replyTo('fabien@example.com')
