@@ -57,6 +57,14 @@ developpement_web:
     requirements:
       _locale: en|fr
 
+# Microsoft Power platform
+microsoft_power_platform:
+    path: /{_locale}/services/microsoft-power-platform.html
+    controller: App\Controller\DefaultController::microsoftPowerPlatformAction
+    locale:      en
+    requirements:
+      _locale: en|fr
+
 
 appli_mobile:
     path: /{_locale}/services/application_mobile_cameroun.html

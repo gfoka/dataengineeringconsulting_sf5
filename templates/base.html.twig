@@ -99,12 +99,16 @@
 
                     <li class="parent_1"><a href="#">{% trans %}menu.nos_services{% endtrans %}<i class="ion-ios-arrow-down"></i></a>
                         <ul class="animated flipInX">
-                            <li><a href="{{ path('developpement_web') }}">{% trans %}menu.conception_de_site_internet{% endtrans %}</a></li>
-                            <li><a href="{{ path('appli_mobile') }}">{% trans %}menu.conception_application_mobile{% endtrans %}</a></li>
-                            <li><a href="{{ path('infographie') }}">{% trans %}menu.infographie{% endtrans %}</a></li>
+                            <li class="parent_2"><a href="#">Logiciel & web <i class="ion-ios-arrow-right ArrowMenu"></i></a>
+                                <ul class="animated fadeInLeft">
+                                    <li><a href="{{ path('developpement_web') }}">{% trans %}menu.conception_de_site_internet{% endtrans %}</a></li>
+                                    <li><a href="{{ path('appli_mobile') }}">{% trans %}menu.conception_application_mobile{% endtrans %}</a></li>
+                                    <li><a href="{{ path('microsoft_power_platform') }}">Microsoft Power Platform</a></li>
+                                    <li><a href="page-loading.html">Dévellopement logiciel</a></li>
+                                </ul>
+                            </li>
                             <li><a href="{{ path('hosting') }}">{% trans %}menu.hebergement{% endtrans %}</a></li>
-
-                            
+                            <li><a href="{{ path('infographie') }}">{% trans %}menu.infographie{% endtrans %}</a></li>
                         </ul>
                     </li>
                     
@@ -213,8 +217,8 @@
             </div>
             <div class="col-md-2 col-xs-6">
                 <h4>Contact</h4>
-                <p> Monté Jouvence</p>
-                <a class="contact_link" href="call:699786514">(+237 6 99 78 65 14)</a>
+                <p> Carrefour Elig Essono</p>
+                <a class="contact_link" href="call:699786514">(+237 691 377 874)</a>
                 <a class="contact_link" href="mailto:contact@dataengineeringconsulting.com">contact@dataengineeringconsulting.com</a>
             </div>
         </div>

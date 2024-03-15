@@ -117,6 +117,18 @@ class DefaultController extends AbstractController
     }
 
 
+
+    //-----------------------------Les Servvices maintenant
+    public function microsoftPowerPlatformAction(): Response
+    {
+        //die('Hi');
+        return $this->render('services/powerplatform.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
+
+
     public function appliAction(): Response
     {
         //die('Hi');
